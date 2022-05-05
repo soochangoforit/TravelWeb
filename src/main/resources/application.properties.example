@@ -1,8 +1,8 @@
 #DB Connection
-spring.datasource.url=jdbc:mariadb://localhost:3306/cloud
+spring.datasource.url=jdbc:mariadb://localhost:{$port}/cloud
 spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 spring.datasource.username=cloud
-spring.datasource.password=12345
+spring.datasource.password={$password}
 
 
 # JPA
@@ -12,5 +12,5 @@ spring.jpa.hibernate.ddl-auto=none
 logging.level.org.hibernate.SQL=debug
 logging.level.org.hibernate.type.descriptor.sql=trace
 
-# MariaDB InnoDB??? @OnDelete? ???? ???? dialect ? MySQL5InnoDBDialect ? ???? ??.
+# MariaDB InnoDB에서는 @OnDelete를 사용하기 위해서는 dialect 를 MySQL5InnoDBDialect 를 사용해야 한다.
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
