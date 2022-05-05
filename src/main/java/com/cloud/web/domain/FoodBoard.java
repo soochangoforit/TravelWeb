@@ -4,6 +4,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -19,14 +21,17 @@ public class FoodBoard extends BaseTimeEntity{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id" , nullable = false , foreignKey = @ForeignKey(name = "fk_food_board_to_users"))
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_type_id" , nullable = false , foreignKey = @ForeignKey(name = "fk_food_board_to_location_type"))
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private LocationType locationType;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "food_type_id" , nullable = false , foreignKey = @ForeignKey(name = "fk_food_board_to_food_type"))
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private FoodType foodType;
 
     //

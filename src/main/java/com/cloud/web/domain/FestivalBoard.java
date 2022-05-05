@@ -3,6 +3,8 @@ package com.cloud.web.domain;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -17,11 +19,13 @@ public class FestivalBoard {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id" , nullable = false , foreignKey = @ForeignKey(name = "fk_festival_board_to_users"))
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
     // 아래부터 Admin 등록 필요 필드
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_type_id" , nullable = false , foreignKey = @ForeignKey(name = "fk_festival_board_location_type"))
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private LocationType locationType;
 
     @Column(name = "festival_info" , length = 2000 , nullable = false)
