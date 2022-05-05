@@ -1,0 +1,1370 @@
+2022-05-01 21:04:41,438 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:04:41,448 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:04:41,456 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:10:45,477 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 1216 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:10:45,495 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:10:46,355 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:10:46,371 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:10:47,008 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:10:47,021 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:10:47,023 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:10:47,024 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:10:47,176 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:10:47,176 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1614 ms
+2022-05-01 21:10:47,447 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:10:47,529 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:10:47,699 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:10:47,845 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:10:47,939 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:10:47,956 [main] WARN  org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator(initiateService:133) - HHH000342: Could not obtain connection to query metadata
+org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.MySQL5InnoDBDialect ] as strategy [org.hibernate.dialect.Dialect]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:156) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:239) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:183) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:170) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:164) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.constructDialect(DialectFactoryImpl.java:74) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:51) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:97) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:10) ~[classes/:?]
+Caused by: org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [org.hibernate.dialect.MySQL5InnoDBDialect ]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:133) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:152) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 43 more
+Caused by: java.lang.ClassNotFoundException: Could not load requested class : org.hibernate.dialect.MySQL5InnoDBDialect 
+	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:210) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:588) ~[?:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[?:?]
+	at java.lang.Class.forName0(Native Method) ~[?:?]
+	at java.lang.Class.forName(Class.java:398) ~[?:?]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:130) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:152) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 43 more
+2022-05-01 21:10:47,973 [main] ERROR org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:426) - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2022-05-01 21:10:47,975 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext(refresh:591) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2022-05-01 21:10:47,976 [main] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:10:47,980 [main] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:10:47,986 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Stopping service [Tomcat]
+2022-05-01 21:10:48,004 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener(logMessage:136) - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-01 21:10:48,049 [main] ERROR org.springframework.boot.SpringApplication(reportFailure:830) - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:10) ~[classes/:?]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	... 16 more
+Caused by: org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.MySQL5InnoDBDialect ] as strategy [org.hibernate.dialect.Dialect]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:156) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:239) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:183) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:170) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:164) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.constructDialect(DialectFactoryImpl.java:74) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:51) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:138) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	... 16 more
+Caused by: org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [org.hibernate.dialect.MySQL5InnoDBDialect ]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:133) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:152) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:239) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:183) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:170) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:164) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.constructDialect(DialectFactoryImpl.java:74) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:51) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:138) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	... 16 more
+Caused by: java.lang.ClassNotFoundException: Could not load requested class : org.hibernate.dialect.MySQL5InnoDBDialect 
+	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:210) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:588) ~[?:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[?:?]
+	at java.lang.Class.forName0(Native Method) ~[?:?]
+	at java.lang.Class.forName(Class.java:398) ~[?:?]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:130) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:152) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:239) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:183) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:170) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:164) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.constructDialect(DialectFactoryImpl.java:74) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:51) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:138) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	... 16 more
+2022-05-01 21:14:21,237 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 15708 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:14:21,248 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:14:22,028 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:14:22,042 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:14:22,589 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:14:22,600 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:14:22,601 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:14:22,602 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:14:22,749 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:14:22,749 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1445 ms
+2022-05-01 21:14:23,037 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:14:23,082 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:14:23,222 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:14:23,356 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:14:23,425 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:14:23,446 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:14:24,003 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    [34mdrop[0m [34mtable[0m [34mif[0m [34mexists[0m [34muser[0m
+2022-05-01 21:14:24,019 [main] INFO  p6spy(logSQL:60) - #1651407264019 | took 12ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:14:24,028 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    [34mdrop[0m [34msequence[0m hibernate_sequence
+2022-05-01 21:14:24,036 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 4091-42S02: Unknown SEQUENCE: 'cloud.hibernate_sequence'
+2022-05-01 21:14:24,038 [main] INFO  p6spy(logSQL:60) - #1651407264038 | took 9ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:14:24,039 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    drop sequence hibernate_sequence" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    drop sequence hibernate_sequence" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:256) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:10) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=143) Unknown SEQUENCE: 'cloud.hibernate_sequence'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:270) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-01 21:14:24,053 [main] DEBUG org.hibernate.SQL(logStatement:144) - [34mcreate[0m [34msequence[0m hibernate_sequence [34mstart[0m [34mwith[0m 1 [34mincrement[0m [34mby[0m 1
+2022-05-01 21:14:24,077 [main] INFO  p6spy(logSQL:60) - #1651407264077 | took 23ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:14:24,078 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    [34mcreate[0m [34mtable[0m [34muser[0m (
+       id [34mbigint[0m [34mnot[0m [34mnull[0m,
+        name [34mvarchar[0m(255),
+        [34mprimary[0m [34mkey[0m (id)
+    ) engine=InnoDB
+2022-05-01 21:14:24,087 [main] INFO  p6spy(logSQL:60) - #1651407264087 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:14:24,089 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:14:24,099 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:14:24,138 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:14:24,520 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:14:24,681 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:14:24,781 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:14:24,801 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 4.005 seconds (JVM running for 5.995)
+2022-05-01 21:15:02,026 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:15:02,029 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:15:02,034 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:15:32,706 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 16884 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:15:32,716 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:15:33,596 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:15:33,615 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:15:34,246 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:15:34,257 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:15:34,258 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:15:34,259 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:15:34,408 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:15:34,409 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1645 ms
+2022-05-01 21:15:34,690 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:15:34,741 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:15:34,904 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:15:35,024 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:15:35,104 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:15:35,135 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:15:35,659 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    [34mdrop[0m [34mtable[0m [34mif[0m [34mexists[0m [34muser[0m
+2022-05-01 21:15:35,670 [main] INFO  p6spy(logSQL:60) - #1651407335669 | took 7ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:15:35,670 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    [34mdrop[0m [34msequence[0m hibernate_sequence
+2022-05-01 21:15:35,677 [main] INFO  p6spy(logSQL:60) - #1651407335677 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:15:35,679 [main] DEBUG org.hibernate.SQL(logStatement:144) - [34mcreate[0m [34msequence[0m hibernate_sequence [34mstart[0m [34mwith[0m 1 [34mincrement[0m [34mby[0m 1
+2022-05-01 21:15:35,695 [main] INFO  p6spy(logSQL:60) - #1651407335695 | took 16ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:15:35,697 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    [34mcreate[0m [34mtable[0m [34muser[0m (
+       id [34mbigint[0m [34mnot[0m [34mnull[0m,
+        name [34mvarchar[0m(255),
+        [34mprimary[0m [34mkey[0m (id)
+    ) engine=InnoDB
+2022-05-01 21:15:35,706 [main] INFO  p6spy(logSQL:60) - #1651407335706 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:15:35,708 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:15:35,718 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:15:35,758 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:15:36,062 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:15:36,179 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:15:36,203 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:15:36,217 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.964 seconds (JVM running for 6.012)
+2022-05-01 21:17:29,912 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:17:29,915 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:17:29,921 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:17:35,495 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 14396 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:17:35,504 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:17:36,197 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:17:36,213 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:17:36,774 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:17:36,785 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:17:36,785 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:17:36,786 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:17:36,929 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:17:36,929 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1384 ms
+2022-05-01 21:17:37,177 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:17:37,238 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:17:37,374 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:17:37,475 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:17:37,540 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:17:37,561 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:17:38,058 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:17:38,078 [main] INFO  p6spy(logSQL:60) - #1651407458078 | took 17ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:17:38,079 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:17:38,085 [main] INFO  p6spy(logSQL:60) - #1651407458085 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:17:38,089 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:17:38,106 [main] INFO  p6spy(logSQL:60) - #1651407458106 | took 16ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:17:38,107 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:17:38,116 [main] INFO  p6spy(logSQL:60) - #1651407458116 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:17:38,118 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:17:38,126 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:17:38,169 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:17:38,457 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:17:38,566 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:17:38,587 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:17:38,602 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.534 seconds (JVM running for 5.452)
+2022-05-01 21:20:00,871 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:20:00,874 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:20:00,880 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:20:06,840 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 14572 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:20:06,849 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:20:07,592 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:20:07,609 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:20:08,250 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:20:08,261 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:20:08,261 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:20:08,263 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:20:08,423 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:20:08,423 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1531 ms
+2022-05-01 21:20:08,704 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:20:08,751 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:20:08,918 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:20:09,038 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:20:09,150 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:20:09,177 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:20:09,790 [main] INFO  p6spy(logSQL:60) - #1651407609789 | took 19ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:20:09,796 [main] INFO  p6spy(logSQL:60) - #1651407609796 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:20:09,816 [main] INFO  p6spy(logSQL:60) - #1651407609816 | took 15ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:20:09,826 [main] INFO  p6spy(logSQL:60) - #1651407609826 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:20:09,828 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:20:09,839 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:20:09,891 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:20:10,200 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:20:10,311 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:20:10,332 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:20:10,348 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.96 seconds (JVM running for 6.055)
+2022-05-01 21:23:06,807 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:23:06,809 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:23:06,817 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:23:13,405 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 3912 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:23:13,415 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:23:14,269 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:23:14,287 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:23:14,951 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:23:14,964 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:23:14,965 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:23:14,966 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:23:15,124 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:23:15,124 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1662 ms
+2022-05-01 21:23:15,405 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:23:15,457 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:23:15,619 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:23:15,733 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:23:15,803 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:23:15,823 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:23:16,348 [main] DEBUG org.hibernate.SQL(logStatement:144) - drop table if exists user
+2022-05-01 21:23:16,370 [main] INFO  p6spy(logSQL:60) - #1651407796370 | took 19ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+drop table if exists user
+drop table if exists user;
+2022-05-01 21:23:16,371 [main] DEBUG org.hibernate.SQL(logStatement:144) - drop sequence hibernate_sequence
+2022-05-01 21:23:16,378 [main] INFO  p6spy(logSQL:60) - #1651407796378 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+drop sequence hibernate_sequence
+drop sequence hibernate_sequence;
+2022-05-01 21:23:16,381 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:23:16,397 [main] INFO  p6spy(logSQL:60) - #1651407796396 | took 15ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:23:16,398 [main] DEBUG org.hibernate.SQL(logStatement:144) - create table user (id bigint not null, name varchar(255), primary key (id)) engine=InnoDB
+2022-05-01 21:23:16,407 [main] INFO  p6spy(logSQL:60) - #1651407796407 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create table user (id bigint not null, name varchar(255), primary key (id)) engine=InnoDB
+create table user (id bigint not null, name varchar(255), primary key (id)) engine=InnoDB;
+2022-05-01 21:23:16,409 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:23:16,419 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:23:16,463 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:23:16,753 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:23:16,868 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:23:16,896 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:23:16,909 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 4.229 seconds (JVM running for 6.493)
+2022-05-01 21:24:44,370 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:24:44,372 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:24:44,377 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:24:50,396 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 1360 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:24:50,407 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:24:51,247 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:24:51,266 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:24:51,955 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:24:51,969 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:24:51,971 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:24:51,972 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:24:52,204 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:24:52,205 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1742 ms
+2022-05-01 21:24:52,577 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:24:52,639 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:24:52,889 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:24:53,034 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:24:53,126 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:24:53,154 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:24:53,727 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    [34mdrop[0m [34mtable[0m [34mif[0m [34mexists[0m [34muser[0m
+2022-05-01 21:24:53,754 [main] INFO  p6spy(logSQL:60) - #1651407893754 | took 24ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:24:53,755 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    [34mdrop[0m [34msequence[0m hibernate_sequence
+2022-05-01 21:24:53,761 [main] INFO  p6spy(logSQL:60) - #1651407893761 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:24:53,764 [main] DEBUG org.hibernate.SQL(logStatement:144) - [34mcreate[0m [34msequence[0m hibernate_sequence [34mstart[0m [34mwith[0m 1 [34mincrement[0m [34mby[0m 1
+2022-05-01 21:24:53,779 [main] INFO  p6spy(logSQL:60) - #1651407893779 | took 14ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:24:53,780 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    [34mcreate[0m [34mtable[0m [34muser[0m (
+       id [34mbigint[0m [34mnot[0m [34mnull[0m,
+        name [34mvarchar[0m(255),
+        [34mprimary[0m [34mkey[0m (id)
+    ) engine=InnoDB
+2022-05-01 21:24:53,791 [main] INFO  p6spy(logSQL:60) - #1651407893790 | took 10ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:24:53,793 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:24:53,805 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:24:53,859 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:24:54,219 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:24:54,358 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:24:54,383 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:24:54,400 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 4.533 seconds (JVM running for 6.807)
+2022-05-01 21:29:35,025 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:29:35,025 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:29:35,040 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:34:27,068 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 9752 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:34:27,068 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:34:27,756 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:34:27,772 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:34:28,278 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:34:28,278 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:34:28,278 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:34:28,293 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:34:28,418 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:34:28,418 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1303 ms
+2022-05-01 21:34:28,684 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:34:28,731 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:34:28,856 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:34:28,966 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:34:29,044 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:34:29,075 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:34:29,544 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:34:29,560 [main] INFO  p6spy(logSQL:60) - #1651408469560 | took 10ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:34:29,560 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:34:29,576 [main] INFO  p6spy(logSQL:60) - #1651408469576 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:34:29,576 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:34:29,591 [main] INFO  p6spy(logSQL:60) - #1651408469591 | took 15ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:34:29,591 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:34:29,607 [main] INFO  p6spy(logSQL:60) - #1651408469607 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:34:29,607 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:34:29,607 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:34:29,654 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:34:29,889 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:34:29,998 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:34:30,033 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:34:30,045 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.39 seconds (JVM running for 5.415)
+2022-05-01 21:34:58,029 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:34:58,029 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:34:58,029 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:35:04,338 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 11092 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:35:04,348 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:35:05,083 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:35:05,099 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:35:05,630 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:35:05,646 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:35:05,646 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:35:05,646 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:35:05,803 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:35:05,803 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1408 ms
+2022-05-01 21:35:06,022 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:35:06,069 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:35:06,211 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:35:06,319 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:35:06,382 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:35:06,397 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:35:06,945 [main] INFO  p6spy(logSQL:60) - #1651408506945 | took 13ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:35:06,945 [main] INFO  p6spy(logSQL:60) - #1651408506945 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:35:06,976 [main] INFO  p6spy(logSQL:60) - #1651408506976 | took 17ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:35:06,976 [main] INFO  p6spy(logSQL:60) - #1651408506976 | took 7ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:35:06,976 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:35:06,992 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:35:07,039 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:35:07,289 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:35:07,398 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:35:07,429 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:35:07,429 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.507 seconds (JVM running for 5.503)
+2022-05-01 21:37:25,314 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:37:25,316 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:37:25,323 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:37:30,747 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 2336 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:37:30,754 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:37:31,437 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:37:31,452 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:37:31,979 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:37:31,989 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:37:31,990 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:37:31,990 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:37:32,123 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:37:32,123 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1323 ms
+2022-05-01 21:37:32,359 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:37:32,419 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:37:32,552 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:37:32,663 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:37:32,736 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:37:32,759 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:37:33,254 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:37:33,276 [main] INFO  p6spy(logSQL:60) - #1651408653276 | took 19ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:37:33,277 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:37:33,283 [main] INFO  p6spy(logSQL:60) - #1651408653283 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:37:33,286 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:37:33,302 [main] INFO  p6spy(logSQL:60) - #1651408653302 | took 15ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:37:33,303 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:37:33,312 [main] INFO  p6spy(logSQL:60) - #1651408653312 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:37:33,314 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:37:33,323 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:37:33,368 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:37:33,658 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:37:33,781 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:37:33,805 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:37:33,819 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.509 seconds (JVM running for 5.76)
+2022-05-01 21:37:54,793 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:37:54,796 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:37:54,803 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:38:00,542 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 18412 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:38:00,551 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:38:01,272 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:38:01,286 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:38:01,811 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:38:01,820 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:38:01,821 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:38:01,822 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:38:01,970 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:38:01,970 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1367 ms
+2022-05-01 21:38:02,256 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:38:02,320 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:38:02,488 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:38:02,610 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:38:02,684 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:38:02,707 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:38:03,452 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:38:03,494 [main] INFO  p6spy(logSQL:60) - #1651408683493 | took 28ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:38:03,494 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:38:03,503 [main] INFO  p6spy(logSQL:60) - #1651408683503 | took 8ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:38:03,507 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:38:03,525 [main] INFO  p6spy(logSQL:60) - #1651408683525 | took 17ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:38:03,526 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:38:03,538 [main] INFO  p6spy(logSQL:60) - #1651408683538 | took 11ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:38:03,541 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:38:03,555 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:38:03,618 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:38:04,016 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:38:04,152 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:38:04,176 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:38:04,192 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 4.123 seconds (JVM running for 6.249)
+2022-05-01 21:42:58,419 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:42:58,419 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:42:58,419 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:44:20,911 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 12768 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:44:20,919 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:44:21,608 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:44:21,625 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:44:22,277 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:44:22,287 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:44:22,288 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:44:22,289 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:44:22,439 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:44:22,439 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1480 ms
+2022-05-01 21:44:22,738 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:44:22,805 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:44:22,979 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:44:23,091 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:44:23,168 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:44:23,195 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:44:23,716 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:44:23,743 [main] INFO  p6spy(logSQL:60) - #1651409063743 | took 25ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:44:23,744 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:44:23,753 [main] INFO  p6spy(logSQL:60) - #1651409063753 | took 8ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:44:23,758 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:44:23,779 [main] INFO  p6spy(logSQL:60) - #1651409063779 | took 20ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:44:23,780 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:44:23,792 [main] INFO  p6spy(logSQL:60) - #1651409063792 | took 10ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:44:23,795 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:44:23,811 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:44:23,893 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:44:24,278 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:44:24,421 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:44:24,446 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:44:24,462 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 4.044 seconds (JVM running for 6.592)
+2022-05-01 21:45:47,758 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:45:47,768 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:45:47,778 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:47:27,790 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 11452 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:47:27,798 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:47:28,511 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:47:28,528 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:47:29,109 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:47:29,119 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:47:29,120 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:47:29,121 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:47:29,267 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:47:29,268 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1427 ms
+2022-05-01 21:47:29,534 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:47:29,592 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:47:29,724 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:47:29,833 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:47:29,908 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:47:29,929 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:47:30,464 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:47:30,507 [main] INFO  p6spy(logSQL:60) - #1651409250507 | took 39ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:47:30,508 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:47:30,514 [main] INFO  p6spy(logSQL:60) - #1651409250514 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:47:30,517 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:47:30,531 [main] INFO  p6spy(logSQL:60) - #1651409250531 | took 14ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:47:30,532 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:47:30,541 [main] INFO  p6spy(logSQL:60) - #1651409250541 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:47:30,543 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:47:30,553 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:47:30,593 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:47:30,883 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:47:30,996 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:47:31,010 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext(refresh:591) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-05-01 21:47:31,013 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:47:31,017 [main] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:47:31,024 [main] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:47:31,028 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Pausing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:47:31,028 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Stopping service [Tomcat]
+2022-05-01 21:47:31,033 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Stopping ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:47:31,033 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Destroying ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:47:31,042 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener(logMessage:136) - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-01 21:47:31,068 [main] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter(report:40) - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-05-01 21:47:44,131 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 14988 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:47:44,139 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:47:44,832 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:47:44,852 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:47:45,418 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:47:45,429 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:47:45,429 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:47:45,430 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:47:45,573 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:47:45,573 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1384 ms
+2022-05-01 21:47:45,852 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:47:45,910 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:47:46,079 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:47:46,191 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:47:46,262 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:47:46,282 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:47:46,791 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:47:46,811 [main] INFO  p6spy(logSQL:60) - #1651409266811 | took 18ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:47:46,812 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:47:46,818 [main] INFO  p6spy(logSQL:60) - #1651409266818 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:47:46,821 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:47:46,837 [main] INFO  p6spy(logSQL:60) - #1651409266837 | took 15ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:47:46,838 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:47:46,846 [main] INFO  p6spy(logSQL:60) - #1651409266846 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:47:46,848 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:47:46,857 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:47:46,897 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:47:47,188 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:47:47,305 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:47:47,329 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:47:47,345 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.673 seconds (JVM running for 5.843)
+2022-05-01 21:48:00,066 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:48:00,068 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:48:00,075 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:48:07,431 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 11632 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:48:07,441 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:48:08,288 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:48:08,307 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:48:08,999 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:48:09,011 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:48:09,012 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:48:09,013 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:48:09,179 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:48:09,180 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1680 ms
+2022-05-01 21:48:09,455 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:48:09,505 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:48:09,660 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:48:09,780 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:48:09,853 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:48:09,876 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:48:10,399 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:48:10,421 [main] INFO  p6spy(logSQL:60) - #1651409290421 | took 19ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:48:10,421 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:48:10,428 [main] INFO  p6spy(logSQL:60) - #1651409290428 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:48:10,431 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:48:10,447 [main] INFO  p6spy(logSQL:60) - #1651409290447 | took 15ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:48:10,448 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:48:10,456 [main] INFO  p6spy(logSQL:60) - #1651409290456 | took 7ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:48:10,458 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:48:10,468 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:48:10,512 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:48:10,826 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:48:10,941 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:48:10,962 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:48:10,975 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 4.074 seconds (JVM running for 6.402)
+2022-05-01 21:50:32,491 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:50:32,493 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:50:32,500 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:50:38,937 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 17972 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:50:38,945 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:50:39,670 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:50:39,692 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:50:40,342 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:50:40,355 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:50:40,356 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:50:40,357 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:50:40,516 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:50:40,517 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1531 ms
+2022-05-01 21:50:40,770 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:50:40,833 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:50:40,988 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:50:41,098 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:50:41,165 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:50:41,185 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:50:41,709 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:50:41,734 [main] INFO  p6spy(logSQL:60) - #1651409441733 | took 21ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:50:41,734 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:50:41,741 [main] INFO  p6spy(logSQL:60) - #1651409441741 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:50:41,744 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:50:41,761 [main] INFO  p6spy(logSQL:60) - #1651409441761 | took 15ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:50:41,762 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:50:41,770 [main] INFO  p6spy(logSQL:60) - #1651409441770 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:50:41,772 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:50:41,780 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:50:41,822 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:50:42,197 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:50:42,351 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:50:42,376 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:50:42,392 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.916 seconds (JVM running for 5.866)
+2022-05-01 21:51:45,104 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:51:45,108 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:51:45,114 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:53:01,648 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 17048 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:53:01,655 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:53:02,423 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:53:02,442 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:53:03,068 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:53:03,078 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:53:03,079 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:53:03,079 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:53:03,222 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:53:03,222 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1527 ms
+2022-05-01 21:53:03,472 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:53:03,524 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:53:03,655 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:53:03,760 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:53:03,831 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:53:03,852 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:53:04,312 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:53:04,336 [main] INFO  p6spy(logSQL:60) - #1651409584335 | took 20ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:53:04,336 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:53:04,342 [main] INFO  p6spy(logSQL:60) - #1651409584342 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:53:04,345 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:53:04,360 [main] INFO  p6spy(logSQL:60) - #1651409584360 | took 14ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:53:04,361 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:53:04,370 [main] INFO  p6spy(logSQL:60) - #1651409584370 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:53:04,373 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:53:04,384 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:53:04,428 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:53:04,693 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:53:04,799 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:53:04,829 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:53:04,845 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.633 seconds (JVM running for 5.615)
+2022-05-01 21:53:18,133 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-01 21:53:18,134 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet(initServletBean:525) - Initializing Servlet 'dispatcherServlet'
+2022-05-01 21:53:18,135 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet(initServletBean:547) - Completed initialization in 1 ms
+2022-05-01 21:55:59,989 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:55:59,992 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:55:59,999 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 21:56:29,883 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 17660 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 21:56:29,894 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 21:56:30,672 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 21:56:30,692 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 21:56:31,301 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:56:31,314 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:56:31,315 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 21:56:31,316 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 21:56:31,495 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 21:56:31,496 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1553 ms
+2022-05-01 21:56:31,779 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 21:56:31,831 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 21:56:31,975 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 21:56:32,086 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 21:56:32,171 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 21:56:32,195 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 21:56:32,749 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists user
+2022-05-01 21:56:32,772 [main] INFO  p6spy(logSQL:60) - #1651409792771 | took 19ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists user
+
+    drop table if exists user;
+2022-05-01 21:56:32,772 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop sequence hibernate_sequence
+2022-05-01 21:56:32,779 [main] INFO  p6spy(logSQL:60) - #1651409792779 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop sequence hibernate_sequence
+
+    drop sequence hibernate_sequence;
+2022-05-01 21:56:32,782 [main] DEBUG org.hibernate.SQL(logStatement:144) - create sequence hibernate_sequence start with 1 increment by 1
+2022-05-01 21:56:32,798 [main] INFO  p6spy(logSQL:60) - #1651409792798 | took 16ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+2022-05-01 21:56:32,799 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2022-05-01 21:56:32,808 [main] INFO  p6spy(logSQL:60) - #1651409792808 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+2022-05-01 21:56:32,810 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 21:56:32,820 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:56:32,859 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 21:56:33,203 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 21:56:33,388 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 21:56:33,414 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:56:33,430 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 4.711 seconds (JVM running for 6.972)
+2022-05-01 21:59:31,036 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 21:59:31,039 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 21:59:31,050 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.

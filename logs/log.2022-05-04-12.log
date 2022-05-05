@@ -1,0 +1,727 @@
+2022-05-04 12:51:25,249 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper(buildDefaultMergedContextConfiguration:305) - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.cloud.web.repository.UserRepositoryTest], using SpringBootContextLoader
+2022-05-04 12:51:25,296 [main] INFO  org.springframework.test.context.support.AbstractContextLoader(generateDefaultLocations:264) - Could not detect default resource locations for test class [com.cloud.web.repository.UserRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-05-04 12:51:25,296 [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils(detectDefaultConfigurationClasses:83) - Could not detect default configuration classes for test class [com.cloud.web.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-05-04 12:51:25,656 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper(getOrFindConfigurationClasses:238) - Found @SpringBootConfiguration com.cloud.web.WebApplication for test class com.cloud.web.repository.UserRepositoryTest
+2022-05-04 12:51:25,921 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper(getDefaultTestExecutionListenerClassNames:245) - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-05-04 12:51:25,984 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper(getTestExecutionListeners:174) - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@e72dba7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@33c2bd, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1dfd5f51, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3c321bdb, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@24855019, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3abd581e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4d4d8fcf, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@610db97e, org.springframework.test.context.event.EventPublishingTestExecutionListener@6f0628de, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3fabf088, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1e392345, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@12f3afb5, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4ced35ed, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2c22a348, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7bd69e82]
+2022-05-04 12:51:26,890 [main] INFO  com.cloud.web.repository.UserRepositoryTest(logStarting:55) - Starting UserRepositoryTest using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 3532 (started by tncks in C:\WebCloud\web)
+2022-05-04 12:51:26,890 [main] INFO  com.cloud.web.repository.UserRepositoryTest(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-04 12:51:28,563 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-04 12:51:28,766 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 175 ms. Found 7 JPA repository interfaces.
+2022-05-04 12:51:30,361 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-04 12:51:30,548 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-04 12:51:31,095 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-04 12:51:32,706 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-04 12:51:32,894 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-04 12:51:33,019 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-04 12:51:34,895 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_location_type
+2022-05-04 12:51:34,926 [main] INFO  p6spy(logSQL:60) - #1651636294926 | took 22ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_location_type
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_location_type;
+2022-05-04 12:51:34,926 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_to_users
+2022-05-04 12:51:34,957 [main] INFO  p6spy(logSQL:60) - #1651636294957 | took 26ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_to_users
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_to_users;
+2022-05-04 12:51:34,957 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_festival_board
+2022-05-04 12:51:34,973 [main] INFO  p6spy(logSQL:60) - #1651636294973 | took 13ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_festival_board
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_festival_board;
+2022-05-04 12:51:34,973 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_users
+2022-05-04 12:51:35,004 [main] INFO  p6spy(logSQL:60) - #1651636295004 | took 24ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_users
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_users;
+2022-05-04 12:51:35,004 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_food_type
+2022-05-04 12:51:35,020 [main] INFO  p6spy(logSQL:60) - #1651636295020 | took 14ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_food_type
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_food_type;
+2022-05-04 12:51:35,020 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_location_type
+2022-05-04 12:51:35,035 [main] INFO  p6spy(logSQL:60) - #1651636295035 | took 24ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_location_type
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_location_type;
+2022-05-04 12:51:35,035 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_users
+2022-05-04 12:51:35,067 [main] INFO  p6spy(logSQL:60) - #1651636295067 | took 24ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_users
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_users;
+2022-05-04 12:51:35,067 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_food_board
+2022-05-04 12:51:35,082 [main] INFO  p6spy(logSQL:60) - #1651636295082 | took 13ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_food_board
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_food_board;
+2022-05-04 12:51:35,082 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_users
+2022-05-04 12:51:35,113 [main] INFO  p6spy(logSQL:60) - #1651636295113 | took 24ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_users
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_users;
+2022-05-04 12:51:35,113 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_board
+2022-05-04 12:51:35,129 [main] INFO  p6spy(logSQL:60) - #1651636295129 | took 20ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_board
+
+    drop table if exists festival_board;
+2022-05-04 12:51:35,129 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_cmt
+2022-05-04 12:51:35,160 [main] INFO  p6spy(logSQL:60) - #1651636295160 | took 24ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_cmt
+
+    drop table if exists festival_cmt;
+2022-05-04 12:51:35,160 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_board
+2022-05-04 12:51:35,176 [main] INFO  p6spy(logSQL:60) - #1651636295176 | took 20ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_board
+
+    drop table if exists food_board;
+2022-05-04 12:51:35,176 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_cmt
+2022-05-04 12:51:35,192 [main] INFO  p6spy(logSQL:60) - #1651636295192 | took 17ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_cmt
+
+    drop table if exists food_cmt;
+2022-05-04 12:51:35,192 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_type
+2022-05-04 12:51:35,410 [main] INFO  p6spy(logSQL:60) - #1651636295410 | took 208ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_type
+
+    drop table if exists food_type;
+2022-05-04 12:51:35,410 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists location_type
+2022-05-04 12:51:35,598 [main] INFO  p6spy(logSQL:60) - #1651636295598 | took 195ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists location_type
+
+    drop table if exists location_type;
+2022-05-04 12:51:35,598 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists users
+2022-05-04 12:51:35,801 [main] INFO  p6spy(logSQL:60) - #1651636295801 | took 191ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists users
+
+    drop table if exists users;
+2022-05-04 12:51:35,801 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+2022-05-04 12:51:35,926 [main] INFO  p6spy(logSQL:60) - #1651636295926 | took 117ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB;
+2022-05-04 12:51:35,926 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+2022-05-04 12:51:35,942 [main] INFO  p6spy(logSQL:60) - #1651636295942 | took 13ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB;
+2022-05-04 12:51:35,942 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+2022-05-04 12:51:35,957 [main] INFO  p6spy(logSQL:60) - #1651636295957 | took 13ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB;
+2022-05-04 12:51:35,957 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+2022-05-04 12:51:35,973 [main] INFO  p6spy(logSQL:60) - #1651636295973 | took 14ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB;
+2022-05-04 12:51:35,973 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+2022-05-04 12:51:35,989 [main] INFO  p6spy(logSQL:60) - #1651636295989 | took 15ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB;
+2022-05-04 12:51:35,989 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+2022-05-04 12:51:36,004 [main] INFO  p6spy(logSQL:60) - #1651636296004 | took 13ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB;
+2022-05-04 12:51:36,004 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default 'USER' not null,
+        primary key (user_id)
+    ) engine=InnoDB
+2022-05-04 12:51:36,020 [main] INFO  p6spy(logSQL:60) - #1651636296020 | took 16ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default 'USER' not null,
+        primary key (user_id)
+    ) engine=InnoDB
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default 'USER' not null,
+        primary key (user_id)
+    ) engine=InnoDB;
+2022-05-04 12:51:36,020 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint fk_festival_board_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-04 12:51:36,098 [main] INFO  p6spy(logSQL:60) - #1651636296098 | took 70ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint fk_festival_board_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table festival_board 
+       add constraint fk_festival_board_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-04 12:51:36,098 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint fk_festival_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-04 12:51:36,145 [main] INFO  p6spy(logSQL:60) - #1651636296145 | took 56ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint fk_festival_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_board 
+       add constraint fk_festival_board_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-04 12:51:36,145 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_festival_board 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+2022-05-04 12:51:36,192 [main] INFO  p6spy(logSQL:60) - #1651636296192 | took 44ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_festival_board 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_festival_board 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id);
+2022-05-04 12:51:36,192 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-04 12:51:36,254 [main] INFO  p6spy(logSQL:60) - #1651636296254 | took 61ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-04 12:51:36,254 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint fk_food_board_to_food_type 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+2022-05-04 12:51:36,317 [main] INFO  p6spy(logSQL:60) - #1651636296317 | took 51ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint fk_food_board_to_food_type 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+
+    alter table food_board 
+       add constraint fk_food_board_to_food_type 
+       foreign key (food_type_id) 
+       references food_type (food_type_id);
+2022-05-04 12:51:36,317 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint fk_food_board_to_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-04 12:51:36,379 [main] INFO  p6spy(logSQL:60) - #1651636296379 | took 65ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint fk_food_board_to_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table food_board 
+       add constraint fk_food_board_to_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-04 12:51:36,379 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint fk_food_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-04 12:51:36,442 [main] INFO  p6spy(logSQL:60) - #1651636296442 | took 53ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint fk_food_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_board 
+       add constraint fk_food_board_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-04 12:51:36,442 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_food_board 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+2022-05-04 12:51:36,473 [main] INFO  p6spy(logSQL:60) - #1651636296473 | took 43ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_food_board 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_food_board 
+       foreign key (food_board_id) 
+       references food_board (food_board_id);
+2022-05-04 12:51:36,473 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-04 12:51:36,536 [main] INFO  p6spy(logSQL:60) - #1651636296536 | took 59ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-04 12:51:36,551 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-04 12:51:36,583 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-04 12:51:37,208 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-04 12:51:38,208 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-04 12:51:39,429 [main] INFO  com.cloud.web.repository.UserRepositoryTest(logStarted:61) - Started UserRepositoryTest in 13.269 seconds (JVM running for 16.805)
+2022-05-04 12:51:39,507 [main] INFO  org.springframework.test.context.transaction.TransactionContext(startTransaction:107) - Began transaction (1) for test context [DefaultTestContext@2f025e9e testClass = UserRepositoryTest, testInstance = com.cloud.web.repository.UserRepositoryTest@2c8e096, testMethod = user저장_default_USER_check@UserRepositoryTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3dabdd11 testClass = UserRepositoryTest, locations = '{}', classes = '{class com.cloud.web.WebApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1698ee84, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@14b030a0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@56bca85b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d1a32f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@75f5fd58, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@70ab2d48], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@7901a5ab]; rollback [false]
+2022-05-04 12:51:39,585 [main] INFO  p6spy(logSQL:60) - #1651636299585 | took 19ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email) VALUE ( 'a111' , 'a111' , '사람1' , '사람1','a111@gmail.com' )
+INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email) VALUE ( 'a111' , 'a111' , '사람1' , '사람1','a111@gmail.com' );
+2022-05-04 12:51:39,585 [main] INFO  p6spy(logSQL:60) - #1651636299585 | took 1ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email) VALUE ( 'a222' , 'a222' , '사람2' , '사람2','a222@gmail.com' )
+INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email) VALUE ( 'a222' , 'a222' , '사람2' , '사람2','a222@gmail.com' );
+2022-05-04 12:51:39,585 [main] INFO  p6spy(logSQL:60) - #1651636299585 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email) VALUE ( 'a333' , 'a333' , '사람3' , '사람3','a333@gmail.com' )
+INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email) VALUE ( 'a333' , 'a333' , '사람3' , '사람3','a333@gmail.com' );
+2022-05-04 12:51:39,585 [main] INFO  p6spy(logSQL:60) - #1651636299585 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email) VALUE ( 'a444' , 'a444' , '사람4' , '사람4','a444@gmail.com' )
+INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email) VALUE ( 'a444' , 'a444' , '사람4' , '사람4','a444@gmail.com' );
+2022-05-04 12:51:39,601 [main] INFO  p6spy(logSQL:60) - #1651636299601 | took 13ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO location_type ( location_type) VALUE ( '서울' )
+INSERT INTO location_type ( location_type) VALUE ( '서울' );
+2022-05-04 12:51:39,601 [main] INFO  p6spy(logSQL:60) - #1651636299601 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO location_type ( location_type) VALUE ( '부산' )
+INSERT INTO location_type ( location_type) VALUE ( '부산' );
+2022-05-04 12:51:39,617 [main] INFO  p6spy(logSQL:60) - #1651636299617 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO location_type ( location_type) VALUE ( '대구' )
+INSERT INTO location_type ( location_type) VALUE ( '대구' );
+2022-05-04 12:51:39,617 [main] INFO  p6spy(logSQL:60) - #1651636299617 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO location_type ( location_type) VALUE ( '창원' )
+INSERT INTO location_type ( location_type) VALUE ( '창원' );
+2022-05-04 12:51:39,632 [main] INFO  p6spy(logSQL:60) - #1651636299632 | took 13ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_type ( food_type) VALUE ( '양식' )
+INSERT INTO food_type ( food_type) VALUE ( '양식' );
+2022-05-04 12:51:39,632 [main] INFO  p6spy(logSQL:60) - #1651636299632 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_type ( food_type) VALUE ( '중식' )
+INSERT INTO food_type ( food_type) VALUE ( '중식' );
+2022-05-04 12:51:39,632 [main] INFO  p6spy(logSQL:60) - #1651636299632 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_type ( food_type) VALUE ( '일식' )
+INSERT INTO food_type ( food_type) VALUE ( '일식' );
+2022-05-04 12:51:39,632 [main] INFO  p6spy(logSQL:60) - #1651636299632 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_type ( food_type) VALUE ( '한식' )
+INSERT INTO food_type ( food_type) VALUE ( '한식' );
+2022-05-04 12:51:39,648 [main] INFO  p6spy(logSQL:60) - #1651636299648 | took 11ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_board ( food_address , food_info , food_preview , food_rate ,food_picture, food_title , food_type_id , location_type_id , user_id) VALUE ( '서울역' , '스파게티 전문점' , '맛있다.' , 3.0 ,'사진경로', '스파게티 전문점' , 1 , 1 , 1)
+INSERT INTO food_board ( food_address , food_info , food_preview , food_rate ,food_picture, food_title , food_type_id , location_type_id , user_id) VALUE ( '서울역' , '스파게티 전문점' , '맛있다.' , 3.0 ,'사진경로', '스파게티 전문점' , 1 , 1 , 1);
+2022-05-04 12:51:39,648 [main] INFO  p6spy(logSQL:60) - #1651636299648 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_board ( food_address , food_info , food_preview , food_rate ,food_picture, food_title , food_type_id , location_type_id , user_id) VALUE ( '부산역' , '짬뽕 전문점' , '맛있다.' , 3.5 , '사진경로' ,'짬뽕 전문점', 2 , 2 , 2)
+INSERT INTO food_board ( food_address , food_info , food_preview , food_rate ,food_picture, food_title , food_type_id , location_type_id , user_id) VALUE ( '부산역' , '짬뽕 전문점' , '맛있다.' , 3.5 , '사진경로' ,'짬뽕 전문점', 2 , 2 , 2);
+2022-05-04 12:51:39,648 [main] INFO  p6spy(logSQL:60) - #1651636299648 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_board ( food_address , food_info , food_preview , food_rate ,food_picture, food_title , food_type_id , location_type_id , user_id) VALUE ( '대구역' , '스시 전문점"' , '맛있다.' , 4.1,'사진경로' , '스시 전문점' , 3 , 3 , 3)
+INSERT INTO food_board ( food_address , food_info , food_preview , food_rate ,food_picture, food_title , food_type_id , location_type_id , user_id) VALUE ( '대구역' , '스시 전문점"' , '맛있다.' , 4.1,'사진경로' , '스시 전문점' , 3 , 3 , 3);
+2022-05-04 12:51:39,648 [main] INFO  p6spy(logSQL:60) - #1651636299648 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_board ( food_address , food_info , food_preview , food_rate ,food_picture, food_title , food_type_id , location_type_id , user_id) VALUE ( '창원역' , '파전 전문점"' , '맛있다.' , 4.1 ,'사진경로', '파전 전문점' , 4 , 4 , 4)
+INSERT INTO food_board ( food_address , food_info , food_preview , food_rate ,food_picture, food_title , food_type_id , location_type_id , user_id) VALUE ( '창원역' , '파전 전문점"' , '맛있다.' , 4.1 ,'사진경로', '파전 전문점' , 4 , 4 , 4);
+2022-05-04 12:51:39,648 [main] INFO  p6spy(logSQL:60) - #1651636299648 | took 10ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO festival_board ( fstvl_nm ,opar, fstvl_start_date,fstvl_end_date , fstvl_co ,mnnst ,auspc_instt ,suprt_instt ,phone_number, homepage_url ,relate_info ,rdnmadr,lnmadr ,latitude,longitude , reference_date ,instt_code,instt_nm , festival_picture , festival_info, location_type_id , user_id ) VALUE('벚꽃 축제', '서울 강남' ,'2022-07-01', '2022-08-01', '벚꽃 축재', '정부' , '정부' , '정부' , '051-123-4567' , 'www.seoul.com' , '벚꽃 축제 정부 주관' , '강남 도로명 주소' , '강남 지번 주소' , '35.12401153' , '126.8815859', '2022-04-01' , '제공기관코드' ,'제공기관명' , '사진경로', '"벚꽃 축제" ', 1, 1)
+INSERT INTO festival_board ( fstvl_nm ,opar, fstvl_start_date,fstvl_end_date , fstvl_co ,mnnst ,auspc_instt ,suprt_instt ,phone_number, homepage_url ,relate_info ,rdnmadr,lnmadr ,latitude,longitude , reference_date ,instt_code,instt_nm , festival_picture , festival_info, location_type_id , user_id ) VALUE('벚꽃 축제', '서울 강남' ,'2022-07-01', '2022-08-01', '벚꽃 축재', '정부' , '정부' , '정부' , '051-123-4567' , 'www.seoul.com' , '벚꽃 축제 정부 주관' , '강남 도로명 주소' , '강남 지번 주소' , '35.12401153' , '126.8815859', '2022-04-01' , '제공기관코드' ,'제공기관명' , '사진경로', '"벚꽃 축제" ', 1, 1);
+2022-05-04 12:51:39,664 [main] INFO  p6spy(logSQL:60) - #1651636299664 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO festival_board ( fstvl_nm ,opar, fstvl_start_date,fstvl_end_date , fstvl_co ,mnnst ,auspc_instt ,suprt_instt ,phone_number, homepage_url ,relate_info ,rdnmadr,lnmadr ,latitude,longitude , reference_date ,instt_code,instt_nm , festival_picture , festival_info, location_type_id , user_id ) VALUE('모래 축제', '부산 해운대구' ,'2022-06-01', '2022-07-01', '모래 축재', '정부' , '정부' , '정부' , '051-123-4567' , 'www.busan.com' , '모래 축제 정부 주관' , '해운대 도로명 주소' , '해운대구 지번 주소' , '37.47823402' , '126.9515012', '2022-04-01' , '제공기관코드' ,'제공기관명' , '사진경로', '"모래축제" ', 2, 2)
+INSERT INTO festival_board ( fstvl_nm ,opar, fstvl_start_date,fstvl_end_date , fstvl_co ,mnnst ,auspc_instt ,suprt_instt ,phone_number, homepage_url ,relate_info ,rdnmadr,lnmadr ,latitude,longitude , reference_date ,instt_code,instt_nm , festival_picture , festival_info, location_type_id , user_id ) VALUE('모래 축제', '부산 해운대구' ,'2022-06-01', '2022-07-01', '모래 축재', '정부' , '정부' , '정부' , '051-123-4567' , 'www.busan.com' , '모래 축제 정부 주관' , '해운대 도로명 주소' , '해운대구 지번 주소' , '37.47823402' , '126.9515012', '2022-04-01' , '제공기관코드' ,'제공기관명' , '사진경로', '"모래축제" ', 2, 2);
+2022-05-04 12:51:39,664 [main] INFO  p6spy(logSQL:60) - #1651636299664 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO festival_board ( fstvl_nm ,opar, fstvl_start_date,fstvl_end_date , fstvl_co ,mnnst ,auspc_instt ,suprt_instt ,phone_number, homepage_url ,relate_info ,rdnmadr,lnmadr ,latitude,longitude , reference_date ,instt_code,instt_nm , festival_picture , festival_info, location_type_id , user_id ) VALUE('대구 축제', '대구 동성로' ,'2022-07-01', '2022-08-01', '대구 축재', '정부' , '정부' , '정부' , '051-123-4567' , 'www.daegu.com' , '대구 축제 정부 주관' , '대구 도로명 주소' , '대구 지번 주소' , '35.1071746' , '126.8231387', '2022-04-01' , '제공기관코드' ,'제공기관명' , '사진경로', '대구 축제', 3, 3)
+INSERT INTO festival_board ( fstvl_nm ,opar, fstvl_start_date,fstvl_end_date , fstvl_co ,mnnst ,auspc_instt ,suprt_instt ,phone_number, homepage_url ,relate_info ,rdnmadr,lnmadr ,latitude,longitude , reference_date ,instt_code,instt_nm , festival_picture , festival_info, location_type_id , user_id ) VALUE('대구 축제', '대구 동성로' ,'2022-07-01', '2022-08-01', '대구 축재', '정부' , '정부' , '정부' , '051-123-4567' , 'www.daegu.com' , '대구 축제 정부 주관' , '대구 도로명 주소' , '대구 지번 주소' , '35.1071746' , '126.8231387', '2022-04-01' , '제공기관코드' ,'제공기관명' , '사진경로', '대구 축제', 3, 3);
+2022-05-04 12:51:39,664 [main] INFO  p6spy(logSQL:60) - #1651636299664 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO festival_board ( fstvl_nm ,opar, fstvl_start_date,fstvl_end_date , fstvl_co ,mnnst ,auspc_instt ,suprt_instt ,phone_number, homepage_url ,relate_info ,rdnmadr,lnmadr ,latitude,longitude , reference_date ,instt_code,instt_nm , festival_picture , festival_info, location_type_id , user_id ) VALUE('창원 축제', '창원 어디구' ,'2022-06-05', '2022-07-01', '창원 축재', '정부' , '정부' , '정부' , '051-123-4567' , 'www.chang.com' , '창원 축제 정부 주관' , '창원 도로명 주소' , '창원 지번 주소' , '35.13849504' , '126.828739', '2022-04-01' , '제공기관코드' ,'제공기관명' , '사진경로', '"창원축제" ', 4, 4)
+INSERT INTO festival_board ( fstvl_nm ,opar, fstvl_start_date,fstvl_end_date , fstvl_co ,mnnst ,auspc_instt ,suprt_instt ,phone_number, homepage_url ,relate_info ,rdnmadr,lnmadr ,latitude,longitude , reference_date ,instt_code,instt_nm , festival_picture , festival_info, location_type_id , user_id ) VALUE('창원 축제', '창원 어디구' ,'2022-06-05', '2022-07-01', '창원 축재', '정부' , '정부' , '정부' , '051-123-4567' , 'www.chang.com' , '창원 축제 정부 주관' , '창원 도로명 주소' , '창원 지번 주소' , '35.13849504' , '126.828739', '2022-04-01' , '제공기관코드' ,'제공기관명' , '사진경로', '"창원축제" ', 4, 4);
+2022-05-04 12:51:39,679 [main] INFO  p6spy(logSQL:60) - #1651636299679 | took 12ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_cmt (food_cmt , food_board_id , user_id) VALUE('음식 굿1' , 1 , 1 )
+INSERT INTO food_cmt (food_cmt , food_board_id , user_id) VALUE('음식 굿1' , 1 , 1 );
+2022-05-04 12:51:39,679 [main] INFO  p6spy(logSQL:60) - #1651636299679 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_cmt (food_cmt , food_board_id , user_id) VALUE('음식 굿2', 2 , 2 )
+INSERT INTO food_cmt (food_cmt , food_board_id , user_id) VALUE('음식 굿2', 2 , 2 );
+2022-05-04 12:51:39,679 [main] INFO  p6spy(logSQL:60) - #1651636299679 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_cmt (food_cmt , food_board_id , user_id) VALUE('음식 굿3' , 3 , 3 )
+INSERT INTO food_cmt (food_cmt , food_board_id , user_id) VALUE('음식 굿3' , 3 , 3 );
+2022-05-04 12:51:39,679 [main] INFO  p6spy(logSQL:60) - #1651636299679 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO food_cmt (food_cmt , food_board_id , user_id) VALUE('음식 굿4' , 4 , 4 )
+INSERT INTO food_cmt (food_cmt , food_board_id , user_id) VALUE('음식 굿4' , 4 , 4 );
+2022-05-04 12:51:39,695 [main] INFO  p6spy(logSQL:60) - #1651636299695 | took 12ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO festival_cmt (festival_cmt , festival_board_id , user_id) VALUE('행사 굿1' , 1 , 1 )
+INSERT INTO festival_cmt (festival_cmt , festival_board_id , user_id) VALUE('행사 굿1' , 1 , 1 );
+2022-05-04 12:51:39,695 [main] INFO  p6spy(logSQL:60) - #1651636299695 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO festival_cmt (festival_cmt , festival_board_id , user_id) VALUE('행사 굿1' , 2 , 2 )
+INSERT INTO festival_cmt (festival_cmt , festival_board_id , user_id) VALUE('행사 굿1' , 2 , 2 );
+2022-05-04 12:51:39,695 [main] INFO  p6spy(logSQL:60) - #1651636299695 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO festival_cmt (festival_cmt , festival_board_id , user_id) VALUE('행사 굿1' , 3 , 3 )
+INSERT INTO festival_cmt (festival_cmt , festival_board_id , user_id) VALUE('행사 굿1' , 3 , 3 );
+2022-05-04 12:51:39,695 [main] INFO  p6spy(logSQL:60) - #1651636299695 | took 0ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+INSERT INTO festival_cmt (festival_cmt , festival_board_id , user_id) VALUE('행사 굿1' , 4 , 4 )
+INSERT INTO festival_cmt (festival_cmt , festival_board_id , user_id) VALUE('행사 굿1' , 4 , 4 );
+2022-05-04 12:51:39,945 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    insert 
+    into
+        users
+        (user_email, user_login_id, user_name, user_nickname, user_password, role_type) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2022-05-04 12:51:39,976 [main] INFO  p6spy(logSQL:60) - #1651636299976 | took 1ms | statement | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+insert into users (user_email, user_login_id, user_name, user_nickname, user_password, role_type) values (?, ?, ?, ?, ?, ?)
+insert into users (user_email, user_login_id, user_name, user_nickname, user_password, role_type) values ('tncksdl05@gmail.com', 'a555', '이수찬', '이수찬닉', 'a555', 'USER');
+2022-05-04 12:51:40,148 [main] INFO  p6spy(logSQL:60) - #1651636300148 | took 1ms | commit | connection 3| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+;
+2022-05-04 12:51:40,148 [main] INFO  org.springframework.test.context.transaction.TransactionContext(endTransaction:139) - Committed transaction for test: [DefaultTestContext@2f025e9e testClass = UserRepositoryTest, testInstance = com.cloud.web.repository.UserRepositoryTest@2c8e096, testMethod = user저장_default_USER_check@UserRepositoryTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3dabdd11 testClass = UserRepositoryTest, locations = '{}', classes = '{class com.cloud.web.WebApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1698ee84, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@14b030a0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@56bca85b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d1a32f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@75f5fd58, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@70ab2d48], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-05-04 12:51:40,179 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-04 12:51:40,179 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-04 12:51:40,195 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.

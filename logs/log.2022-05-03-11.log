@@ -1,0 +1,12 @@
+2022-05-03 23:59:56,514 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 1572 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-03 23:59:56,535 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-03 23:59:58,199 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 23:59:58,347 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 132 ms. Found 7 JPA repository interfaces.
+2022-05-03 23:59:59,292 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 23:59:59,308 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 23:59:59,310 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-03 23:59:59,311 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-03 23:59:59,515 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-03 23:59:59,516 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 2922 ms
+2022-05-03 23:59:59,864 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 23:59:59,956 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final

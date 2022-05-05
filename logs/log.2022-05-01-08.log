@@ -1,0 +1,78 @@
+2022-05-01 20:45:32,163 [restartedMain] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 13584 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 20:45:32,171 [restartedMain] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 20:45:32,220 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor(logTo:255) - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-01 20:45:32,221 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor(logTo:255) - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-01 20:45:33,075 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 20:45:33,094 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 20:45:33,802 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 20:45:33,813 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 20:45:33,814 [restartedMain] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 20:45:33,815 [restartedMain] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 20:45:33,950 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 20:45:33,950 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1728 ms
+2022-05-01 20:45:34,201 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 20:45:34,267 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 20:45:34,367 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 20:45:34,503 [restartedMain] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 20:45:34,741 [restartedMain] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 20:45:34,900 [restartedMain] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 20:45:35,208 [restartedMain] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 20:45:35,232 [restartedMain] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 20:45:35,338 [restartedMain] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 20:45:35,676 [restartedMain] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 20:45:35,813 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer(startServer:58) - LiveReload server is running on port 35729
+2022-05-01 20:45:35,849 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 20:45:35,882 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 20:45:35,901 [restartedMain] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 4.147 seconds (JVM running for 6.569)
+2022-05-01 20:47:05,888 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 20:47:05,895 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 20:47:05,903 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 20:47:36,185 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 7960 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 20:47:36,197 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 20:47:36,880 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 20:47:36,903 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2022-05-01 20:47:37,546 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 20:47:37,557 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 20:47:37,558 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 20:47:37,558 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 20:47:37,718 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 20:47:37,718 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1474 ms
+2022-05-01 20:47:37,947 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 20:47:38,018 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 20:47:38,094 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 20:47:38,155 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 20:47:38,311 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 20:47:38,423 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 20:47:38,577 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 20:47:38,588 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 20:47:38,635 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 20:47:38,905 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 20:47:39,024 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 20:47:39,046 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 20:47:39,063 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.337 seconds (JVM running for 5.634)
+2022-05-01 20:47:46,049 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 20:47:46,052 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-01 20:47:46,059 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-01 20:54:34,130 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 14040 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-01 20:54:34,140 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-01 20:54:34,813 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-01 20:54:34,827 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2022-05-01 20:54:35,396 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-01 20:54:35,405 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-01 20:54:35,406 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-01 20:54:35,407 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-01 20:54:35,603 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-01 20:54:35,603 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1419 ms
+2022-05-01 20:54:35,813 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-01 20:54:35,889 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-01 20:54:35,956 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-01 20:54:36,008 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-01 20:54:36,154 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-01 20:54:36,264 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-01 20:54:36,776 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-01 20:54:36,786 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-01 20:54:36,826 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-01 20:54:37,101 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-01 20:54:37,214 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-01 20:54:37,235 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 20:54:37,250 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 3.572 seconds (JVM running for 5.805)

@@ -1,0 +1,3201 @@
+2022-05-03 04:03:31,751 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 04:03:31,762 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-03 04:03:31,770 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-03 04:03:40,778 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 16000 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-03 04:03:40,797 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-03 04:03:41,833 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 04:03:41,936 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 94 ms. Found 7 JPA repository interfaces.
+2022-05-03 04:03:42,665 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 04:03:42,678 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 04:03:42,680 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-03 04:03:42,680 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-03 04:03:42,843 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-03 04:03:42,843 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1999 ms
+2022-05-03 04:03:43,131 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 04:03:43,191 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-03 04:03:43,415 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 04:03:43,554 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-03 04:03:43,662 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-03 04:03:43,697 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-03 04:03:44,407 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists FKewcri2j15hrpqvlt9ae7u9fcw
+2022-05-03 04:03:44,425 [main] INFO  p6spy(logSQL:60) - #1651518224425 | took 15ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists FKewcri2j15hrpqvlt9ae7u9fcw
+
+    alter table festival_board 
+       drop 
+       foreign key if exists FKewcri2j15hrpqvlt9ae7u9fcw;
+2022-05-03 04:03:44,426 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists FKhqfkjfcdgrhtumxtirenyu3of
+2022-05-03 04:03:44,442 [main] INFO  p6spy(logSQL:60) - #1651518224442 | took 15ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists FKhqfkjfcdgrhtumxtirenyu3of
+
+    alter table festival_board 
+       drop 
+       foreign key if exists FKhqfkjfcdgrhtumxtirenyu3of;
+2022-05-03 04:03:44,442 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKh6v3kvp5wwndcopmd94ws2btj
+2022-05-03 04:03:44,452 [main] INFO  p6spy(logSQL:60) - #1651518224452 | took 8ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKh6v3kvp5wwndcopmd94ws2btj
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKh6v3kvp5wwndcopmd94ws2btj;
+2022-05-03 04:03:44,452 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKs6v7056qfxtb3ie8vl543fj6v
+2022-05-03 04:03:44,468 [main] INFO  p6spy(logSQL:60) - #1651518224468 | took 15ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKs6v7056qfxtb3ie8vl543fj6v
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKs6v7056qfxtb3ie8vl543fj6v;
+2022-05-03 04:03:44,468 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists FKg0cvjkrodhhg89og823angcvp
+2022-05-03 04:03:44,477 [main] INFO  p6spy(logSQL:60) - #1651518224477 | took 8ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists FKg0cvjkrodhhg89og823angcvp
+
+    alter table food_board 
+       drop 
+       foreign key if exists FKg0cvjkrodhhg89og823angcvp;
+2022-05-03 04:03:44,477 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists FKk5708q0t6177pedlgv5pgnp05
+2022-05-03 04:03:44,492 [main] INFO  p6spy(logSQL:60) - #1651518224492 | took 14ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists FKk5708q0t6177pedlgv5pgnp05
+
+    alter table food_board 
+       drop 
+       foreign key if exists FKk5708q0t6177pedlgv5pgnp05;
+2022-05-03 04:03:44,492 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists FK15hiw4mp39gjipvd6r4m4xfe4
+2022-05-03 04:03:44,507 [main] INFO  p6spy(logSQL:60) - #1651518224507 | took 14ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists FK15hiw4mp39gjipvd6r4m4xfe4
+
+    alter table food_board 
+       drop 
+       foreign key if exists FK15hiw4mp39gjipvd6r4m4xfe4;
+2022-05-03 04:03:44,507 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKchmjden8lb1c3nsk5jlaprc1q
+2022-05-03 04:03:44,516 [main] INFO  p6spy(logSQL:60) - #1651518224515 | took 8ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKchmjden8lb1c3nsk5jlaprc1q
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKchmjden8lb1c3nsk5jlaprc1q;
+2022-05-03 04:03:44,516 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKlfbfmyom74et604mph90p979e
+2022-05-03 04:03:44,532 [main] INFO  p6spy(logSQL:60) - #1651518224532 | took 15ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKlfbfmyom74et604mph90p979e
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKlfbfmyom74et604mph90p979e;
+2022-05-03 04:03:44,532 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_board
+2022-05-03 04:03:44,545 [main] INFO  p6spy(logSQL:60) - #1651518224545 | took 12ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_board
+
+    drop table if exists festival_board;
+2022-05-03 04:03:44,546 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_cmt
+2022-05-03 04:03:44,559 [main] INFO  p6spy(logSQL:60) - #1651518224559 | took 11ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_cmt
+
+    drop table if exists festival_cmt;
+2022-05-03 04:03:44,559 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_board
+2022-05-03 04:03:44,571 [main] INFO  p6spy(logSQL:60) - #1651518224571 | took 11ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_board
+
+    drop table if exists food_board;
+2022-05-03 04:03:44,571 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_cmt
+2022-05-03 04:03:44,582 [main] INFO  p6spy(logSQL:60) - #1651518224582 | took 10ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_cmt
+
+    drop table if exists food_cmt;
+2022-05-03 04:03:44,582 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_type
+2022-05-03 04:03:44,589 [main] INFO  p6spy(logSQL:60) - #1651518224589 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_type
+
+    drop table if exists food_type;
+2022-05-03 04:03:44,589 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists location_type
+2022-05-03 04:03:44,596 [main] INFO  p6spy(logSQL:60) - #1651518224595 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists location_type
+
+    drop table if exists location_type;
+2022-05-03 04:03:44,596 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists users
+2022-05-03 04:03:44,602 [main] INFO  p6spy(logSQL:60) - #1651518224602 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists users
+
+    drop table if exists users;
+2022-05-03 04:03:44,605 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+2022-05-03 04:03:44,620 [main] INFO  p6spy(logSQL:60) - #1651518224619 | took 13ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB;
+2022-05-03 04:03:44,620 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+2022-05-03 04:03:44,631 [main] INFO  p6spy(logSQL:60) - #1651518224631 | took 10ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB;
+2022-05-03 04:03:44,632 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+2022-05-03 04:03:44,644 [main] INFO  p6spy(logSQL:60) - #1651518224644 | took 11ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB;
+2022-05-03 04:03:44,645 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+2022-05-03 04:03:44,657 [main] INFO  p6spy(logSQL:60) - #1651518224657 | took 11ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB;
+2022-05-03 04:03:44,658 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+2022-05-03 04:03:44,671 [main] INFO  p6spy(logSQL:60) - #1651518224670 | took 12ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB;
+2022-05-03 04:03:44,671 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+2022-05-03 04:03:44,682 [main] INFO  p6spy(logSQL:60) - #1651518224682 | took 11ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB;
+2022-05-03 04:03:44,683 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER' ,
+        primary key (user_id)
+    ) engine=InnoDB
+2022-05-03 04:03:44,701 [main] INFO  p6spy(logSQL:60) - #1651518224701 | took 17ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER' ,
+        primary key (user_id)
+    ) engine=InnoDB
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER' ,
+        primary key (user_id)
+    ) engine=InnoDB;
+2022-05-03 04:03:44,702 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint FKewcri2j15hrpqvlt9ae7u9fcw 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-03 04:03:44,743 [main] INFO  p6spy(logSQL:60) - #1651518224743 | took 40ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint FKewcri2j15hrpqvlt9ae7u9fcw 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table festival_board 
+       add constraint FKewcri2j15hrpqvlt9ae7u9fcw 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-03 04:03:44,744 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint FKhqfkjfcdgrhtumxtirenyu3of 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:03:44,774 [main] INFO  p6spy(logSQL:60) - #1651518224774 | took 29ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint FKhqfkjfcdgrhtumxtirenyu3of 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_board 
+       add constraint FKhqfkjfcdgrhtumxtirenyu3of 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:03:44,774 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint FKh6v3kvp5wwndcopmd94ws2btj 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+2022-05-03 04:03:44,806 [main] INFO  p6spy(logSQL:60) - #1651518224805 | took 30ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint FKh6v3kvp5wwndcopmd94ws2btj 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+
+    alter table festival_cmt 
+       add constraint FKh6v3kvp5wwndcopmd94ws2btj 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id);
+2022-05-03 04:03:44,806 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint FKs6v7056qfxtb3ie8vl543fj6v 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:03:44,847 [main] INFO  p6spy(logSQL:60) - #1651518224847 | took 41ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint FKs6v7056qfxtb3ie8vl543fj6v 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_cmt 
+       add constraint FKs6v7056qfxtb3ie8vl543fj6v 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:03:44,849 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint FKg0cvjkrodhhg89og823angcvp 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+2022-05-03 04:03:44,888 [main] INFO  p6spy(logSQL:60) - #1651518224888 | took 38ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint FKg0cvjkrodhhg89og823angcvp 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+
+    alter table food_board 
+       add constraint FKg0cvjkrodhhg89og823angcvp 
+       foreign key (food_type_id) 
+       references food_type (food_type_id);
+2022-05-03 04:03:44,889 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint FKk5708q0t6177pedlgv5pgnp05 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-03 04:03:44,930 [main] INFO  p6spy(logSQL:60) - #1651518224929 | took 40ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint FKk5708q0t6177pedlgv5pgnp05 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table food_board 
+       add constraint FKk5708q0t6177pedlgv5pgnp05 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-03 04:03:44,930 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint FK15hiw4mp39gjipvd6r4m4xfe4 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:03:44,971 [main] INFO  p6spy(logSQL:60) - #1651518224971 | took 40ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint FK15hiw4mp39gjipvd6r4m4xfe4 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_board 
+       add constraint FK15hiw4mp39gjipvd6r4m4xfe4 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:03:44,971 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint FKchmjden8lb1c3nsk5jlaprc1q 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+2022-05-03 04:03:45,001 [main] INFO  p6spy(logSQL:60) - #1651518225001 | took 29ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint FKchmjden8lb1c3nsk5jlaprc1q 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+
+    alter table food_cmt 
+       add constraint FKchmjden8lb1c3nsk5jlaprc1q 
+       foreign key (food_board_id) 
+       references food_board (food_board_id);
+2022-05-03 04:03:45,002 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint FKlfbfmyom74et604mph90p979e 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:03:45,033 [main] INFO  p6spy(logSQL:60) - #1651518225033 | took 30ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint FKlfbfmyom74et604mph90p979e 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_cmt 
+       add constraint FKlfbfmyom74et604mph90p979e 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:03:45,035 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 04:03:45,044 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 04:03:45,164 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 04:03:45,446 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-03 04:03:45,937 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 04:03:45,960 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 04:03:45,972 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 5.667 seconds (JVM running for 8.151)
+2022-05-03 04:05:27,994 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 04:05:27,996 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-03 04:05:28,001 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-03 04:05:35,097 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 6368 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-03 04:05:35,107 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-03 04:05:35,867 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 04:05:35,953 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 78 ms. Found 7 JPA repository interfaces.
+2022-05-03 04:05:36,504 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 04:05:36,513 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 04:05:36,514 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-03 04:05:36,515 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-03 04:05:36,641 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-03 04:05:36,641 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1486 ms
+2022-05-03 04:05:36,906 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 04:05:36,977 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-03 04:05:37,144 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 04:05:37,279 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-03 04:05:37,372 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-03 04:05:37,402 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-03 04:05:38,168 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists FKewcri2j15hrpqvlt9ae7u9fcw
+2022-05-03 04:05:38,188 [main] INFO  p6spy(logSQL:60) - #1651518338188 | took 17ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists FKewcri2j15hrpqvlt9ae7u9fcw
+
+    alter table festival_board 
+       drop 
+       foreign key if exists FKewcri2j15hrpqvlt9ae7u9fcw;
+2022-05-03 04:05:38,189 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists FKhqfkjfcdgrhtumxtirenyu3of
+2022-05-03 04:05:38,205 [main] INFO  p6spy(logSQL:60) - #1651518338205 | took 15ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists FKhqfkjfcdgrhtumxtirenyu3of
+
+    alter table festival_board 
+       drop 
+       foreign key if exists FKhqfkjfcdgrhtumxtirenyu3of;
+2022-05-03 04:05:38,205 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKh6v3kvp5wwndcopmd94ws2btj
+2022-05-03 04:05:38,214 [main] INFO  p6spy(logSQL:60) - #1651518338214 | took 8ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKh6v3kvp5wwndcopmd94ws2btj
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKh6v3kvp5wwndcopmd94ws2btj;
+2022-05-03 04:05:38,214 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKs6v7056qfxtb3ie8vl543fj6v
+2022-05-03 04:05:38,230 [main] INFO  p6spy(logSQL:60) - #1651518338230 | took 15ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKs6v7056qfxtb3ie8vl543fj6v
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists FKs6v7056qfxtb3ie8vl543fj6v;
+2022-05-03 04:05:38,231 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists FKg0cvjkrodhhg89og823angcvp
+2022-05-03 04:05:38,240 [main] INFO  p6spy(logSQL:60) - #1651518338240 | took 8ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists FKg0cvjkrodhhg89og823angcvp
+
+    alter table food_board 
+       drop 
+       foreign key if exists FKg0cvjkrodhhg89og823angcvp;
+2022-05-03 04:05:38,240 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists FKk5708q0t6177pedlgv5pgnp05
+2022-05-03 04:05:38,256 [main] INFO  p6spy(logSQL:60) - #1651518338256 | took 15ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists FKk5708q0t6177pedlgv5pgnp05
+
+    alter table food_board 
+       drop 
+       foreign key if exists FKk5708q0t6177pedlgv5pgnp05;
+2022-05-03 04:05:38,257 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists FK15hiw4mp39gjipvd6r4m4xfe4
+2022-05-03 04:05:38,274 [main] INFO  p6spy(logSQL:60) - #1651518338274 | took 17ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists FK15hiw4mp39gjipvd6r4m4xfe4
+
+    alter table food_board 
+       drop 
+       foreign key if exists FK15hiw4mp39gjipvd6r4m4xfe4;
+2022-05-03 04:05:38,275 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKchmjden8lb1c3nsk5jlaprc1q
+2022-05-03 04:05:38,290 [main] INFO  p6spy(logSQL:60) - #1651518338290 | took 14ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKchmjden8lb1c3nsk5jlaprc1q
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKchmjden8lb1c3nsk5jlaprc1q;
+2022-05-03 04:05:38,290 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKlfbfmyom74et604mph90p979e
+2022-05-03 04:05:38,305 [main] INFO  p6spy(logSQL:60) - #1651518338305 | took 14ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKlfbfmyom74et604mph90p979e
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists FKlfbfmyom74et604mph90p979e;
+2022-05-03 04:05:38,305 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_board
+2022-05-03 04:05:38,318 [main] INFO  p6spy(logSQL:60) - #1651518338317 | took 11ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_board
+
+    drop table if exists festival_board;
+2022-05-03 04:05:38,318 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_cmt
+2022-05-03 04:05:38,328 [main] INFO  p6spy(logSQL:60) - #1651518338328 | took 10ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_cmt
+
+    drop table if exists festival_cmt;
+2022-05-03 04:05:38,329 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_board
+2022-05-03 04:05:38,343 [main] INFO  p6spy(logSQL:60) - #1651518338343 | took 13ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_board
+
+    drop table if exists food_board;
+2022-05-03 04:05:38,343 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_cmt
+2022-05-03 04:05:38,356 [main] INFO  p6spy(logSQL:60) - #1651518338356 | took 11ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_cmt
+
+    drop table if exists food_cmt;
+2022-05-03 04:05:38,356 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_type
+2022-05-03 04:05:38,363 [main] INFO  p6spy(logSQL:60) - #1651518338363 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_type
+
+    drop table if exists food_type;
+2022-05-03 04:05:38,363 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists location_type
+2022-05-03 04:05:38,369 [main] INFO  p6spy(logSQL:60) - #1651518338369 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists location_type
+
+    drop table if exists location_type;
+2022-05-03 04:05:38,369 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists users
+2022-05-03 04:05:38,375 [main] INFO  p6spy(logSQL:60) - #1651518338375 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists users
+
+    drop table if exists users;
+2022-05-03 04:05:38,380 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+2022-05-03 04:05:38,392 [main] INFO  p6spy(logSQL:60) - #1651518338392 | took 11ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB;
+2022-05-03 04:05:38,393 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+2022-05-03 04:05:38,403 [main] INFO  p6spy(logSQL:60) - #1651518338403 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB;
+2022-05-03 04:05:38,403 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+2022-05-03 04:05:38,414 [main] INFO  p6spy(logSQL:60) - #1651518338414 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB;
+2022-05-03 04:05:38,414 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+2022-05-03 04:05:38,422 [main] INFO  p6spy(logSQL:60) - #1651518338422 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB;
+2022-05-03 04:05:38,423 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+2022-05-03 04:05:38,433 [main] INFO  p6spy(logSQL:60) - #1651518338433 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB;
+2022-05-03 04:05:38,433 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+2022-05-03 04:05:38,443 [main] INFO  p6spy(logSQL:60) - #1651518338443 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB;
+2022-05-03 04:05:38,444 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB
+2022-05-03 04:05:38,456 [main] INFO  p6spy(logSQL:60) - #1651518338455 | took 10ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB;
+2022-05-03 04:05:38,456 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint FKewcri2j15hrpqvlt9ae7u9fcw 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-03 04:05:38,488 [main] INFO  p6spy(logSQL:60) - #1651518338488 | took 31ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint FKewcri2j15hrpqvlt9ae7u9fcw 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table festival_board 
+       add constraint FKewcri2j15hrpqvlt9ae7u9fcw 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-03 04:05:38,489 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint FKhqfkjfcdgrhtumxtirenyu3of 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:05:38,522 [main] INFO  p6spy(logSQL:60) - #1651518338521 | took 32ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint FKhqfkjfcdgrhtumxtirenyu3of 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_board 
+       add constraint FKhqfkjfcdgrhtumxtirenyu3of 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:05:38,522 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint FKh6v3kvp5wwndcopmd94ws2btj 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+2022-05-03 04:05:38,554 [main] INFO  p6spy(logSQL:60) - #1651518338554 | took 31ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint FKh6v3kvp5wwndcopmd94ws2btj 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+
+    alter table festival_cmt 
+       add constraint FKh6v3kvp5wwndcopmd94ws2btj 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id);
+2022-05-03 04:05:38,554 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint FKs6v7056qfxtb3ie8vl543fj6v 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:05:38,606 [main] INFO  p6spy(logSQL:60) - #1651518338606 | took 51ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint FKs6v7056qfxtb3ie8vl543fj6v 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_cmt 
+       add constraint FKs6v7056qfxtb3ie8vl543fj6v 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:05:38,607 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint FKg0cvjkrodhhg89og823angcvp 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+2022-05-03 04:05:38,652 [main] INFO  p6spy(logSQL:60) - #1651518338651 | took 43ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint FKg0cvjkrodhhg89og823angcvp 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+
+    alter table food_board 
+       add constraint FKg0cvjkrodhhg89og823angcvp 
+       foreign key (food_type_id) 
+       references food_type (food_type_id);
+2022-05-03 04:05:38,652 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint FKk5708q0t6177pedlgv5pgnp05 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-03 04:05:38,709 [main] INFO  p6spy(logSQL:60) - #1651518338709 | took 56ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint FKk5708q0t6177pedlgv5pgnp05 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table food_board 
+       add constraint FKk5708q0t6177pedlgv5pgnp05 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-03 04:05:38,710 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint FK15hiw4mp39gjipvd6r4m4xfe4 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:05:38,762 [main] INFO  p6spy(logSQL:60) - #1651518338761 | took 51ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint FK15hiw4mp39gjipvd6r4m4xfe4 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_board 
+       add constraint FK15hiw4mp39gjipvd6r4m4xfe4 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:05:38,762 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint FKchmjden8lb1c3nsk5jlaprc1q 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+2022-05-03 04:05:38,801 [main] INFO  p6spy(logSQL:60) - #1651518338801 | took 37ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint FKchmjden8lb1c3nsk5jlaprc1q 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+
+    alter table food_cmt 
+       add constraint FKchmjden8lb1c3nsk5jlaprc1q 
+       foreign key (food_board_id) 
+       references food_board (food_board_id);
+2022-05-03 04:05:38,801 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint FKlfbfmyom74et604mph90p979e 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:05:38,840 [main] INFO  p6spy(logSQL:60) - #1651518338839 | took 37ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint FKlfbfmyom74et604mph90p979e 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_cmt 
+       add constraint FKlfbfmyom74et604mph90p979e 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:05:38,842 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 04:05:38,858 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 04:05:38,980 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 04:05:39,393 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-03 04:05:40,005 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 04:05:40,031 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 04:05:40,046 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 5.459 seconds (JVM running for 7.398)
+2022-05-03 04:14:19,925 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 04:14:19,927 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-03 04:14:19,933 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-03 04:14:28,547 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 8472 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-03 04:14:28,556 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-03 04:14:29,493 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 04:14:29,617 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 111 ms. Found 7 JPA repository interfaces.
+2022-05-03 04:14:30,372 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 04:14:30,386 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 04:14:30,386 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-03 04:14:30,387 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-03 04:14:30,535 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-03 04:14:30,536 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1922 ms
+2022-05-03 04:14:30,895 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 04:14:30,953 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-03 04:14:31,091 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 04:14:31,199 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-03 04:14:31,269 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-03 04:14:31,291 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-03 04:14:32,064 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_location_type
+2022-05-03 04:14:32,069 [main] INFO  p6spy(logSQL:60) - #1651518872068 | took 0ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_location_type
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_location_type;
+2022-05-03 04:14:32,075 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_to_users
+2022-05-03 04:14:32,076 [main] INFO  p6spy(logSQL:60) - #1651518872076 | took 0ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_to_users
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_to_users;
+2022-05-03 04:14:32,077 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_festival_board
+2022-05-03 04:14:32,078 [main] INFO  p6spy(logSQL:60) - #1651518872078 | took 0ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_festival_board
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_festival_board;
+2022-05-03 04:14:32,079 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_users
+2022-05-03 04:14:32,080 [main] INFO  p6spy(logSQL:60) - #1651518872080 | took 0ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_users
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_users;
+2022-05-03 04:14:32,081 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_food_type
+2022-05-03 04:14:32,081 [main] INFO  p6spy(logSQL:60) - #1651518872081 | took 0ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_food_type
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_food_type;
+2022-05-03 04:14:32,082 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_location_type
+2022-05-03 04:14:32,082 [main] INFO  p6spy(logSQL:60) - #1651518872082 | took 0ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_location_type
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_location_type;
+2022-05-03 04:14:32,083 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_users
+2022-05-03 04:14:32,083 [main] INFO  p6spy(logSQL:60) - #1651518872083 | took 0ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_users
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_users;
+2022-05-03 04:14:32,084 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_food_board
+2022-05-03 04:14:32,084 [main] INFO  p6spy(logSQL:60) - #1651518872084 | took 0ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_food_board
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_food_board;
+2022-05-03 04:14:32,085 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_users
+2022-05-03 04:14:32,086 [main] INFO  p6spy(logSQL:60) - #1651518872086 | took 0ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_users
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_users;
+2022-05-03 04:14:32,087 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_board
+2022-05-03 04:14:32,099 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1451-23000: Cannot delete or update a parent row: a foreign key constraint fails
+2022-05-03 04:14:32,100 [main] INFO  p6spy(logSQL:60) - #1651518872100 | took 13ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_board
+
+    drop table if exists festival_board;
+2022-05-03 04:14:32,101 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    drop table if exists festival_board" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    drop table if exists festival_board" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:246) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=737) Cannot delete or update a parent row: a foreign key constraint fails
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:278) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,111 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_cmt
+2022-05-03 04:14:32,119 [main] INFO  p6spy(logSQL:60) - #1651518872119 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_cmt
+
+    drop table if exists festival_cmt;
+2022-05-03 04:14:32,119 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_board
+2022-05-03 04:14:32,124 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1451-23000: Cannot delete or update a parent row: a foreign key constraint fails
+2022-05-03 04:14:32,124 [main] INFO  p6spy(logSQL:60) - #1651518872124 | took 4ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_board
+
+    drop table if exists food_board;
+2022-05-03 04:14:32,125 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    drop table if exists food_board" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    drop table if exists food_board" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:246) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=737) Cannot delete or update a parent row: a foreign key constraint fails
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:278) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,126 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_cmt
+2022-05-03 04:14:32,134 [main] INFO  p6spy(logSQL:60) - #1651518872134 | took 7ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_cmt
+
+    drop table if exists food_cmt;
+2022-05-03 04:14:32,134 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_type
+2022-05-03 04:14:32,138 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1451-23000: Cannot delete or update a parent row: a foreign key constraint fails
+2022-05-03 04:14:32,138 [main] INFO  p6spy(logSQL:60) - #1651518872138 | took 4ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_type
+
+    drop table if exists food_type;
+2022-05-03 04:14:32,139 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    drop table if exists food_type" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    drop table if exists food_type" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:246) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=737) Cannot delete or update a parent row: a foreign key constraint fails
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:278) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,140 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists location_type
+2022-05-03 04:14:32,145 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1451-23000: Cannot delete or update a parent row: a foreign key constraint fails
+2022-05-03 04:14:32,145 [main] INFO  p6spy(logSQL:60) - #1651518872145 | took 4ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists location_type
+
+    drop table if exists location_type;
+2022-05-03 04:14:32,145 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    drop table if exists location_type" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    drop table if exists location_type" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:246) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=737) Cannot delete or update a parent row: a foreign key constraint fails
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:278) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,147 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists users
+2022-05-03 04:14:32,150 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1451-23000: Cannot delete or update a parent row: a foreign key constraint fails
+2022-05-03 04:14:32,151 [main] INFO  p6spy(logSQL:60) - #1651518872151 | took 4ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists users
+
+    drop table if exists users;
+2022-05-03 04:14:32,151 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    drop table if exists users" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    drop table if exists users" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:246) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: (conn=737) Cannot delete or update a parent row: a foreign key constraint fails
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:278) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,156 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+2022-05-03 04:14:32,157 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1050-42S01: Table 'festival_board' already exists
+2022-05-03 04:14:32,158 [main] INFO  p6spy(logSQL:60) - #1651518872158 | took 1ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB;
+2022-05-03 04:14:32,158 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=737) Table 'festival_board' already exists
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:270) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,160 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+2022-05-03 04:14:32,169 [main] INFO  p6spy(logSQL:60) - #1651518872169 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB;
+2022-05-03 04:14:32,171 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+2022-05-03 04:14:32,172 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1050-42S01: Table 'food_board' already exists
+2022-05-03 04:14:32,172 [main] INFO  p6spy(logSQL:60) - #1651518872172 | took 1ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB;
+2022-05-03 04:14:32,173 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=737) Table 'food_board' already exists
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:270) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,174 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+2022-05-03 04:14:32,183 [main] INFO  p6spy(logSQL:60) - #1651518872183 | took 8ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB;
+2022-05-03 04:14:32,183 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+2022-05-03 04:14:32,184 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1050-42S01: Table 'food_type' already exists
+2022-05-03 04:14:32,184 [main] INFO  p6spy(logSQL:60) - #1651518872184 | took 0ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB;
+2022-05-03 04:14:32,185 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=737) Table 'food_type' already exists
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:270) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,187 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+2022-05-03 04:14:32,187 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1050-42S01: Table 'location_type' already exists
+2022-05-03 04:14:32,188 [main] INFO  p6spy(logSQL:60) - #1651518872188 | took 0ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB;
+2022-05-03 04:14:32,188 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=737) Table 'location_type' already exists
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:270) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,189 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB
+2022-05-03 04:14:32,190 [main] WARN  org.mariadb.jdbc.message.server.ErrorPacket(warn:100) - Error: 1050-42S01: Table 'users' already exists
+2022-05-03 04:14:32,191 [main] INFO  p6spy(logSQL:60) - #1651518872191 | took 0ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB;
+2022-05-03 04:14:32,191 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl(handleException:27) - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.cloud.web.WebApplication.main(WebApplication.java:12) ~[classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=737) Table 'users' already exists
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:270) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:358) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:133) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:807) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:746) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:665) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:608) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:906) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1031) ~[mariadb-java-client-3.0.3.jar:?]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:441) ~[mariadb-java-client-3.0.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at com.p6spy.engine.wrapper.StatementWrapper.execute(StatementWrapper.java:114) ~[p6spy-3.8.2.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.8.Final.jar:5.6.8.Final]
+	... 34 more
+2022-05-03 04:14:32,192 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint fk_festival_board_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-03 04:14:32,215 [main] INFO  p6spy(logSQL:60) - #1651518872215 | took 23ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint fk_festival_board_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table festival_board 
+       add constraint fk_festival_board_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-03 04:14:32,215 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint fk_festival_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:14:32,249 [main] INFO  p6spy(logSQL:60) - #1651518872248 | took 32ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint fk_festival_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_board 
+       add constraint fk_festival_board_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:14:32,249 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_festival_board 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+2022-05-03 04:14:32,276 [main] INFO  p6spy(logSQL:60) - #1651518872275 | took 26ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_festival_board 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_festival_board 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id);
+2022-05-03 04:14:32,276 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:14:32,314 [main] INFO  p6spy(logSQL:60) - #1651518872314 | took 37ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:14:32,315 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint fk_food_board_to_food_type 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+2022-05-03 04:14:32,346 [main] INFO  p6spy(logSQL:60) - #1651518872346 | took 30ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint fk_food_board_to_food_type 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+
+    alter table food_board 
+       add constraint fk_food_board_to_food_type 
+       foreign key (food_type_id) 
+       references food_type (food_type_id);
+2022-05-03 04:14:32,347 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint fk_food_board_to_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-03 04:14:32,386 [main] INFO  p6spy(logSQL:60) - #1651518872385 | took 38ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint fk_food_board_to_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table food_board 
+       add constraint fk_food_board_to_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-03 04:14:32,386 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint fk_food_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:14:32,425 [main] INFO  p6spy(logSQL:60) - #1651518872425 | took 38ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint fk_food_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_board 
+       add constraint fk_food_board_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:14:32,426 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_food_board 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+2022-05-03 04:14:32,462 [main] INFO  p6spy(logSQL:60) - #1651518872461 | took 34ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_food_board 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_food_board 
+       foreign key (food_board_id) 
+       references food_board (food_board_id);
+2022-05-03 04:14:32,462 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:14:32,497 [main] INFO  p6spy(logSQL:60) - #1651518872497 | took 34ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:14:32,499 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 04:14:32,512 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 04:14:32,636 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 04:14:33,110 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-03 04:14:33,637 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 04:14:33,659 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 04:14:33,672 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 5.704 seconds (JVM running for 8.277)
+2022-05-03 04:16:17,036 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 04:16:17,039 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-03 04:16:17,044 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
+2022-05-03 04:16:22,831 [main] INFO  com.cloud.web.WebApplication(logStarting:55) - Starting WebApplication using Java 11.0.6 on LAPTOP-A4VCJ045 with PID 11080 (C:\WebCloud\web\out\production\classes started by tncks in C:\WebCloud\web)
+2022-05-03 04:16:22,842 [main] INFO  com.cloud.web.WebApplication(logStartupProfileInfo:640) - No active profile set, falling back to 1 default profile: "default"
+2022-05-03 04:16:23,657 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-03 04:16:23,745 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate(registerRepositoriesIn:201) - Finished Spring Data repository scanning in 70 ms. Found 7 JPA repository interfaces.
+2022-05-03 04:16:24,395 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(initialize:108) - Tomcat initialized with port(s): 8080 (http)
+2022-05-03 04:16:24,406 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Initializing ProtocolHandler ["http-nio-8080"]
+2022-05-03 04:16:24,407 [main] INFO  org.apache.catalina.core.StandardService(log:173) - Starting service [Tomcat]
+2022-05-03 04:16:24,409 [main] INFO  org.apache.catalina.core.StandardEngine(log:173) - Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-03 04:16:24,570 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](log:173) - Initializing Spring embedded WebApplicationContext
+2022-05-03 04:16:24,570 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext(prepareWebApplicationContext:290) - Root WebApplicationContext: initialization completed in 1675 ms
+2022-05-03 04:16:24,880 [main] INFO  org.hibernate.jpa.internal.util.LogHelper(logPersistenceUnitInformation:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-03 04:16:24,926 [main] INFO  org.hibernate.Version(logVersion:44) - HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-03 04:16:25,108 [main] INFO  org.hibernate.annotations.common.Version(<clinit>:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-03 04:16:25,229 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:110) - HikariPool-1 - Starting...
+2022-05-03 04:16:25,302 [main] INFO  com.zaxxer.hikari.HikariDataSource(getConnection:123) - HikariPool-1 - Start completed.
+2022-05-03 04:16:25,329 [main] INFO  org.hibernate.dialect.Dialect(<init>:175) - HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-05-03 04:16:26,007 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_location_type
+2022-05-03 04:16:26,027 [main] INFO  p6spy(logSQL:60) - #1651518986026 | took 16ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_location_type
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_location_type;
+2022-05-03 04:16:26,027 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_to_users
+2022-05-03 04:16:26,044 [main] INFO  p6spy(logSQL:60) - #1651518986044 | took 15ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_to_users
+
+    alter table festival_board 
+       drop 
+       foreign key if exists fk_festival_board_to_users;
+2022-05-03 04:16:26,044 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_festival_board
+2022-05-03 04:16:26,054 [main] INFO  p6spy(logSQL:60) - #1651518986054 | took 9ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_festival_board
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_festival_board;
+2022-05-03 04:16:26,054 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_users
+2022-05-03 04:16:26,071 [main] INFO  p6spy(logSQL:60) - #1651518986070 | took 15ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_users
+
+    alter table festival_cmt 
+       drop 
+       foreign key if exists fk_festival_cmt_to_users;
+2022-05-03 04:16:26,071 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_food_type
+2022-05-03 04:16:26,081 [main] INFO  p6spy(logSQL:60) - #1651518986081 | took 9ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_food_type
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_food_type;
+2022-05-03 04:16:26,081 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_location_type
+2022-05-03 04:16:26,098 [main] INFO  p6spy(logSQL:60) - #1651518986098 | took 16ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_location_type
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_location_type;
+2022-05-03 04:16:26,098 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_users
+2022-05-03 04:16:26,113 [main] INFO  p6spy(logSQL:60) - #1651518986113 | took 14ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_users
+
+    alter table food_board 
+       drop 
+       foreign key if exists fk_food_board_to_users;
+2022-05-03 04:16:26,113 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_food_board
+2022-05-03 04:16:26,122 [main] INFO  p6spy(logSQL:60) - #1651518986122 | took 8ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_food_board
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_food_board;
+2022-05-03 04:16:26,123 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_users
+2022-05-03 04:16:26,140 [main] INFO  p6spy(logSQL:60) - #1651518986140 | took 16ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_users
+
+    alter table food_cmt 
+       drop 
+       foreign key if exists fk_food_cmt_to_users;
+2022-05-03 04:16:26,140 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_board
+2022-05-03 04:16:26,152 [main] INFO  p6spy(logSQL:60) - #1651518986151 | took 11ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_board
+
+    drop table if exists festival_board;
+2022-05-03 04:16:26,152 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists festival_cmt
+2022-05-03 04:16:26,164 [main] INFO  p6spy(logSQL:60) - #1651518986164 | took 11ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists festival_cmt
+
+    drop table if exists festival_cmt;
+2022-05-03 04:16:26,164 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_board
+2022-05-03 04:16:26,176 [main] INFO  p6spy(logSQL:60) - #1651518986176 | took 11ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_board
+
+    drop table if exists food_board;
+2022-05-03 04:16:26,176 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_cmt
+2022-05-03 04:16:26,187 [main] INFO  p6spy(logSQL:60) - #1651518986187 | took 10ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_cmt
+
+    drop table if exists food_cmt;
+2022-05-03 04:16:26,187 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists food_type
+2022-05-03 04:16:26,193 [main] INFO  p6spy(logSQL:60) - #1651518986193 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists food_type
+
+    drop table if exists food_type;
+2022-05-03 04:16:26,194 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists location_type
+2022-05-03 04:16:26,200 [main] INFO  p6spy(logSQL:60) - #1651518986200 | took 6ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists location_type
+
+    drop table if exists location_type;
+2022-05-03 04:16:26,200 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    drop table if exists users
+2022-05-03 04:16:26,207 [main] INFO  p6spy(logSQL:60) - #1651518986207 | took 5ms | statement | connection 1| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    drop table if exists users
+
+    drop table if exists users;
+2022-05-03 04:16:26,211 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+2022-05-03 04:16:26,223 [main] INFO  p6spy(logSQL:60) - #1651518986223 | took 11ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB
+
+    create table festival_board (
+       festival_board_id bigint not null auto_increment,
+        auspc_instt varchar(255),
+        fstvl_co varchar(255),
+        fstvl_end_date varchar(255),
+        fstvl_nm varchar(255),
+        fstvl_start_date varchar(255),
+        homepage_url varchar(255),
+        festival_info varchar(2000) not null,
+        instt_code varchar(255),
+        instt_nm varchar(255),
+        festival_is_opened bit default  0 ,
+        latitude varchar(255),
+        festival_like integer default  0 ,
+        lnmadr varchar(255),
+        longitude varchar(255),
+        mnnst varchar(255),
+        opar varchar(255),
+        phone_number varchar(255),
+        festival_picture varchar(255),
+        rdnmadr varchar(255),
+        reference_date varchar(255),
+        relate_info varchar(255),
+        suprt_instt varchar(255),
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_board_id)
+    ) engine=InnoDB;
+2022-05-03 04:16:26,224 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+2022-05-03 04:16:26,236 [main] INFO  p6spy(logSQL:60) - #1651518986235 | took 11ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB
+
+    create table festival_cmt (
+       festival_cmt_id bigint not null auto_increment,
+        festival_cmt varchar(2000) not null,
+        festival_board_id bigint not null,
+        user_id bigint not null,
+        primary key (festival_cmt_id)
+    ) engine=InnoDB;
+2022-05-03 04:16:26,236 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+2022-05-03 04:16:26,246 [main] INFO  p6spy(logSQL:60) - #1651518986246 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB
+
+    create table food_board (
+       food_board_id bigint not null auto_increment,
+        created_date datetime(6),
+        modified_date datetime(6),
+        food_address varchar(2000) not null,
+        food_info varchar(2000) not null,
+        food_like integer default  0 ,
+        food_picture varchar(255),
+        food_preview varchar(255) not null,
+        food_rate double precision not null,
+        food_title varchar(255) not null,
+        food_type_id bigint not null,
+        location_type_id bigint not null,
+        user_id bigint not null,
+        primary key (food_board_id)
+    ) engine=InnoDB;
+2022-05-03 04:16:26,247 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+2022-05-03 04:16:26,257 [main] INFO  p6spy(logSQL:60) - #1651518986257 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB
+
+    create table food_cmt (
+       food_cmt_id bigint not null auto_increment,
+        food_cmt varchar(2000) not null,
+        food_board_id bigint not null,
+        user_id bigint not null,
+        primary key (food_cmt_id)
+    ) engine=InnoDB;
+2022-05-03 04:16:26,258 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+2022-05-03 04:16:26,269 [main] INFO  p6spy(logSQL:60) - #1651518986269 | took 9ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB
+
+    create table food_type (
+       food_type_id bigint not null auto_increment,
+        food_type varchar(255) NOT NULL UNIQUE,
+        primary key (food_type_id)
+    ) engine=InnoDB;
+2022-05-03 04:16:26,269 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+2022-05-03 04:16:26,281 [main] INFO  p6spy(logSQL:60) - #1651518986281 | took 11ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB
+
+    create table location_type (
+       location_type_id bigint not null auto_increment,
+        location_type varchar(255) NOT NULL UNIQUE,
+        primary key (location_type_id)
+    ) engine=InnoDB;
+2022-05-03 04:16:26,281 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB
+2022-05-03 04:16:26,295 [main] INFO  p6spy(logSQL:60) - #1651518986294 | took 12ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB
+
+    create table users (
+       user_id bigint not null auto_increment,
+        user_email varchar(255) not null,
+        user_login_id varchar(255) NOT NULL UNIQUE,
+        user_name varchar(255) not null,
+        user_nickname varchar(255) NOT NULL UNIQUE,
+        user_password varchar(255) not null,
+        role_type varchar(10) default  'ROLE_USER'  not null,
+        primary key (user_id)
+    ) engine=InnoDB;
+2022-05-03 04:16:26,295 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint fk_festival_board_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-03 04:16:26,335 [main] INFO  p6spy(logSQL:60) - #1651518986335 | took 38ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint fk_festival_board_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table festival_board 
+       add constraint fk_festival_board_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-03 04:16:26,336 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_board 
+       add constraint fk_festival_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:16:26,369 [main] INFO  p6spy(logSQL:60) - #1651518986369 | took 33ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_board 
+       add constraint fk_festival_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_board 
+       add constraint fk_festival_board_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:16:26,370 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_festival_board 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+2022-05-03 04:16:26,399 [main] INFO  p6spy(logSQL:60) - #1651518986399 | took 29ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_festival_board 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id)
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_festival_board 
+       foreign key (festival_board_id) 
+       references festival_board (festival_board_id);
+2022-05-03 04:16:26,400 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:16:26,433 [main] INFO  p6spy(logSQL:60) - #1651518986433 | took 32ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table festival_cmt 
+       add constraint fk_festival_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:16:26,434 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint fk_food_board_to_food_type 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+2022-05-03 04:16:26,467 [main] INFO  p6spy(logSQL:60) - #1651518986467 | took 32ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint fk_food_board_to_food_type 
+       foreign key (food_type_id) 
+       references food_type (food_type_id)
+
+    alter table food_board 
+       add constraint fk_food_board_to_food_type 
+       foreign key (food_type_id) 
+       references food_type (food_type_id);
+2022-05-03 04:16:26,468 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint fk_food_board_to_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+2022-05-03 04:16:26,509 [main] INFO  p6spy(logSQL:60) - #1651518986508 | took 40ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint fk_food_board_to_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id)
+
+    alter table food_board 
+       add constraint fk_food_board_to_location_type 
+       foreign key (location_type_id) 
+       references location_type (location_type_id);
+2022-05-03 04:16:26,510 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_board 
+       add constraint fk_food_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:16:26,581 [main] INFO  p6spy(logSQL:60) - #1651518986580 | took 70ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_board 
+       add constraint fk_food_board_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_board 
+       add constraint fk_food_board_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:16:26,581 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_food_board 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+2022-05-03 04:16:26,611 [main] INFO  p6spy(logSQL:60) - #1651518986611 | took 29ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_food_board 
+       foreign key (food_board_id) 
+       references food_board (food_board_id)
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_food_board 
+       foreign key (food_board_id) 
+       references food_board (food_board_id);
+2022-05-03 04:16:26,611 [main] DEBUG org.hibernate.SQL(logStatement:144) - 
+    
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+2022-05-03 04:16:26,647 [main] INFO  p6spy(logSQL:60) - #1651518986647 | took 34ms | statement | connection 2| url jdbc:mariadb://localhost/cloud?user=cloud&password=***
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id)
+
+    alter table food_cmt 
+       add constraint fk_food_cmt_to_users 
+       foreign key (user_id) 
+       references users (user_id);
+2022-05-03 04:16:26,650 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator(initiateService:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-03 04:16:26,660 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(buildNativeEntityManagerFactory:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 04:16:26,767 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration(openEntityManagerInViewInterceptor:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-03 04:16:27,083 [main] WARN  org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration(checkTemplateLocationExists:104) - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-05-03 04:16:27,541 [main] INFO  org.apache.coyote.http11.Http11NioProtocol(log:173) - Starting ProtocolHandler ["http-nio-8080"]
+2022-05-03 04:16:27,563 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer(start:220) - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-03 04:16:27,575 [main] INFO  com.cloud.web.WebApplication(logStarted:61) - Started WebApplication in 5.255 seconds (JVM running for 7.419)
+2022-05-03 04:21:06,165 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-03 04:21:06,167 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:350) - HikariPool-1 - Shutdown initiated...
+2022-05-03 04:21:06,173 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource(close:352) - HikariPool-1 - Shutdown completed.
