@@ -39,4 +39,5 @@ out/
 
 # Spring properties ignore - only examples are allowed to upload
 application.properties
-logs
+log
+.log
