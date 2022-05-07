@@ -1,6 +1,7 @@
 package com.cloud.web.repository;
 
 import com.cloud.web.domain.*;
+import com.cloud.web.domain.enums.Role;
 import lombok.extern.slf4j.Slf4j;
 import lombok.extern.slf4j.XSlf4j;
 import org.assertj.core.api.Assertions;
@@ -86,7 +87,7 @@ public class UserRepositoryTest {
   @Test
   public void user저장_default_USER_check() throws Exception {
       //given
-      User user = new User("a555", "a555", "이수찬", "이수찬닉", "tncksdl05@gmail.com");
+      User user = new User("a555", "a555", "이수찬", "이수찬닉","tncksdl05@gmail.com", Role.ROLE_USER);
 
       //when
       User saved = userRepository.save(user);
@@ -115,7 +116,7 @@ public class UserRepositoryTest {
     public void loginId_unique_check_success() throws Exception {
         //given
         // 똑같은 a111 아이디로 회원가입 시도,
-        User user = new User("a111", "a555", "이수찬", "이수찬닉", "tncksdl05@gmail.com");
+        User user = new User("a111", "a555", "이수찬","이수찬닉" ,"tncksdl05@gmail.com" , Role.ROLE_USER);
 
         //when , then -> loginId 중복 가입 했을시 unique 제약 조건에 걸린 Exception 발생 확인
         assertThatThrownBy(() -> userRepository.save(user) )
