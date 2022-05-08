@@ -10,7 +10,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 
 @Entity
-@Getter @Setter
+@Getter
 @Table(name = "food_board")
 public class FoodBoard extends BaseTimeEntity{
 

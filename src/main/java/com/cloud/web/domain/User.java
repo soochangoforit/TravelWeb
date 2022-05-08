@@ -20,7 +20,7 @@ import javax.persistence.*;
  * 따라서 테이블에는 그냥 명시만 해주고 실제 동작은 prePersist()를 통해서 override 구현해주도록 한다.
  */
 @Entity
-@Getter @Setter
+@Getter
 @Table(name = "users" )
 @ToString
 public class User {
