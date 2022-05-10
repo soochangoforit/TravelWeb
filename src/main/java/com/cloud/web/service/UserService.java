@@ -2,7 +2,7 @@ package com.cloud.web.service;
 
 import com.cloud.web.domain.User;
 import com.cloud.web.domain.enums.Role;
-import com.cloud.web.dto.request.UserLoginRequest;
+import com.cloud.web.dto.request.UserJoinRequest;
 import com.cloud.web.dto.response.UserResponse;
 import com.cloud.web.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +32,7 @@ public class UserService {
 
     // 원래는 User 사용하면 X , DTO로 사용해야한다. Join 하는 시점에 원래 role_type 필드에 권한을 넣어줘야 한다.
     @Transactional
-    public UserResponse join(UserLoginRequest user){
+    public UserResponse join(UserJoinRequest user){
 
         String rawPw = user.getPassword();
         String encodePw = bCryptPasswordEncoder.encode(rawPw);
