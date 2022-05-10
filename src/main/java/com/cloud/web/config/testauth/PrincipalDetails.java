@@ -3,6 +3,7 @@ package com.cloud.web.config.testauth;
 
 
 import com.cloud.web.domain.User;
+import com.cloud.web.dto.response.UserResponse;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -33,15 +34,29 @@ import java.util.Collection;
 
 //@bean으로 등록된 PrincipalDetailsService 에서 loadUserByUsername() 으로 부터 사용이 되기 때문에 굳이 @Bean으로 등록하지 X
 
-public class TestPrincipalDetails implements UserDetails {
+/**
+ * getUser 추가
+ */
+public class PrincipalDetails implements UserDetails {
 
     // override 해줘야 한다.
     // 우리의 로그인에 성공한 정보는 User Class 객체가 가지고 있다.
     private User user; //콤포지션
 
     // PrincipalDetails 가 실제 로그인에 성공한 User 정보를 담기 위해서 생성자로 해당 User 객체를 받아서 감싸준다.
-    public TestPrincipalDetails(User user) {
+    public PrincipalDetails(User user) {
         this.user = user;
+    }
+
+    public UserResponse getUser() {
+
+        UserResponse userDto = UserResponse.builder()
+                .db_id(user.getId())
+                .name(user.getName())
+                .nickname(user.getNickname())
+                .email(user.getEmail()).build();
+
+        return userDto;
     }
 
     // return Type이 Collection에 GrantedAuthority 를 return 하는 return Type이 필요하다.
