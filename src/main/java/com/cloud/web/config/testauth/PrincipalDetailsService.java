@@ -23,7 +23,7 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class TestPrincipalDetailsService implements UserDetailsService {
+public class PrincipalDetailsService implements UserDetailsService {
 
     // override 해줘야 한다.
     // 아래 주석문 정말 중요하다.!!!!!!!!!!!!
@@ -85,7 +85,7 @@ public class TestPrincipalDetailsService implements UserDetailsService {
         // 이렇게 하면 로그인이 완료가 된다.
 
         if(userEntity.isPresent()){
-            return new TestPrincipalDetails(userEntity.get());
+            return new PrincipalDetails(userEntity.get());
         }
         return null;
 
