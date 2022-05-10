@@ -1,6 +1,6 @@
 package com.cloud.web.controller.test;
 
-import com.cloud.web.dto.request.UserLoginRequest;
+import com.cloud.web.dto.request.UserJoinRequest;
 import com.cloud.web.dto.response.UserResponse;
 import com.cloud.web.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -23,14 +24,13 @@ public class testController {
 
 
     @GetMapping("/")
-    public @ResponseBody String index(){
-        return "Main Page";
+    public  String index(Model model){
+
+
+
+        return "main";
     }
 
-    @GetMapping("")
-    public @ResponseBody String index2(){
-        return "ddd";
-    }
 
     @GetMapping("/loginForm")
     public  String loginForm(){
@@ -45,7 +45,7 @@ public class testController {
 
     //@ResponseBody  반환값을 .html이 아닌 데이터(JSON)으로 반환하겠다는 의미.
     @PostMapping(value = "/join" ) // 실제 회원가입을 담당하는 곳
-    public String join(UserLoginRequest user){
+    public String join(UserJoinRequest user){
 
         UserResponse userDto = userService.join(user);// 시큐리티 설정을 하는 순간 비밀번호 암호화가 반드시 필요하다.
 
@@ -70,13 +70,13 @@ public class testController {
     @Secured("ROLE_ADMIN") // 해당 controller 위에 선언하면, ADMIN 권한만 가진 사용자만 접근 가능하다. 비록 security config에서 설정에서 제외를 해줬지만!!
     @GetMapping("/info")
     public @ResponseBody String info(){
-        return "개인정보";
+        return "admin 권한 개인정보";
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')") // dataPage 메소드가 실행 되기 전에 실행된다. 저런 문법 아래에서만 사용이 가능하다. 하나로만 걸고 싶으면 @Secured만 사용해도 괜찮다.
     @GetMapping("/data")
     public @ResponseBody String dataPage(){
-        return "데이터 정보";
+        return "admin 권한 데이터 정보";
     }
 
 
