@@ -1,4 +1,4 @@
-package com.cloud.web.config.testauth;
+package com.cloud.web.config.auth;
 
 
 import com.cloud.web.domain.User;
@@ -61,7 +61,10 @@ public class PrincipalDetailsService implements UserDetailsService {
 
         log.info("username    " + username);
 
-        Optional<User> userEntity = userRepository.findByLoginId(username);
+        //Optional<User> userEntity = userRepository.findByLoginId(username);
+
+        User userEntity = userRepository.findByLoginId(username).orElse(null);
+
 
         // 바로 이 시점이 security가 알아서 로그인 폼에 입력한 사용자 정보를 가지고
         // 실제 DB에서 데이터가 있는지 findByLoginId()를 통해서 확인한다.
@@ -84,11 +87,11 @@ public class PrincipalDetailsService implements UserDetailsService {
         // 이러한 모든 과정을 loadUserByUsername 가 다 알아서 해준다.
         // 이렇게 하면 로그인이 완료가 된다.
 
-        if(userEntity.isPresent()){
-            return new PrincipalDetails(userEntity.get());
+        if(userEntity != null) {
+            return new PrincipalDetails(userEntity);
         }
-        return null;
 
+        return null;
 
         // 이제 이렇게 하고 로그인한 user의 권한을 확인하고 싶다고 하면
         // PrincipalDetailsService 를 Autowired를 하고 가져온 객체에서
