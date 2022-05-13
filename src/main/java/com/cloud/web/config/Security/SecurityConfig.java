@@ -71,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and() // 로그인 조차 하지 않았을때 여기로 넘어온다. USER로 로그인 했는데 권한이 없는 경우, 403 Error가 난다.
                 .formLogin()
                 .loginPage("/loginForm?alertmsg=" + URLEncoder.encode("로그인 필요합니다.", "UTF-8")) // URL에 "/logout" 이라고 하면 "/loginForm" 경로로 다시 돌아가고 결국 LoginForm이 나타난다.
-                .loginProcessingUrl("/login") // login 주소가 호출이 되면 시큐리티가 대신 낚아채서 대신 로그인을 진행한다. 사용자 원하느걸로 해도 ㄱㅊ 근데 html에서의 action이랑 같은 설정으로 해야한다.
+                .loginProcessingUrl("/loginProcess") // login 주소가 호출이 되면 시큐리티가 대신 낚아채서 대신 로그인을 진행한다. 사용자 원하느걸로 해도 ㄱㅊ 근데 html에서의 action이랑 같은 설정으로 해야한다.
                 .failureHandler(loginFailureHandler)
                 .successHandler(loginSuccessHandler)
                 //.defaultSuccessUrl("/") // successHandler에서 일반 로그인 시 "/"로 설정, 권한 필요한 페이지 승인 거절 났을때 우선 로그인 페이지로 이동하여 성공하면 , 요청했던 페이지로 redirect

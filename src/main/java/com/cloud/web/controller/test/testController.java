@@ -11,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 @Slf4j
 @Controller
 public class testController {
@@ -25,15 +28,17 @@ public class testController {
 
     @GetMapping("/")
     public  String index(Model model){
-
-
-
         return "main";
     }
 
 
+    // 로그인에 실패 했을 경우 , 서버(loginFailureHandler)로부터 날라오는 error를 controller에 변수로 담는다.
     @GetMapping("/loginForm")
-    public  String loginForm(){
+    public  String loginForm(@RequestParam(value = "alertmsg", required = false) String alertMessage,
+                             Model model){
+
+        model.addAttribute("alertmsg", alertMessage);
+
         return "loginForm";
     }
 
@@ -60,6 +65,22 @@ public class testController {
     }
 
 
+    // 행사 게시글 첫 페잊;
+    @GetMapping(value = "/festivals")
+    public String accesied(){
+        return "festivals";
+    }
+
+    // 행사 등록하기 - admin만 접근 가능
+    @GetMapping(value = "/admin/festival/save")
+    public @ResponseBody String post(){
+        return "행사 등록을 위한 페이지 입니다.";
+    }
+
+
+
+
+
     @GetMapping("/user")
     public @ResponseBody String aproveUser(){
         return "로그인 까지 성공후 User 권한을 가진 사용자가 / 경로가 아닌 /user 경로로 자동으로 접근되었습니다.";
@@ -80,10 +101,6 @@ public class testController {
     }
 
 
-    @GetMapping("/admin")
-    public @ResponseBody String ss(){
-        return "admin 권한으로 접속한 유저입니다.";
-    }
 
 
 
