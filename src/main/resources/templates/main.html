@@ -9,6 +9,7 @@
 
 here is main Page from "/"
 
+<a th:href="@{/foods}" >맛집 게시글 보러 가기</a><br>
 
     <a  th:href="@{/login}" sec:authorize="!isAuthenticated()">로그인 및 회원가입하러 가기</a>
 
@@ -23,6 +24,8 @@ here is main Page from "/"
         <a href="/logout">
             로그아웃
         </a>
+
+
     </form>
 
 
