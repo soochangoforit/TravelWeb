@@ -86,7 +86,7 @@ public class FoodBoardRepositoryTest {
          //when
          foodBoardRepository.save(foodBoard);
 
-         foodBoard.setAddress("주소 변경했음");
+         //foodBoard.setAddress("주소 변경했음");
 
          //then
          assertThat(foodBoard.getModifiedDate()).isNotNull();

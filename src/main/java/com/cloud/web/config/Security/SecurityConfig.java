@@ -64,13 +64,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/user/**").authenticated() // 여기서 굉장히 중요한 기능이!! 로그인 하지 않은 user 사용자가 해당 주소로 갈려고 하면 최소한은 로그인은 되어야 하기 때문에 /loginForm으로 넘어가고, 넘어가서 로그인이 인증이 되면 리다이렉트 주소로 /user로 온다. (접속을 시도한 시점의 URL로 온다.)
+                .antMatchers("/user/**").authenticated() // 여기서 굉장히 중요한 기능이!! 로그인 하지 않은 user 사용자가 해당 주소로 갈려고 하면 최소한은 로그인은 되어야 하기 때문에 /login으로 넘어가고, 넘어가서 로그인이 인증이 되면 리다이렉트 주소로 /user로 온다. (접속을 시도한 시점의 URL로 온다.)
                 .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')") // 권한이 없으면 403 나와야 한다. hasRole은 앞에 "ROLE_"을 붙인 상태에서 확인하고, hasAnyAuthority는 붙지 않는다.?? 그래서 접근은 가능하지만 @Secured 기능에서 사용되지 않는다.
                 .anyRequest().permitAll()
 
                 .and() // 로그인 조차 하지 않았을때 여기로 넘어온다. USER로 로그인 했는데 권한이 없는 경우, 403 Error가 난다.
                 .formLogin()
-                .loginPage("/loginForm?alertmsg=" + URLEncoder.encode("로그인 필요합니다.", "UTF-8")) // URL에 "/logout" 이라고 하면 "/loginForm" 경로로 다시 돌아가고 결국 LoginForm이 나타난다.
+                .loginPage("/login?alertmsg=" + URLEncoder.encode("로그인 필요합니다.", "UTF-8")) // URL에 "/logout" 이라고 하면 "/loginForm" 경로로 다시 돌아가고 결국 LoginForm이 나타난다.
                 .loginProcessingUrl("/loginProcess") // login 주소가 호출이 되면 시큐리티가 대신 낚아채서 대신 로그인을 진행한다. 사용자 원하느걸로 해도 ㄱㅊ 근데 html에서의 action이랑 같은 설정으로 해야한다.
                 .failureHandler(loginFailureHandler)
                 .successHandler(loginSuccessHandler)

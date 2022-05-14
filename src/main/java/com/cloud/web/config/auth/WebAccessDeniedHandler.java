@@ -50,7 +50,7 @@ public class WebAccessDeniedHandler implements AccessDeniedHandler {
             /* spring security가 먼저 로그인 인증조차 하지 않는 요청에서 가로채간다. 그래서 주석처리 2022/05/13
             else { // 로그인 조차 X
                 req.setAttribute("msg","로그인이 필요한 페이지 입니다.");
-                req.setAttribute("nextPage","/loginForm"); // 로그인 폼으로
+                req.setAttribute("nextPage","/login"); // 로그인 폼으로
                 res.setStatus(HttpStatus.UNAUTHORIZED.value());
                 SecurityContextHolder.clearContext();
             }

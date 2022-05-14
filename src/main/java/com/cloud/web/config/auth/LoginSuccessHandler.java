@@ -50,7 +50,7 @@ public class LoginSuccessHandler  implements AuthenticationSuccessHandler {
 
         HttpSession session = request.getSession();
 
-        session.setAttribute("user", user.getUser()); // user 객체 그대로 저장
+        session.setAttribute("user", user.getUser()); // user dto 객체 그대로 저장
 
 
         // spring security에서 제공했던 기능을 직접 코드로 구현

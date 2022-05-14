@@ -26,6 +26,8 @@ public class testController {
     }
 
 
+
+
     @GetMapping("/")
     public  String index(Model model){
         return "main";
@@ -33,7 +35,7 @@ public class testController {
 
 
     // 로그인에 실패 했을 경우 , 서버(loginFailureHandler)로부터 날라오는 error를 controller에 변수로 담는다.
-    @GetMapping("/loginForm")
+    @GetMapping("/login")
     public  String loginForm(@RequestParam(value = "alertmsg", required = false) String alertMessage,
                              Model model){
 
@@ -42,7 +44,7 @@ public class testController {
         return "loginForm";
     }
 
-    @GetMapping("/joinForm") //<a href로 들어온다. get방식으로>
+    @GetMapping("/join") //<a href로 들어온다. get방식으로>
     public  String joinForm(){
         return "joinForm";
     }
@@ -60,7 +62,7 @@ public class testController {
         log.info(userDto.getNickname());
         log.info(userDto.getEmail());
 
-        return "redirect:/loginForm";  //   @GetMapping("/loginForm") 여기로 돌아간다.
+        return "redirect:/login";  //   @GetMapping("/loginForm") 여기로 돌아간다.
 
     }
 

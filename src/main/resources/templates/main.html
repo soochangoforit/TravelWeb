@@ -10,7 +10,7 @@
 here is main Page from "/"
 
 
-    <a  th:href="@{/loginForm}" sec:authorize="!isAuthenticated()">로그인 및 회원가입하러 가기</a>
+    <a  th:href="@{/login}" sec:authorize="!isAuthenticated()">로그인 및 회원가입하러 가기</a>
 
     <form sec:authorize="isAuthenticated()">
         <div th:object="${session.user}">

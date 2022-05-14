@@ -35,7 +35,7 @@ public class LoginFailureHandler extends SimpleUrlAuthenticationFailureHandler {
         }
         errorMessage = URLEncoder.encode(errorMessage, "UTF-8");
 
-        setDefaultFailureUrl("/loginForm?alertmsg="+errorMessage); // 로그인 실패시 /loginForm 경로로 쿼리스트링을 보내는데 출력하고자 하는 error 문자열을 한글로 인코딩헤서 함께 보낸다.
+        setDefaultFailureUrl("/login?alertmsg="+errorMessage); // 로그인 실패시 /login 경로로 쿼리스트링을 보내는데 출력하고자 하는 error 문자열을 한글로 인코딩헤서 함께 보낸다.
         super.onAuthenticationFailure(request, response, exception);
     }
 

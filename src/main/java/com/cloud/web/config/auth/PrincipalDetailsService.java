@@ -36,7 +36,7 @@ public class PrincipalDetailsService implements UserDetailsService {
     /*
      * .and()
              .formLogin()
-             .loginPage("/loginForm")
+             .loginPage("/login")
              .usernameParameter("사용자가 정의한 username, loadbyUsername 메소드와 매핑하기 위해서")
              .loginProcessingUrl("/login")
              .defaultSuccessUrl("/");
@@ -88,7 +88,7 @@ public class PrincipalDetailsService implements UserDetailsService {
         // 이렇게 하면 로그인이 완료가 된다.
 
         if(userEntity != null) {
-            return new PrincipalDetails(userEntity);
+           return new PrincipalDetails(userEntity);
         }
 
         return null;
