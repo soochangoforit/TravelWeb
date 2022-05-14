@@ -1,12 +1,5 @@
 
-INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email)
-    VALUE ( 'a111' , 'a111' , '사람1' , '사람1','a111@gmail.com' );
-INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email)
-    VALUE ( 'a222' , 'a222' , '사람2' , '사람2','a222@gmail.com' );
-INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email)
-    VALUE ( 'a333' , 'a333' , '사람3' , '사람3','a333@gmail.com' );
-INSERT INTO users (user_login_id, user_password, user_name, user_nickname, user_email)
-    VALUE ( 'a444' , 'a444' , '사람4' , '사람4','a444@gmail.com' );
+
 
 
 --

@@ -16,7 +16,7 @@
 
 
         <div class="container">
-            <form th:action="@{/foodForm}" th:object="${foodBoard}" method="post">
+            <form th:action="@{/foodForm}" th:object="${foodBoard}" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label >맛집 게시글 제목</label>
@@ -32,6 +32,13 @@
                     </div>
                 </div>
 
+              <!--  <div class="form-group">
+                    <label >맛집 사진 첨부</label>
+                    <div class="form-floating mb-3">
+                        <input type="file" class="form-control" id="file" th:field="*{filepath}">
+                    </div>
+                </div> -->
+
 
                 <div class="form-group">
                     <label>맛집 위치 지역 선택</label>
@@ -42,6 +49,7 @@
                                 th:text="${val.type}"></option>
                     </select>
                 </div>
+
 
                 <div class="form-group">
                     <label >맛집 도로명 주소</label>
