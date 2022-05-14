@@ -34,7 +34,7 @@ public class testController {
     }
 
 
-    // 로그인에 실패 했을 경우 , 서버(loginFailureHandler)로부터 날라오는 error를 controller에 변수로 담는다.
+    // 로그인에 실패 했을 경우 , 서버(loginFailureHandler)로부터 날라오는 error를 controller에 변수로 담는다. //
     @GetMapping("/login")
     public  String loginForm(@RequestParam(value = "alertmsg", required = false) String alertMessage,
                              Model model){
