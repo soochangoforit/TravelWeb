@@ -1,27 +1,31 @@
 package com.cloud.web.controller;
 
 import com.cloud.web.config.auth.PrincipalDetails;
-import com.cloud.web.domain.FoodBoard;
-import com.cloud.web.domain.FoodType;
-import com.cloud.web.domain.LocationType;
+import com.cloud.web.domain.*;
+import com.cloud.web.domain.enums.AttachmentType;
+import com.cloud.web.dto.request.BoardPostDto;
 import com.cloud.web.dto.request.FoodBoardSaveDto;
 import com.cloud.web.dto.response.UserResponse;
 import com.cloud.web.repository.FoodBoardRepository;
 import com.cloud.web.repository.FoodTypeRepository;
 import com.cloud.web.repository.LocationTypeRepository;
+import com.cloud.web.repository.UserRepository;
 import com.cloud.web.service.FoodBoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.UrlResource;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -35,6 +39,11 @@ public class FoodController {
     private LocationTypeRepository locationTypeRepository;
     @Autowired
     private FoodBoardService foodBoardService;
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private FileStore fileStore;
 
 
 
@@ -67,7 +76,8 @@ public class FoodController {
         model.addAttribute("foodTypeList", foodTypeList);
         model.addAttribute("locationTypeList", locationTypeList);
 
-        model.addAttribute("foodBoard", new FoodBoard());
+        // model.addAttribute("foodBoard", new FoodBoard());
+        model.addAttribute("foodBoard", new FoodBoardSaveDto()); // 오로지 웹 정보만 받도록 하는 dto 생성 후 반환
 
         return "foodBoard/form";
     }
@@ -78,17 +88,32 @@ public class FoodController {
      * @return URL로 다시 접근하기 위해서는 redirect 넣어준다. 그렇게 안하면 html 찾는다.
      */
     @PostMapping("/foodForm")
-    public String save_FoodForm(@ModelAttribute FoodBoardSaveDto foodBoardDto , Authentication authentication){
+    public String save_FoodForm(@ModelAttribute FoodBoardSaveDto foodBoardDto , Authentication authentication) throws IOException {
 
 
-        PrincipalDetails user = (PrincipalDetails) authentication.getPrincipal();
-        Long user_db_id = user.getUser().getDb_id();
+        PrincipalDetails userDetails = (PrincipalDetails) authentication.getPrincipal();
+        Long user_db_id = userDetails.getUser().getDb_id();
 
         log.info(user_db_id.toString());
 
-        FoodBoard saved = foodBoardService.save(user_db_id, foodBoardDto);
+        User user = userRepository.findById(user_db_id).orElse(null);
+
+        BoardPostDto boardPostDto = foodBoardDto.createBoardPostDto(user);
+
+        //FoodBoard saved = foodBoardService.save(user_db_id, foodBoardDto);
+
+        foodBoardService.post(boardPostDto); // 최종 등록 Db에 등록
 
         return "redirect:/foods";
+    }
+
+
+    @ResponseBody
+    @GetMapping("/images/{filename}")
+    public UrlResource processImg(@PathVariable String filename) throws MalformedURLException {
+
+        return new UrlResource("file:" + fileStore.createPath(filename, AttachmentType.IMAGE));
+
     }
 
 

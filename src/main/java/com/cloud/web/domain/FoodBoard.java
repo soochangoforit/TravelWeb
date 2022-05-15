@@ -8,6 +8,8 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -41,8 +43,8 @@ public class FoodBoard extends BaseTimeEntity{
     @Column(name = "food_preview" , nullable = false)
     private String preview;
 
-    @Column(name = "food_picture" )
-    private String picture; // 사진 경로 타입 의문,,
+    //@Column(name = "food_picture" )
+    //private String picture; // 사진 경로 타입 의문,,
 
     @Column(name = "food_address" , length = 2000 , nullable = false)
     private String address;
@@ -65,16 +67,30 @@ public class FoodBoard extends BaseTimeEntity{
     public FoodBoard() {
     }
 
+
+    /*
+        블로그 보고, board에서 list 형태로 파일을 가지고 있다.
+     */
+    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL)
+    private List<Attachment> attachedFiles = new ArrayList<>();
+
+    public void setAttachedFiles(List<Attachment> attachedFiles) {
+        attachedFiles.stream().forEach(e->e.setBoard(this)); // 내가 추가함!!!!!
+        this.attachedFiles = attachedFiles;
+    }
+
     @Builder
-    public FoodBoard(User user, LocationType locationType, FoodType foodType, String title, String preview, String picture, String address, String info, double rate) {
+    public FoodBoard(User user, LocationType locationType, FoodType foodType, String title, String preview , String address, String info, double rate,
+                     List<Attachment> attachedFiles) {
         this.user = user;
         this.locationType = locationType;
         this.foodType = foodType;
         this.title = title;
         this.preview = preview;
-        this.picture = picture;
+        //this.picture = picture;
         this.address = address;
         this.info = info;
         this.rate = rate;
+        this.attachedFiles = attachedFiles;
     }
 }

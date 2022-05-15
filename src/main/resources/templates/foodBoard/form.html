@@ -15,7 +15,7 @@
     <div th:replace="fragments/nav :: nav"></div>
 
 
-        <div class="container">
+        <div class="container"><!--FoodBoardSaveDto 가 넘겨져서 왔다. -->
             <form th:action="@{/foodForm}" th:object="${foodBoard}" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
@@ -32,12 +32,12 @@
                     </div>
                 </div>
 
-              <!--  <div class="form-group">
+               <div class="form-group">
                     <label >맛집 사진 첨부</label>
-                    <div class="form-floating mb-3">
-                        <input type="file" class="form-control" id="file" th:field="*{filepath}">
+                    <div class="form-floating mb-3"> <!--list 로 잘 받을 수 있을지 의문이고, 그리고 파일 list는 애초에 담지 X -->
+                        <input type="file" class="form-control" id="imageFiles" th:field="*{imageFiles}" multiple="multiple">
                     </div>
-                </div> -->
+                </div>
 
 
                 <div class="form-group">

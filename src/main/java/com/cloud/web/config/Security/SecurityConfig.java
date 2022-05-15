@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private  LoginSuccessHandler loginSuccessHandler;
 
-    private  WebAccessDeniedHandler webAccessDeniedHandler;
+    private  WebAccessDeniedHandler webAccessDeniedHandler; //
 
 
     @Autowired
