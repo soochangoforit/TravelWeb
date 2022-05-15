@@ -22,6 +22,7 @@
           <th scope="col">제목</th>
           <th scope="col">맛집1줄소개</th>
           <th scope="col">작성자 (유저)</th>
+          <th scope="col">사진</th>
         </tr>
         </thead>
         <tbody>
@@ -30,6 +31,11 @@
           <th th:text="${board.getTitle()}"></th>
           <th th:text="${board.getPreview()}"></th>
           <th th:text="${board.getUser().getNickname()}"></th>
+          <th><img th:each="imageFile : ${board.attachedFiles}"
+                   th:src="@{/images/{imageFile}(imageFile=${imageFile.storeFilename})}" width="300" height="300" style="margin-right: 5px"/>
+          </th>
+
+
         </tr>
       </table>
 
