@@ -42,3 +42,4 @@ application.properties
 log
 .log
 log.log
+/logs/
