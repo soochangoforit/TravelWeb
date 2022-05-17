@@ -10,6 +10,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
+@Setter // 우선은 지금 foodBoard에서 list로 담고 있는 cmt에 foodBoard를 저장하기 위해서 임시적으로 setter 사용,,,권장 X , 추가적으로 값을 바인딩하기 위해서 필요
 @Table(name = "food_cmt" )
 public class FoodCmt {
 

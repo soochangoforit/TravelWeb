@@ -28,7 +28,7 @@
         <tbody>
         <tr th:each="board : ${foodBoards}">
           <th th:text="${board.getId()}"></th>
-          <th th:text="${board.getTitle()}"></th>
+          <th><a th:text="${board.getTitle()}" th:href="@{/foods/{id}(id=${board.id})}"></a></th>
           <th th:text="${board.getPreview()}"></th>
           <th th:text="${board.getUser().getNickname()}"></th>
           <th><img th:each="imageFile : ${board.attachedFiles}"

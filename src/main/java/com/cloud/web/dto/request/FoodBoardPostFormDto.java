@@ -5,17 +5,12 @@ import com.cloud.web.domain.FoodType;
 import com.cloud.web.domain.LocationType;
 import com.cloud.web.domain.User;
 import com.cloud.web.domain.enums.AttachmentType;
-import com.cloud.web.dto.response.UserResponse;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Getter
 @Setter // 바인딩 하기 위해서 반드시 존재해야 한다.
 @NoArgsConstructor
-public class FoodBoardSaveDto extends BaseTimeEntity {
+public class FoodBoardPostFormDto extends BaseTimeEntity {
 
 
     //private Long id;
@@ -83,8 +78,8 @@ public class FoodBoardSaveDto extends BaseTimeEntity {
      *  바인딩의 목적으로 만들어졌다.
      */
     @Builder
-    public FoodBoardSaveDto( LocationType locationType, FoodType foodType, String title, String preview,  String address,
-                             String info, double rate, List<MultipartFile> imageFiles, List<MultipartFile> generalFiles ) {
+    public FoodBoardPostFormDto(LocationType locationType, FoodType foodType, String title, String preview, String address,
+                                String info, double rate, List<MultipartFile> imageFiles, List<MultipartFile> generalFiles ) {
 
         this.locationType = locationType;
         this.foodType = foodType;
@@ -108,7 +103,7 @@ public class FoodBoardSaveDto extends BaseTimeEntity {
      *
      *  해당 BoardPostDto은 Entity로 전환되기 직전의 dto이므로 모든 정보를 담고 있어야 한다. (user 정보까지)
      */
-    public BoardPostDto createBoardPostDto(User user) {
+    public FoodBoardPostDto createBoardPostDto(User user) {
 
         // 웹에서 2개의 날것의 list를 받아서 하나의 Map 형태로 만들어서 BoardPostDto를 생성한다.
         // 여전히 BoardPostDto에서도 아직 날것의 2개의 list이지만
@@ -117,7 +112,7 @@ public class FoodBoardSaveDto extends BaseTimeEntity {
 
         Map<AttachmentType, List<MultipartFile>> attachments = getAttachmentTypeListMap();
 
-        return BoardPostDto.builder()
+        return FoodBoardPostDto.builder()
                 .user(user)
                 .locationType(locationType)
                 .foodType(foodType)

@@ -79,6 +79,30 @@ public class FoodBoard extends BaseTimeEntity{
         this.attachedFiles = attachedFiles;
     }
 
+    /**
+     * FoodBoard는 cmt을 알기 위해서
+     * 일대다 양방향 연관관계에서 list로 사용해서 활용 추가 - 2022-05-17
+     */
+    @OneToMany(mappedBy = "foodBoard" , cascade = CascadeType.ALL)
+    private List<FoodCmt> foodCmts = new ArrayList<FoodCmt>();
+
+    /**
+     * 연관 관계 편의 메서드
+     */
+    public void addFoodCmts(FoodCmt foodCmt) {
+
+        foodCmt.setFoodBoard(this);
+        this.foodCmts.add(foodCmt);
+       /*
+        FoodCmt build = foodCmt.builder()
+                .user(foodCmt.getUser())
+                .foodBoard(this)
+                .foodCmt(foodCmt.getFoodCmt()).build();
+        */
+    }
+
+
+
     @Builder
     public FoodBoard(User user, LocationType locationType, FoodType foodType, String title, String preview , String address, String info, double rate,
                      List<Attachment> attachedFiles) {

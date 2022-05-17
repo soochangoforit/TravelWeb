@@ -5,7 +5,6 @@ import com.cloud.web.domain.FoodType;
 import com.cloud.web.domain.LocationType;
 import com.cloud.web.domain.User;
 import com.cloud.web.domain.enums.AttachmentType;
-import com.cloud.web.dto.response.UserResponse;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 실제 데이터가 이동하는 부분 user 정보까지 합쳐서
  */
-public class BoardPostDto {
+public class FoodBoardPostDto {
 
     private User user;
 
@@ -40,9 +39,9 @@ public class BoardPostDto {
         dto에는 user 정보와 , 저장할 파일 리스트를 가지고 있다.
      */
     @Builder
-    public BoardPostDto(User user, LocationType locationType, FoodType foodType, String title, String preview,
-                        String address, String info, double rate,
-                        Map<AttachmentType, List<MultipartFile>> attachmentFiles) {
+    public FoodBoardPostDto(User user, LocationType locationType, FoodType foodType, String title, String preview,
+                            String address, String info, double rate,
+                            Map<AttachmentType, List<MultipartFile>> attachmentFiles) {
 
         this.user = user;
         this.locationType = locationType;
