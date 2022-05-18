@@ -3,6 +3,7 @@ package com.cloud.web.dto.response;
 import com.cloud.web.domain.Attachment;
 import com.cloud.web.domain.FoodType;
 import com.cloud.web.domain.LocationType;
+import com.querydsl.core.annotations.QueryProjection;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class FoodBoardShowDto {
     private List<Attachment> attachedFiles;
 
     @Builder
+    @QueryProjection
     public FoodBoardShowDto(Long id, String locationType, String foodType, String title,
                             String preview, String address, String info, double rate,
                             List<Attachment> attachedFiles) {

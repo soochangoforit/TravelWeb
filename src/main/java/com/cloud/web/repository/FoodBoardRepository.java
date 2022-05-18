@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FoodBoardRepository extends JpaRepository<FoodBoard,Long> {
+public interface FoodBoardRepository extends JpaRepository<FoodBoard,Long> , FoodBoardRepositoryCustom {
 }

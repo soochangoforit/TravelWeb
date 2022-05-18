@@ -15,7 +15,60 @@
     <div class="container">
       <h2>게시판</h2>
       <div>총 건수 : <span th:text="${#lists.size(foodBoards)}"></span></div>
-      <table class="table">
+
+
+      <div class="container"><!--FoodBoardSaveDto 가 넘겨져서 왔다. -->
+        <form th:action="@{/foods}" th:object="${condition}" method="post" >
+
+          <div class="form-group">
+            <label >맛집 게시글 제목</label>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="title" th:field="*{title}">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>맛집 위치 지역 선택</label>
+            <select class="form-select" th:field="*{locationType_Id}">
+              <option value=""> 선택 </option>
+              <option th:each="val : ${locationTypeList}"
+                      th:value="${val.id}"
+                      th:text="${val.type}"></option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label>맛집 음식 유형 선택</label>
+            <select class="form-select"  th:field="*{foodType_id}">
+              <option value=""> 선택 </option>
+              <option th:each="val : ${foodTypeList}"
+                      th:value="${val.id}"
+                      th:utext="${val.type}"></option>
+            </select>
+          </div>
+
+
+
+          <!--                <div class="text-end">-->
+          <input type="submit" class="btn btn-primary" >
+
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <table class="table">
         <thead>
         <tr>
           <th scope="col">번호</th>
@@ -23,6 +76,7 @@
           <th scope="col">맛집1줄소개</th>
           <th scope="col">작성자 (유저)</th>
           <th scope="col">사진</th>
+          <th scope="col">좋아요(추천)</th>
         </tr>
         </thead>
         <tbody>
@@ -34,6 +88,7 @@
           <th><img th:each="imageFile : ${board.attachedFiles}"
                    th:src="@{/images/{imageFile}(imageFile=${imageFile.storeFilename})}" width="300" height="300" style="margin-right: 5px"/>
           </th>
+          <th th:text="${board.getLike()}" ></th>
 
 
         </tr>

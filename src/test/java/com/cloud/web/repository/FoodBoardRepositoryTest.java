@@ -1,6 +1,7 @@
 package com.cloud.web.repository;
 
 import com.cloud.web.domain.*;
+import com.cloud.web.dto.request.FoodBoardCondition;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,8 +28,7 @@ import static org.assertj.core.api.Assertions.*;
 @Transactional
 public class FoodBoardRepositoryTest {
 
-    @Autowired
-    private FoodBoardRepository foodBoardRepository;
+
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -39,6 +39,16 @@ public class FoodBoardRepositoryTest {
     private FoodCmtRepository foodCmtRepository;
 
 
+    /**
+     * 쿼리 Dsl 를 위해서 필요한 부분
+     */
+    @Autowired
+    private FoodBoardRepository foodBoardRepository;
+    @Autowired
+    private EntityManager em;
+
+
+/*
     @Autowired private DataSource database;
 
     private static boolean dataLoaded = false;
@@ -54,7 +64,7 @@ public class FoodBoardRepositoryTest {
             }
         }
     }
-
+*/
 
 
     @Test
@@ -110,6 +120,22 @@ public class FoodBoardRepositoryTest {
           assertThat(all1.size()).isEqualTo(3);
 
       }
+
+
+    @Test
+    public void foodBoard_Condition_Check(){
+
+        FoodBoardCondition condition = FoodBoardCondition.builder()
+                .title("tt")
+                .foodType_id(3L)
+                .locationType_Id(2L).build();
+
+        List<FoodBoard> searchedList = foodBoardRepository.search(condition);
+
+        Assertions.assertThat(searchedList.size()).isEqualTo(1);
+
+
+    }
 
 
 
