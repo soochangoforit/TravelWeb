@@ -117,8 +117,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="cmts : ${foodCmts}">
-            <th th:text="${cmts.id}"></th>
+        <tr th:each="cmts ,i : ${foodCmts}">
+            <th th:text="${i.count}"></th>
             <th th:text="${cmts.foodCmt}"></th>
             <th th:text="${cmts.user.nickname}"></th>
         </tr>

@@ -80,8 +80,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="board : ${foodBoards}">
-          <th th:text="${board.getId()}"></th>
+        <tr th:each="board , i : ${foodBoards}">
+          <th th:text="${i.count}"></th>
           <th><a th:text="${board.getTitle()}" th:href="@{/foods/{id}(id=${board.id})}"></a></th>
           <th th:text="${board.getPreview()}"></th>
           <th th:text="${board.getUser().getNickname()}"></th>
