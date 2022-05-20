@@ -26,13 +26,14 @@ public class FoodBoard extends BaseTimeEntity{
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "location_type_id" , nullable = false , foreignKey = @ForeignKey(name = "fk_food_board_to_location_type"))
+    @JoinColumn(name = "location_type_id" ,nullable = false , foreignKey = @ForeignKey(name = "fk_food_board_to_location_type"))
     @OnDelete(action = OnDeleteAction.CASCADE)
     private LocationType locationType;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "food_type_id" , nullable = false , foreignKey = @ForeignKey(name = "fk_food_board_to_food_type"))
+    @JoinColumn(name = "food_type_id", nullable = false , foreignKey = @ForeignKey(name = "fk_food_board_to_food_type"))
     @OnDelete(action = OnDeleteAction.CASCADE)
     private FoodType foodType;
 
@@ -68,16 +69,21 @@ public class FoodBoard extends BaseTimeEntity{
     }
 
 
-    /*
-        블로그 보고, board에서 list 형태로 파일을 가지고 있다.
-     */
+    /**
+       foodBoard에서 list 형태로 파일 목록을 가지고 있다.
+    */
     @OneToMany(mappedBy = "board", cascade = CascadeType.ALL)
     private List<Attachment> attachedFiles = new ArrayList<>();
 
-    public void setAttachedFiles(List<Attachment> attachedFiles) {
+    /**
+     * 연관 관계 편의 메서드
+     * @param attachedFiles 맛집 게시글에 등록시 첨부하는 사진 목록
+     */
+    public void addAttachedFiles(List<Attachment> attachedFiles) {
         attachedFiles.stream().forEach(e->e.setBoard(this)); // 내가 추가함!!!!!
         this.attachedFiles = attachedFiles;
     }
+
 
     /**
      * FoodBoard는 cmt을 알기 위해서
@@ -102,10 +108,30 @@ public class FoodBoard extends BaseTimeEntity{
     }
 
 
+    public FoodBoard changeToEntity(Long id, User user, LocationType locationType,
+                            FoodType foodType, String title, String preview ,
+                            String address, String info, double rate,
+                            List<Attachment> attachedFiles){
+        this.id = id;
+        this.user = user;
+        this.locationType = locationType;
+        this.foodType = foodType;
+        this.title = title;
+        this.preview = preview;
+        this.address = address;
+        this.info = info;
+        this.rate = rate;
+        this.attachedFiles = attachedFiles;
+
+        return this;
+    }
+
+
 
     @Builder
-    public FoodBoard(User user, LocationType locationType, FoodType foodType, String title, String preview , String address, String info, double rate,
+    public FoodBoard(Long id, User user, LocationType locationType, FoodType foodType, String title, String preview , String address, String info, double rate,
                      List<Attachment> attachedFiles) {
+        this.id = id;
         this.user = user;
         this.locationType = locationType;
         this.foodType = foodType;
