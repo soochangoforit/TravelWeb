@@ -1,5 +1,6 @@
 package com.cloud.web.service;
 
+import com.cloud.web.domain.FoodBoard;
 import com.cloud.web.domain.User;
 import com.cloud.web.domain.enums.Role;
 import com.cloud.web.dto.request.UserJoinRequest;
@@ -11,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
@@ -64,13 +66,28 @@ public class UserService {
         // repository를 통해 save하기 전에 encode 해줘야 한다.
         User entity = userRepository.save(encoder);
 
-        UserResponse userLoginResponse = new UserResponse(entity.getId(), entity.getName(), entity.getNickname(), entity.getEmail());
+      //  UserResponse userLoginResponse = new UserResponse
+       //         (entity.getId(), entity.getName(), entity.getNickname(), entity.getEmail() , entity.getRoleType() , entity.getFoodBoards());
+
+        UserResponse userLoginResponse = UserResponse.builder()
+                .db_id(entity.getId())
+                .name(entity.getName())
+                .nickname(entity.getNickname())
+                .email(entity.getEmail())
+                .role(entity.getRoleType())
+                .foodBoardList(entity.getFoodBoards()).build();
 
         return userLoginResponse;
     }
 
     // 최대한 Entity를 Controller까지 들고오지 않기 위해서 DTO를 활용했다.
-    public UserResponse findById(Long id){
+
+    /**
+     * db_id를 통해서 사용자의 정보를 찾아준다.
+     * @param id 로그인한 사용자의 db_id
+     * @return UserResponse
+     */
+    public UserResponse findUserById(Long id){
 
         Optional<User> entity = userRepository.findById(id);
 
@@ -78,8 +95,12 @@ public class UserService {
                 .db_id(entity.get().getId())
                 .name(entity.get().getName())
                 .nickname(entity.get().getNickname())
-                .email(entity.get().getEmail()).build();
+                .email(entity.get().getEmail())
+                .role(entity.get().getRoleType())
+                .foodBoardList(entity.get().getFoodBoards()).build();
 
         return user;
     }
+
+
 }
