@@ -2,8 +2,12 @@ package com.cloud.web.repository;
 
 import com.cloud.web.domain.FoodBoard;
 import com.cloud.web.dto.request.FoodBoardCondition;
+import com.querydsl.core.QueryResults;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -40,6 +44,7 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
                 .fetch();
     }
 
+
     private BooleanExpression titleLike(String title) {
         return title.isEmpty() ? null : foodBoard.title.contains(title);
     }
@@ -50,5 +55,28 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
         return foodType_Id == null ? null : foodBoard.foodType.id.eq(foodType_Id);
     }
 
+
+    /**
+     * 페이징 처리도 함께하는 다중 검색 기능
+     */
+    @Override
+    public Page<FoodBoard> searchPageSimple(FoodBoardCondition condition, Pageable pageable) {
+
+        QueryResults<FoodBoard> results = queryFactory
+                .select(foodBoard)
+                .from(foodBoard)
+                .where(titleLike(condition.getTitle()),
+                        locationTypeEq(condition.getLocationType_Id()),
+                        foodTypeEq(condition.getFoodType_id()))
+                .offset(pageable.getOffset())
+                .limit(pageable.getPageSize())
+                .fetchResults();
+
+        List<FoodBoard> content = results.getResults();
+        long total = results.getTotal();
+
+        return new PageImpl<>(content, pageable , total);
+
+    }
 
 }
