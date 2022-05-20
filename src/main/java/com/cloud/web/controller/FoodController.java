@@ -13,6 +13,9 @@ import com.cloud.web.service.FoodBoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.UrlResource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -22,7 +25,6 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -49,11 +51,14 @@ public class FoodController {
      *
      * @param  model 맛집 게시글 첫 페이지에 검색 조건에 대한 값을 넣기 위해서 condition 인스턴스 반환
      * @return FoodRepository에서 가져온 결과를 list를 통해서 model에 담는다.
-     */
+*/
     @GetMapping("/foods")
-    public String foodBoardList(Model model){
+    public String foodBoardList(Model model , @PageableDefault(size = 6) Pageable pageable){
 
-        List<FoodBoard>  foodBoards = foodBoardRepository.findAll();
+        Page<FoodBoard> foodBoards = foodBoardRepository.findAll(pageable);
+        int startPage = Math.max( 1, foodBoards.getPageable().getPageNumber() - 4);
+        int endPage = Math.min(foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
+
         List<FoodType> foodTypeList = foodTypeRepository.findAll();
         List<LocationType> locationTypeList = locationTypeRepository.findAll();
 
@@ -61,6 +66,9 @@ public class FoodController {
         model.addAttribute("foodTypeList", foodTypeList);
         model.addAttribute("locationTypeList", locationTypeList);
         model.addAttribute("condition" , new FoodBoardCondition());
+
+        model.addAttribute("startPage",startPage);
+        model.addAttribute("endPage",endPage);
 
         return "foodBoard/list";
     }
@@ -70,16 +78,13 @@ public class FoodController {
      *  맛집 게시글 검색 조건 condition에 따른 결과값을 반환하는 method
      */
     @PostMapping("/foods")
-    public String foodBoardConditionList(FoodBoardCondition condition , Model model ){
+    public String foodBoardConditionList(FoodBoardCondition condition , Model model , @PageableDefault(size = 6) Pageable pageable){
 
-        List<FoodBoard> foodBoards = null;
+        Page<FoodBoard> foodBoards = foodBoardRepository.searchPageSimple(condition,pageable);
 
-        if (condition == null){
-            foodBoards = foodBoardRepository.findAll();
-         }
-        else {
-            foodBoards = foodBoardRepository.search(condition);
-         }
+
+        int startPage = Math.max( 1, foodBoards.getPageable().getPageNumber() - 4);
+        int endPage = Math.min(foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
 
         List<FoodType> foodTypeList = foodTypeRepository.findAll();
         List<LocationType> locationTypeList = locationTypeRepository.findAll();
@@ -88,6 +93,12 @@ public class FoodController {
         model.addAttribute("locationTypeList", locationTypeList); // 검색 조건으로 사용하기 위해서
         model.addAttribute("foodBoards", foodBoards);   // 최초 접속시 전체 게시글 출력하기 위해서
         model.addAttribute("condition" , new FoodBoardCondition()); // post를 통해서 새로운 검색을 하더라도 또 다른 검색이 가능하기 위해서 인스턴스 제공
+
+
+        model.addAttribute("startPage",startPage);
+        model.addAttribute("endPage",endPage);
+
+
 
         return "foodBoard/list"; // 최초의 맛집 게시글 화면으로 이동한다.
     }
@@ -104,7 +115,7 @@ public class FoodController {
     @GetMapping("/foods/{id}")
     public String show_FoodBoard_Result(@PathVariable Long id, Model model){
 
-        FoodBoardShowDto foodBoard = foodBoardService.show(id); // id에 해당하는 게시글의 상세 정보를 보여주기 위해서 데이터 가져온다.
+        FoodBoardShowDto foodBoard = foodBoardService.showByFoodBoardId(id); // id에 해당하는 게시글의 상세 정보를 보여주기 위해서 데이터 가져온다.
 
         // id에 해당하는 맛집 게시글의 댓글 목록 가져온다.
         // FoodBoard 안에 List로 Cmts를 가지고 있어서 getFoodCmts로 굳이 cmtsRepository를 가져오지 않더라도 가능했다.
