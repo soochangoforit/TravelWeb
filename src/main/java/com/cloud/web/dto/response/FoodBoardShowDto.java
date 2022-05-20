@@ -8,16 +8,21 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
+/**
+ * 게시글에서 상세 페이지로 갔을때 보여지는 dto
+ */
 @Getter
+@Setter
 @NoArgsConstructor
 public class FoodBoardShowDto {
 
     private Long id;
-    private String locationType;
-    private String foodType;
+    private LocationType locationType;
+    private FoodType foodType;
     private String title;
     private String preview;
     private String address;
@@ -28,7 +33,7 @@ public class FoodBoardShowDto {
 
     @Builder
     @QueryProjection
-    public FoodBoardShowDto(Long id, String locationType, String foodType, String title,
+    public FoodBoardShowDto(Long id, LocationType locationType, FoodType foodType, String title,
                             String preview, String address, String info, double rate,
                             List<Attachment> attachedFiles) {
         this.id = id;
@@ -41,4 +46,7 @@ public class FoodBoardShowDto {
         this.rate = rate;
         this.attachedFiles = attachedFiles;
     }
+
+
+
 }
