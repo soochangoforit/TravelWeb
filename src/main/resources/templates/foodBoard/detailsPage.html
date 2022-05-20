@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <label >음식 유형</label>
                     <div class="form-floating mb-3">
-                        <p th:text="*{foodType}"></p>
+                        <p th:text="*{foodType.getType()}"></p>
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label >위치</label>
                     <div class="form-floating mb-3">
-                        <p th:text="*{locationType}"></p>
+                        <p th:text="*{locationType.getType()}"></p>
                     </div>
                 </div>
 
@@ -80,6 +80,8 @@
                         <p th:text="*{rate}"></p>
                     </div>
                 </div>
+
+
 
         </form>
     </div>

@@ -5,6 +5,7 @@ import com.cloud.web.domain.FoodBoard;
 import com.cloud.web.domain.FoodCmt;
 import com.cloud.web.domain.User;
 import com.cloud.web.dto.request.FoodBoardPostDto;
+import com.cloud.web.dto.request.FoodBoardPostFormDto;
 import com.cloud.web.dto.request.FoodCmtDto;
 import com.cloud.web.dto.response.FoodBoardShowDto;
 import com.cloud.web.repository.FoodBoardRepository;
@@ -12,8 +13,10 @@ import com.cloud.web.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -65,37 +68,31 @@ public class FoodBoardService {
 
         List<Attachment> attachments = attachmentServiceImpl.saveAttachments(boardPostDto.getAttachmentFiles());
 
-        // 확인용 출력
-        for (Attachment attachment : attachments) {
-            log.info(attachment.getOriginFilename());
-        }
-
         // 사용자가 웹에서 작성한 데이터 + 사용자 정보를 담은 dto에서 createBoard()를 하면
         // 해당 정보 모두들 담은 Entity 객체 FoodBoard를 반환 ( 해당 Entity 안에는 파일 리스트가 공백인 상태)
         FoodBoard board = boardPostDto.createBoard();
+        board.addAttachedFiles(attachments);
 
-        //    attachments.stream()
-        //            .forEach(attachment -> board.setAttachment(attachment));
+        //수정사항 편의 메서드를 user에 넣는게 아니라 맛집 게시글이 등록될떄 user의 list에도 갖고자 한다.
+        board.getUser().addFoodBoard(board);
 
-        board.setAttachedFiles(attachments);
-
-        return foodBoardRepository.save(board); //여기서 궁금한점 이렇게 하면 알아서 list에 있는 값들이 파일 dB에 저장이 될까??
         // Cascade.ALL안에 포함되어 있는 Cascade.Persist를 통해 같이 영속화되어 저장된다.
-
+        return foodBoardRepository.save(board);
     }
 
     /**
      * 사용자가 보기 원하는 맛집 게시글의 상세 페이지를 반환
      * FoodBoardShowDto 반환
+     * @param id 맛집 게시글의 고유 db_id
      */
-    public FoodBoardShowDto show(Long id){
+    public FoodBoardShowDto showByFoodBoardId(Long id){
 
         FoodBoard entity = foodBoardRepository.findById(id).orElse(null);
 
         FoodBoardShowDto dto = FoodBoardShowDto.builder()
                 .id(entity.getId())
-                .locationType(entity.getLocationType().getType())
-                .foodType(entity.getFoodType().getType())
+                .locationType(entity.getLocationType())
+                .foodType(entity.getFoodType())
                 .address(entity.getAddress())
                 .preview(entity.getPreview())
                 .info(entity.getInfo())
@@ -106,6 +103,32 @@ public class FoodBoardService {
         return dto;
 
     }
+
+
+    //todo : 위에 메소드랑 어떤점에서 차이가 있어서 새롭게 만들었는지 기술하자.
+    public FoodBoardPostFormDto showUpdateFormById(Long id){
+
+        FoodBoard entity = foodBoardRepository.findById(id).get();
+
+        FoodBoardPostFormDto foodBoardPostFormDto = FoodBoardPostFormDto.builder()
+                .title(entity.getTitle())
+                .preview(entity.getPreview())
+                .address(entity.getAddress())
+                .info(entity.getInfo())
+                .rate(entity.getRate())
+                .locationType(entity.getLocationType())
+                .foodType(entity.getFoodType())
+                .imageFiles(new ArrayList<MultipartFile>())
+                .build();
+
+        return foodBoardPostFormDto;
+
+    }
+
+
+
+
+
 
 
     public void saveFoodCmt(Long user_db_id, Long id, FoodCmtDto foodCmtDto){

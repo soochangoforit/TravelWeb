@@ -48,7 +48,7 @@ public class FoodBoardPostFormDto extends BaseTimeEntity {
      * 추가적으로 해당 이미지 파일 과 일반 파일도 list로 함께 웹 폼에서 받는다.
      */
     private List<MultipartFile> imageFiles;
-    private List<MultipartFile> generalFiles;
+    //private List<MultipartFile> generalFiles;
 
 
 
@@ -79,7 +79,7 @@ public class FoodBoardPostFormDto extends BaseTimeEntity {
      */
     @Builder
     public FoodBoardPostFormDto(LocationType locationType, FoodType foodType, String title, String preview, String address,
-                                String info, double rate, List<MultipartFile> imageFiles, List<MultipartFile> generalFiles ) {
+                                String info, double rate, List<MultipartFile> imageFiles ) {
 
         this.locationType = locationType;
         this.foodType = foodType;
@@ -89,7 +89,7 @@ public class FoodBoardPostFormDto extends BaseTimeEntity {
         this.info = info;
         this.rate = rate;
         this.imageFiles = (imageFiles != null) ? imageFiles : new ArrayList<>();
-        this.generalFiles = (generalFiles != null) ? generalFiles : new ArrayList<>();
+        //this.generalFiles = (generalFiles != null) ? generalFiles : new ArrayList<>();
 
 
     }
