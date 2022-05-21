@@ -1,13 +1,12 @@
 package com.cloud.web.service;
 
-import com.cloud.web.domain.Attachment;
-import com.cloud.web.domain.FoodBoard;
-import com.cloud.web.domain.FoodCmt;
-import com.cloud.web.domain.User;
+import com.cloud.web.domain.*;
+import com.cloud.web.domain.enums.AttachmentType;
 import com.cloud.web.dto.request.FoodBoardPostDto;
 import com.cloud.web.dto.request.FoodBoardPostFormDto;
 import com.cloud.web.dto.request.FoodCmtDto;
 import com.cloud.web.dto.response.FoodBoardShowDto;
+import com.cloud.web.repository.AttachmentRepository;
 import com.cloud.web.repository.FoodBoardRepository;
 import com.cloud.web.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -28,9 +27,12 @@ public class FoodBoardService {
     private FoodBoardRepository foodBoardRepository;
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private AttachmentServiceImpl attachmentServiceImpl;
+    @Autowired
+    private AttachmentRepository attachmentRepository;
+    @Autowired
+    private FileStore fileStore;
 
 /*
     public FoodBoard save(Long user_db_id , FoodBoardSaveDto foodBoardDto){
@@ -105,7 +107,14 @@ public class FoodBoardService {
     }
 
 
-    //todo : 위에 메소드랑 어떤점에서 차이가 있어서 새롭게 만들었는지 기술하자.
+    /**
+     * 사용자가 수정하기 원하는 게시글의 수정 폼에 이미 등록된 데이터를 뿌려주기 위해서
+     * FoodBoardPostFormDto 를 반환한다.
+     * FoodBoardPostFormDto 를 반환할때는 새로운 사진을 입력 받기 위해서 imageFiles는 new ArrayList로 반환한다.
+     * FoodBoardShowDto 를 사용할 수 없는 이유는 해당 Dto에서는 List imagies 데이터 형식이 MultipartFile가 아니기 때문이다.
+     * @param id 수정하고자 하는 게시글의 id
+     * @return 수정 폼에 뿌려질 데이터가 담긴 foodBoardPostFormDto
+     */
     public FoodBoardPostFormDto showUpdateFormById(Long id){
 
         FoodBoard entity = foodBoardRepository.findById(id).get();
@@ -118,16 +127,11 @@ public class FoodBoardService {
                 .rate(entity.getRate())
                 .locationType(entity.getLocationType())
                 .foodType(entity.getFoodType())
-                .imageFiles(new ArrayList<MultipartFile>())
+                .imageFiles(new ArrayList<>())
                 .build();
 
         return foodBoardPostFormDto;
-
     }
-
-
-
-
 
 
 
@@ -153,6 +157,40 @@ public class FoodBoardService {
         // 현재 FoodBoard Entity는 이미 한번 DB_ID 값을 가지고 있기 때문에 Dirty Check 가능하다.
         foodBoardRepository.save(foodBoard);
     }
+
+
+
+
+    public FoodBoard update(Long id, User user, FoodBoardPostFormDto foodBoardPostFormDto) throws IOException {
+
+        // JPA의 더티 채킹을 활용하기 위해 entity를 영속성 컨텍스트에 관리 되도록 한다.
+        FoodBoard foodBoard = foodBoardRepository.findById(id).orElse(null);
+
+        // 수정하고자 하는 파일이 있으면 , 게시글이 원래 가지고 있던 사진들 삭제 처리
+        // 수정하고자 하는 파일이 없으면 , 기존의 사진들을 삭제하지 않는다.
+        if (foodBoardPostFormDto.getImageFiles().get(0).getBytes().length != 0) {
+            attachmentRepository.deleteByFoodId(id);
+        }
+
+        // foodBoardPostFormDto 으로 부터 받아온 multi type의 file list를 Attachment List으로 바꿔준다.
+        // fileStore 를 통해서 dto로 넘어온 날것의 file에서 이름을 추출하고 각종 작업을 거쳐 new file(저장경로+파일이름)을 생성해주면 된다.
+        List<MultipartFile> imageFiles = foodBoardPostFormDto.getImageFiles();
+        List<Attachment> attachments = fileStore.storeFiles(imageFiles, AttachmentType.IMAGE);
+
+        // 각 사진들의 주인인 맛집 게시글을 setter를 통해 설정해준다. cascade=ALL 옵션에 의해서 저장될때 함꼐 Db에 persist된다.
+        attachments.stream().forEach(e-> e.setBoard(foodBoard));
+
+        FoodBoard changed = foodBoard.changeToEntity(id
+                , user, foodBoardPostFormDto.getLocationType(), foodBoardPostFormDto.getFoodType(), foodBoardPostFormDto.getTitle()
+                , foodBoardPostFormDto.getPreview(), foodBoardPostFormDto.getAddress(), foodBoardPostFormDto.getInfo()
+                , foodBoardPostFormDto.getRate(), attachments);
+
+
+        return changed;
+    }
+
+
+
 
 
 }

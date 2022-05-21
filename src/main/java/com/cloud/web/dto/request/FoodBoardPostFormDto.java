@@ -88,8 +88,7 @@ public class FoodBoardPostFormDto extends BaseTimeEntity {
         this.address = address;
         this.info = info;
         this.rate = rate;
-        this.imageFiles = (imageFiles != null) ? imageFiles : new ArrayList<>();
-        //this.generalFiles = (generalFiles != null) ? generalFiles : new ArrayList<>();
+        this.imageFiles = (imageFiles != null) ? imageFiles : new ArrayList<>() ;
 
 
     }
