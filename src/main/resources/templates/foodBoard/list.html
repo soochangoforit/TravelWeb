@@ -20,6 +20,12 @@
       <div class="container"><!--FoodBoardSaveDto 가 넘겨져서 왔다. -->
         <form th:action="@{/foods}" th:object="${condition}" method="post" >
 
+          <!--
+          <input type="hidden" th:id="title1" th:name="title1" th:value="${condition.title}">
+          <input type="hidden" th:id="location1" th:name="location1" th:value="${condition.locationType_Id}">
+          <input type="hidden" th:id="food1" th:name="food1" th:value="${condition.foodType_id}">
+          <input type="hidden" th:id="rate1" th:name="rate1" th:value="${condition.rate}"> -->
+
           <div class="form-group">
             <label >맛집 게시글 제목</label>
             <div class="form-floating mb-3">
@@ -48,11 +54,18 @@
             </select>
           </div>
 
+          <div class="form-group">
+            <label>작성자 평점순</label>
+            <select class="form-select"  th:field="*{rate}">
+              <option value="0"> 선택 </option>
+              <option value="1">작성자 평점순</option>
+            </select>
+          </div>
 
 
-          <!--                <div class="text-end">-->
+
+                       <!--  <div class="text-end">-->
           <input type="submit" class="btn btn-primary" >
-
         </form>
       </div>
 
@@ -76,19 +89,26 @@
           <th scope="col">맛집1줄소개</th>
           <th scope="col">작성자 (유저)</th>
           <th scope="col">사진</th>
-          <th scope="col">좋아요(추천)</th>
+
         </tr>
         </thead>
         <tbody>
         <tr th:each="board , i : ${foodBoards}">
           <th th:text="${i.count}"></th>
-          <th><a th:text="${board.getTitle()}" th:href="@{/foods/{id}(id=${board.id})}"></a></th>
+          <th>
+
+               <!-- 건드렸다. -->
+                <a th:text="${board.getTitle()}" th:href="@{/foods/{id}/(id=${board.id})}" ></a>
+
+
+
+          </th>
           <th th:text="${board.getPreview()}"></th>
           <th th:text="${board.getUser().getNickname()}"></th>
           <th><img th:each="imageFile : ${board.attachedFiles}"
                    th:src="@{/images/{imageFile}(imageFile=${imageFile.storeFilename})}" width="300" height="300" style="margin-right: 5px"/>
           </th>
-          <th th:text="${board.getLike()}" ></th>
+
 
 
         </tr>
