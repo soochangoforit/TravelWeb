@@ -114,11 +114,21 @@ public class FoodController {
 
     /**
      * 맛집 게시글 제목을 클릭하면 해당 게시글 상세 페이지로 이동
+     * url에 검색 조건이 다 달려서 넘어온다.
      * @param id 특정 맛집 게시글의 고유 db_id
      * @param model 상세 페이지에서 댓글을 입력하기 위한 빈 인스턴스를 제공.
      */
-    @GetMapping("/foods/{id}")//todo:condition
-    public String show_FoodBoard_Result(@PathVariable Long id, Model model /*,FoodBoardCondition condition*/ ){
+    @GetMapping("/foods/{id}")
+    public String show_FoodBoard_Result(@PathVariable Long id, @RequestParam(value = "title" , required = false) String title,
+                             @RequestParam(value = "locationType_Id" , required = false) Long locationType_Id,
+                             @RequestParam(value = "foodType_id" , required = false) Long foodType_id,
+                             @RequestParam(value = "rate" , required = false) Integer rate, Model model  ){
+
+        FoodBoardCondition condition = FoodBoardCondition.builder()
+                .title(title)
+                .locationType_Id(locationType_Id)
+                .foodType_id(foodType_id)
+                .rate(rate).build();
 
         FoodBoardShowDto foodBoard = foodBoardService.showByFoodBoardId(id); // id에 해당하는 게시글의 상세 정보를 보여주기 위해서 데이터 가져온다.
 
@@ -130,8 +140,7 @@ public class FoodController {
         model.addAttribute("foodCmtDto", new FoodCmtDto()); // 해당 id 게시글에서 댓글 작성하기 위한 Dto ( String 데이터 형태인 cmt만 가지고 있다. )
         model.addAttribute("foodCmts", foodCmts); // id로 게시글 조회시 하단에 나타나는 기존의 댓글 목록을 출력하기 위해 model에 제공
 
-        //todo : 추가했다.
-        //model.addAttribute("condition", condition);
+        model.addAttribute("condition", condition); // 상세 페이지에서 뒤로가기 누를시 검색 조건을 그대로 가져가기 위해서
 
         return "foodBoard/detailsPage";
     }

@@ -53,7 +53,7 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
         return title.isEmpty() ? null : foodBoard.title.contains(title);
     }
     private BooleanExpression locationTypeEq(Long locationType_Id) {
-        return locationType_Id == null ? null : foodBoard.locationType.id.eq(locationType_Id);
+        return locationType_Id == null ? null : foodBoard.locationType.id.eq(Long.valueOf(locationType_Id));
     }
     private BooleanExpression foodTypeEq(Long foodType_Id) {
         return foodType_Id == null ? null : foodBoard.foodType.id.eq(foodType_Id);
