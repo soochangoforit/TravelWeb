@@ -102,7 +102,7 @@ public class FoodController {
         model.addAttribute("startPage",startPage);
         model.addAttribute("endPage",endPage);
 
-        //model.addAttribute("condition", condition); //  앞전에 검색한 조건을 그대로 model에 넣어준다. //todo : model추가
+        model.addAttribute("condition", condition); //  앞전에 검색한 조건을 그대로 model에 넣어준다. //todo : model추가
 
 
         return "foodBoard/list"; // 최초의 맛집 게시글 화면으로 이동한다.
