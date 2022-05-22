@@ -20,12 +20,6 @@
       <div class="container"><!--FoodBoardSaveDto 가 넘겨져서 왔다. -->
         <form th:action="@{/foods}" th:object="${condition}" method="post" >
 
-          <!--
-          <input type="hidden" th:id="title1" th:name="title1" th:value="${condition.title}">
-          <input type="hidden" th:id="location1" th:name="location1" th:value="${condition.locationType_Id}">
-          <input type="hidden" th:id="food1" th:name="food1" th:value="${condition.foodType_id}">
-          <input type="hidden" th:id="rate1" th:name="rate1" th:value="${condition.rate}"> -->
-
           <div class="form-group">
             <label >맛집 게시글 제목</label>
             <div class="form-floating mb-3">
@@ -66,6 +60,9 @@
 
                        <!--  <div class="text-end">-->
           <input type="submit" class="btn btn-primary" >
+          <input type='reset'>
+          <a type="button" class="btn btn-primary" th:href="@{/}">메인화면가기</a>
+
         </form>
       </div>
 
@@ -103,6 +100,9 @@
                    th:src="@{/images/{imageFile}(imageFile=${imageFile.storeFilename})}" width="300" height="300" style="margin-right: 5px"/>
           </th>
           <th>
+            <!--상세보기 버튼 클릭시 foodBoard/list.html로 넘어온 검색 조건을 URL로 담아서 전송한다. -->
+            <!--상세보기 페이지에서 뒤로가기 클릭시 해당 검색 조건이 URL에 담긴채, list로 이동하며 -->
+            <!--foodBoardConditionList 로 이동하게 된다. -->
             <form th:action="@{/foods/{id}(id=${board.id})}" method="get">
               <input type="hidden" th:name="title" th:value="${condition.title}"/>
               <input type="hidden" th:name="locationType_Id" th:value="${condition.locationType_Id}"/>
@@ -122,16 +122,22 @@
 
           <li class="page-item " th:classappend="${1 == foodBoards.getPageable().getPageNumber() + 1} ? 'disabled'">
             <a class="page-link" th:href="@{/foods(page=${foodBoards.getPageable().getPageNumber() - 1})}" >Previous</a>
+
+
           </li>
 
           <li class="page-item" th:classappend="${i == foodBoards.getPageable().getPageNumber() + 1} ? 'disabled'"
               th:each="i : ${#numbers.sequence(startPage, endPage)}">
             <a class="page-link" th:href="@{/foods(page=${i - 1})}" th:text="${i}"></a>
+
+
           </li>
 
           <li class="page-item"
               th:classappend="${foodBoards.getTotalPages() == foodBoards.getPageable().getPageNumber() + 1} ? 'disabled'">
             <a class="page-link" th:href="@{/foods(page=${foodBoards.getPageable().getPageNumber() + 1})}" >Next</a>
+
+
           </li>
 
         </ul>

@@ -47,7 +47,8 @@ public class FoodController {
 
 
     /**
-     * 행사 게시판 배너 클릭시 들어가는 URL controller , 맛집 게시글의 첫 페이지
+     * 행사 게시판 배너 클릭시 들어가는 URL controller , 맛집 게시글의 첫 페이지로 들어가기 위한 controller
+     * 페이징 처리시 해당 controller로 들어와서 처리하고 있다.
      *
      * @param  model 맛집 게시글 첫 페이지에 검색 조건에 대한 값을 넣기 위해서 condition 인스턴스 반환
      * @return FoodRepository에서 가져온 결과를 list를 통해서 model에 담는다.
@@ -77,13 +78,14 @@ public class FoodController {
 
 
     /**
-     *  맛집 게시글 검색 조건 condition에 따른 결과값을 반환하는 method
+     *  맨 처음 /foods로 들어오면 해당 검색 조건에 값을 입력할 수 있도록 인스턴스를 넘겨준다.
+     *  넘겨 받은 인스턴스에 값을 할당하고 검색할시 해당 controller로 들어온다.
+     *  검색한 결과에서 상세 보기를 클릭하고 , 뒤로 돌아올시 해당 controller condition에 앞서 검색한 조건이 그대로 담겨진다.
      */
     @PostMapping("/foods")
     public String foodBoardConditionList(FoodBoardCondition condition , Model model , @PageableDefault(size = 6) Pageable pageable){
 
         Page<FoodBoard> foodBoards = foodBoardRepository.searchPageSimple(condition,pageable);
-
 
         int startPage = Math.max( 1, foodBoards.getPageable().getPageNumber() - 4);
         int endPage = Math.min(foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
@@ -102,7 +104,7 @@ public class FoodController {
         model.addAttribute("startPage",startPage);
         model.addAttribute("endPage",endPage);
 
-        model.addAttribute("condition", condition); //  앞전에 검색한 조건을 그대로 model에 넣어준다. //todo : model추가
+        model.addAttribute("condition", condition); //  앞전에 검색한 조건을 그대로 model에 넣어준다.
 
 
         return "foodBoard/list"; // 최초의 맛집 게시글 화면으로 이동한다.
@@ -119,10 +121,12 @@ public class FoodController {
      * @param model 상세 페이지에서 댓글을 입력하기 위한 빈 인스턴스를 제공.
      */
     @GetMapping("/foods/{id}")
-    public String show_FoodBoard_Result(@PathVariable Long id, @RequestParam(value = "title" , required = false) String title,
-                             @RequestParam(value = "locationType_Id" , required = false) Long locationType_Id,
-                             @RequestParam(value = "foodType_id" , required = false) Long foodType_id,
-                             @RequestParam(value = "rate" , required = false) Integer rate, Model model  ){
+    public String show_FoodBoard_Result(@PathVariable Long id,
+                                        @RequestParam(value = "title" , required = false) String title,
+                                        @RequestParam(value = "locationType_Id" , required = false) Long locationType_Id,
+                                        @RequestParam(value = "foodType_id" , required = false) Long foodType_id,
+                                        @RequestParam(value = "rate" , required = false) Integer rate,
+                                        Model model  ){
 
         FoodBoardCondition condition = FoodBoardCondition.builder()
                 .title(title)
