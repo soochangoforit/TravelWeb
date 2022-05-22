@@ -3,8 +3,6 @@ package com.cloud.web.controller;
 
 import com.cloud.web.config.auth.PrincipalDetails;
 import com.cloud.web.domain.*;
-import com.cloud.web.domain.enums.AttachmentType;
-import com.cloud.web.dto.request.FoodBoardPostDto;
 import com.cloud.web.dto.request.FoodBoardPostFormDto;
 import com.cloud.web.dto.response.FoodBoardShowDto;
 import com.cloud.web.dto.response.UserResponse;
@@ -18,11 +16,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class MyPageController {
@@ -107,7 +103,7 @@ public class MyPageController {
      * @param foodBoardPostFormDto 수정할 값들을 받는 dto
      * @return redirect: /myPage/foods/{id} 로 가서 수정한 내역을 확인할 수 있도록 넘어간다.
      */
-    @PostMapping("/myPage/foods/{id}")
+    @PutMapping("/myPage/foods/{id}")
     @Transactional
     public String updateFoodBoard(@PathVariable Long id, @ModelAttribute FoodBoardPostFormDto  foodBoardPostFormDto ,
                                   Authentication authentication) throws IOException {
@@ -123,6 +119,36 @@ public class MyPageController {
         String aa = String.valueOf(id);
 
         return "redirect:/myPage/foods/" + aa;
+    }
+
+
+    /**
+     * 게시물 삭제 api
+     * @param id 삭제하고자 하는 게시물의 id
+     * @return myPage 반환
+     */
+    @DeleteMapping("/myPage/foods/{id}")
+    @Transactional
+    public String deleteBoard(@PathVariable("id") Long id){
+
+        foodBoardRepository.deleteById(id);
+
+        return "redirect:/myPage";
+    }
+
+    /**
+     * 회원 탈퇴 api
+     * @return 로그 아웃된 main page 반환
+     */
+    @DeleteMapping("/myPage")
+    @Transactional
+    public String leave(Authentication authentication){
+
+        // 사용자의 모든 정보 삭제 (관련 게시글 , 작성한 댓글)
+        PrincipalDetails userDetails = (PrincipalDetails) authentication.getPrincipal();
+        userRepository.deleteById(userDetails.getUser().getDb_id());
+
+        return "redirect:/logout";
     }
 
 
