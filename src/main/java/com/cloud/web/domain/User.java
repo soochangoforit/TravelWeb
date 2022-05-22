@@ -10,6 +10,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,6 @@ import java.util.List;
 @Entity
 @Getter
 @Table(name = "users" )
-@ToString
 public class User {
 
     @Id
@@ -66,6 +66,10 @@ public class User {
      * 게시글이 save될때 해당 user의 게시글 list에 데이터를 넣어준다.
      */
     public void addFoodBoard(FoodBoard foodBoard) {
+        // foodBoard.setUser(user); 이런식으로 하면
+        // 연관관게 편의 메서드란 .. 하나의 Entity를 저장할때 mappedBy된 객체들도 함께 persist하기 위함이다.
+        // 그러나 User가 persist될때 함께 Board가 persist 되는것은 아니므로
+        // foodBoard는 따로 post()를 통해서 persist 한다. 대신에 User도 board를 알기 위해서 List 컬렉션을 사용해서 관리 해주도록 한다.
         this.foodBoards.add(foodBoard);
     }
 

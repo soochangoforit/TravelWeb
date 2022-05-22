@@ -6,11 +6,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Getter
 @NoArgsConstructor
-public class UserResponse {
+public class UserResponse  implements Serializable {
 
     private Long db_id;
     private String name;
