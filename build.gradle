@@ -70,6 +70,11 @@ dependencies {
 	implementation "com.querydsl:querydsl-jpa:5.0.0"
 	annotationProcessor "com.querydsl:querydsl-apt:5.0.0"
 
+
+	//session dB
+	//implementation("org.springframework.session:spring-session-jdbc")
+
+
 }
 
 tasks.named('test') {
