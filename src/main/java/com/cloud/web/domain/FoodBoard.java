@@ -8,13 +8,14 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
 @Table(name = "food_board")
-public class FoodBoard extends BaseTimeEntity{
+public class FoodBoard extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -137,7 +138,6 @@ public class FoodBoard extends BaseTimeEntity{
         this.foodType = foodType;
         this.title = title;
         this.preview = preview;
-        //this.picture = picture;
         this.address = address;
         this.info = info;
         this.rate = rate;

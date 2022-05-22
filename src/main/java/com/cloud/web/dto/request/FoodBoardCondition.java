@@ -13,12 +13,16 @@ public class FoodBoardCondition {
     private Long locationType_Id;
     // 맛집 음식 유형으로 검색
     private Long foodType_id;
+    // 글쓴이의 평점 순으로 정렬
+    private Integer rate;
+
 
     @Builder
-    public FoodBoardCondition(String title, Long locationType_Id, Long foodType_id) {
+    public FoodBoardCondition(String title, Long locationType_Id, Long foodType_id ,Integer rate ) {
         this.title = title;
         this.locationType_Id = locationType_Id;
         this.foodType_id = foodType_id;
+        this.rate = rate;
     }
 
 }

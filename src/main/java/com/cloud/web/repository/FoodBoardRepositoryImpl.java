@@ -3,11 +3,14 @@ package com.cloud.web.repository;
 import com.cloud.web.domain.FoodBoard;
 import com.cloud.web.dto.request.FoodBoardCondition;
 import com.querydsl.core.QueryResults;
+import com.querydsl.core.types.Order;
+import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -41,6 +44,7 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
                 .where(titleLike(condition.getTitle()),
                         locationTypeEq(condition.getLocationType_Id()),
                         foodTypeEq(condition.getFoodType_id()))
+                .orderBy(rate(condition.getRate()))
                 .fetch();
     }
 
@@ -53,6 +57,9 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
     }
     private BooleanExpression foodTypeEq(Long foodType_Id) {
         return foodType_Id == null ? null : foodBoard.foodType.id.eq(foodType_Id);
+    }
+    private OrderSpecifier  rate(Integer rate) {
+        return rate == 0 ? new OrderSpecifier(Order.ASC, foodBoard.id) : new OrderSpecifier(Order.DESC, foodBoard.rate);
     }
 
 
@@ -70,6 +77,7 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
                         foodTypeEq(condition.getFoodType_id()))
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())
+                .orderBy(rate(condition.getRate()))
                 .fetchResults();
 
         List<FoodBoard> content = results.getResults();
@@ -78,5 +86,7 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
         return new PageImpl<>(content, pageable , total);
 
     }
+
+
 
 }

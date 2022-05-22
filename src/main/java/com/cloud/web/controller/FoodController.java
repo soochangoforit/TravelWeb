@@ -53,7 +53,7 @@ public class FoodController {
      * @return FoodRepository에서 가져온 결과를 list를 통해서 model에 담는다.
 */
     @GetMapping("/foods")
-    public String foodBoardList(Model model , @PageableDefault(size = 6) Pageable pageable){
+    public String foodBoardList(Model model , @PageableDefault(size = 6) Pageable pageable ){
 
         Page<FoodBoard> foodBoards = foodBoardRepository.findAll(pageable);
         int startPage = Math.max( 1, foodBoards.getPageable().getPageNumber() - 4);
@@ -69,6 +69,8 @@ public class FoodController {
 
         model.addAttribute("startPage",startPage);
         model.addAttribute("endPage",endPage);
+
+
 
         return "foodBoard/list";
     }
@@ -92,12 +94,15 @@ public class FoodController {
         model.addAttribute("foodTypeList", foodTypeList); // 검색 조건으로 사용하기 위해서
         model.addAttribute("locationTypeList", locationTypeList); // 검색 조건으로 사용하기 위해서
         model.addAttribute("foodBoards", foodBoards);   // 최초 접속시 전체 게시글 출력하기 위해서
-        model.addAttribute("condition" , new FoodBoardCondition()); // post를 통해서 새로운 검색을 하더라도 또 다른 검색이 가능하기 위해서 인스턴스 제공
+
+        //todo: 주석
+        //model.addAttribute("condition" , new FoodBoardCondition()); // post를 통해서 새로운 검색을 하더라도 또 다른 검색이 가능하기 위해서 인스턴스 제공
 
 
         model.addAttribute("startPage",startPage);
         model.addAttribute("endPage",endPage);
 
+        //model.addAttribute("condition", condition); //  앞전에 검색한 조건을 그대로 model에 넣어준다. //todo : model추가
 
 
         return "foodBoard/list"; // 최초의 맛집 게시글 화면으로 이동한다.
@@ -112,8 +117,8 @@ public class FoodController {
      * @param id 특정 맛집 게시글의 고유 db_id
      * @param model 상세 페이지에서 댓글을 입력하기 위한 빈 인스턴스를 제공.
      */
-    @GetMapping("/foods/{id}")
-    public String show_FoodBoard_Result(@PathVariable Long id, Model model){
+    @GetMapping("/foods/{id}")//todo:condition
+    public String show_FoodBoard_Result(@PathVariable Long id, Model model /*,FoodBoardCondition condition*/ ){
 
         FoodBoardShowDto foodBoard = foodBoardService.showByFoodBoardId(id); // id에 해당하는 게시글의 상세 정보를 보여주기 위해서 데이터 가져온다.
 
@@ -124,6 +129,9 @@ public class FoodController {
         model.addAttribute("foodBoard" , foodBoard); // id로 게시글 조회시 나타나는 게시글 정보를 담고 있다.
         model.addAttribute("foodCmtDto", new FoodCmtDto()); // 해당 id 게시글에서 댓글 작성하기 위한 Dto ( String 데이터 형태인 cmt만 가지고 있다. )
         model.addAttribute("foodCmts", foodCmts); // id로 게시글 조회시 하단에 나타나는 기존의 댓글 목록을 출력하기 위해 model에 제공
+
+        //todo : 추가했다.
+        //model.addAttribute("condition", condition);
 
         return "foodBoard/detailsPage";
     }
