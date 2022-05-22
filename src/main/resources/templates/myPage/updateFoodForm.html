@@ -20,7 +20,7 @@
 <!-- th:action="@{/myPage/foods/{id}(id=${FoodBoardShowDto.getId()})}" -->
 
             <form th:action="@{/myPage/foods/{id}(id=${id})}" th:object="${foodBoardPostFormDto}" method="post" enctype="multipart/form-data" >
-
+                <input type="hidden" name="_method" value="put"/>
                 <div class="form-group">
                     <label >제목</label>
                     <div class="form-floating mb-3">
@@ -107,7 +107,14 @@
         <!-- 수정하기 버튼, 삭제하기 , 뒤로가기 버튼 필요-->
     <br><br>
 
+    <form id="delete-form" th:action="@{/myPage/foods/{id}(id=${id})}" method="post">
+        <input type="hidden" name="_method" value="delete"/>
+        <button id="delete-btn">삭제</button>
+    </form>
+
     <a type="button" class="btn btn-primary" th:href="@{/myPage}">뒤로가기</a>
+
+
 
     </form>
 
