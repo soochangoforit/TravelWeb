@@ -52,11 +52,16 @@ public class FoodController {
      *
      * @param  model 맛집 게시글 첫 페이지에 검색 조건에 대한 값을 넣기 위해서 condition 인스턴스 반환
      * @return FoodRepository에서 가져온 결과를 list를 통해서 model에 담는다.
+     *
+     * Pageable은 해당 Controller 요청쪽에서 page번호랑, size를 지정해서 사용할  수 있다.
 */
-    @GetMapping("/foods")
-    public String foodBoardList(Model model , @PageableDefault(size = 6) Pageable pageable ){
+    @GetMapping("/foods") // 로그인 -> 행사 게시판
+    public String foodBoardList(Model model , @PageableDefault(size = 6) Pageable pageable){
 
         Page<FoodBoard> foodBoards = foodBoardRepository.findAll(pageable);
+
+        // 현재 페이지로 부터 하단 index바에 몇개까지의 페이지가 표시되게 가능할건지 정하는 코드
+        // 현재 페이지가 10(index 9)페이지이라면 6(index 5)페이지와 14(index 13)페이지가 보이게 한다.
         int startPage = Math.max( 1, foodBoards.getPageable().getPageNumber() - 4);
         int endPage = Math.min(foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
 
@@ -71,15 +76,13 @@ public class FoodController {
         model.addAttribute("startPage",startPage);
         model.addAttribute("endPage",endPage);
 
-
-
         return "foodBoard/list";
     }
 
 
     /**
      *  맨 처음 /foods로 들어오면 해당 검색 조건에 값을 입력할 수 있도록 인스턴스를 넘겨준다.
-     *  넘겨 받은 인스턴스에 값을 할당하고 검색할시 해당 controller로 들어온다.
+     *  넘겨 받은 인스턴스에 값을 할당하고 "검색"할시 해당 controller로 들어온다.
      *  검색한 결과에서 상세 보기를 클릭하고 , 뒤로 돌아올시 해당 controller condition에 앞서 검색한 조건이 그대로 담겨진다.
      */
     @PostMapping("/foods")
@@ -95,7 +98,7 @@ public class FoodController {
 
         model.addAttribute("foodTypeList", foodTypeList); // 검색 조건으로 사용하기 위해서
         model.addAttribute("locationTypeList", locationTypeList); // 검색 조건으로 사용하기 위해서
-        model.addAttribute("foodBoards", foodBoards);   // 최초 접속시 전체 게시글 출력하기 위해서
+        model.addAttribute("foodBoards", foodBoards);   // 검색된 결과가 들어간다.
 
         //todo: 주석
         //model.addAttribute("condition" , new FoodBoardCondition()); // post를 통해서 새로운 검색을 하더라도 또 다른 검색이 가능하기 위해서 인스턴스 제공
@@ -122,11 +125,21 @@ public class FoodController {
      */
     @GetMapping("/foods/{id}")
     public String show_FoodBoard_Result(@PathVariable Long id,
+                                        @PageableDefault(size = 6) Pageable pageable,
                                         @RequestParam(value = "title" , required = false) String title,
                                         @RequestParam(value = "locationType_Id" , required = false) Long locationType_Id,
                                         @RequestParam(value = "foodType_id" , required = false) Long foodType_id,
                                         @RequestParam(value = "rate" , required = false) Integer rate,
                                         Model model  ){
+
+        // 현 controller에 넘어오기 전에 현재 있는 전체 게시글에서 몇번째 게시글 순서에서 상세 페이지를 눌렀는지에 대한 정보가 필요하다
+        // 해당 controller로 넘어오기 전에!!!
+        // 지금 있는 페이지의 페이지 번호도 함께 details page에 들어가야 한다.!!!!!!! (쿼리 스트링으로 들어가야 한다.)
+
+        //details에 있는 뒤로가기에 page 번호가 제공되어야 한다. 여기서 제공하면 된다. 해당 상세페이지는 자신이 몇번째 페이지의 게시물인지 알지 X
+        // 따라서 우리는 알려줘야 한다. 뭐로?? model를 통해서 현 게식물이 몇번쨰 페이지인지 알려줘여 한다.
+
+        model.addAttribute("page", pageable.getPageNumber()); // 몇번쨰 페이지인지 알려줘라 details한테 숫자로 알려줘라!!!
 
         FoodBoardCondition condition = FoodBoardCondition.builder()
                 .title(title)

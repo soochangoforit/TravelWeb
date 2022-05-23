@@ -133,15 +133,20 @@
 
 
 
-        <br><br>
-        <form th:action="@{/foods}" method="post" th:object="${condition}">
-            <input type="hidden" th:name="title" th:value="*{title}"/>
-            <input type="hidden" th:name="locationType_Id" th:value="*{locationType_Id}"/>
-            <input type="hidden" th:name="foodType_id" th:value="*{foodType_id}"/>
-            <input type="hidden" th:name="rate" th:value="*{rate}"/>
-
+    <br><br>
+    <!-- 뒤로가기는 실제 페이지로 뒤로 가는것이 아니라 검색조건과 페이지 정보를 가진 상태에서 검색 버튼으로 들어가야 한다.-->
+    <!--post 방식이라서  body에 검색 조건과 페이지 정보를 넣을 수 있었다.-->
+    <form th:action="@{/foods}" method="post" >
+            <div th:object="${condition}">
+                <input type="hidden" th:name="title" th:value="*{title}"/>
+                <input type="hidden" th:name="locationType_Id" th:value="*{locationType_Id}"/>
+                <input type="hidden" th:name="foodType_id" th:value="*{foodType_id}"/>
+                <input type="hidden" th:name="rate" th:value="*{rate}"/>
+            </div>
+            <div>
+                <input type="hidden" th:name="page" th:value="${page}"/>
+            </div>
         <button type="submit">뒤로가기</button>
-
     </form>
 
 </div>

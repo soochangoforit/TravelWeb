@@ -59,7 +59,7 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
         return foodType_Id == null ? null : foodBoard.foodType.id.eq(foodType_Id);
     }
     private OrderSpecifier  rate(Integer rate) {
-        return rate == 0 ? new OrderSpecifier(Order.ASC, foodBoard.id) : new OrderSpecifier(Order.DESC, foodBoard.rate);
+        return rate == null ? new OrderSpecifier(Order.ASC, foodBoard.id) : new OrderSpecifier(Order.DESC, foodBoard.rate);
     }
 
 
