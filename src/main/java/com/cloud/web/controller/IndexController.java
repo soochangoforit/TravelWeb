@@ -1,5 +1,6 @@
 package com.cloud.web.controller;
 
+import com.cloud.web.config.auth.PrincipalDetails;
 import com.cloud.web.dto.request.UserJoinRequest;
 import com.cloud.web.dto.response.UserResponse;
 import com.cloud.web.service.UserService;
@@ -7,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -78,11 +80,26 @@ public class IndexController {
      * 행사 게시글 첫 페이지 url
      * @return 행사 게시글 페이지 반환
      */
-    @GetMapping(value = "/festivals")
+    @GetMapping(value = "/access/denined")
     public String accesied(){
-        return "festivals";
+        return "accessDenined";
     }
 
+
+    /**
+     * main 페이지에서 관리자 페이지 버튼 클릭시 들어가는 URL
+     */
+    @GetMapping("/adminPage")
+    public String adminPage(Model model,Authentication authentication){
+
+        // 사용자의 정보를 출력한다.
+        PrincipalDetails userDetails = (PrincipalDetails) authentication.getPrincipal();
+        UserResponse user = userService.findUserById(userDetails.getUser().getDb_id());
+
+        model.addAttribute("user" , user);
+
+        return "myPage/adminPage"; // 관리자 페이지.html로 넘어간다.
+    }
 
 
 
@@ -92,15 +109,6 @@ public class IndexController {
 
 
 
-
-    /**
-     * Admin 사용자가 행사 등록하기 위한 url
-     * @return 행사 등록 중간 페이지 (등록 대기 중엔 행사 목록 반환)
-     */
-    @GetMapping(value = "/admin/festival/save")
-    public @ResponseBody String post(){
-        return "행사 등록을 위한 페이지 입니다.";
-    }
 
 
     @GetMapping("/user")

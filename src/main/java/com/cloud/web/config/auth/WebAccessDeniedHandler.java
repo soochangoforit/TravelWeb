@@ -42,9 +42,10 @@ public class WebAccessDeniedHandler implements AccessDeniedHandler {
         if(ade instanceof AccessDeniedException){
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-            if(authentication != null ){ // user 인 사용자가 festivals POST 요청 함으로써 행사 등록을 원할때!!
+            // user인 사용자가 main 페이지에 있는 관리자 페이지에 접근하고자 할때 "/adminPage"로 접근하고자 할때 "/"으로 돌려보낸다.
+            if(authentication != null ){
                 req.setAttribute("msg","접근 권한 없는 사용자입니다.");
-                req.setAttribute("nextPage","/festivals"); // 권한이 없는 사용자가 행사 등록 원할시, 축제 게시글 전체 목록으로 리다이렉트
+                req.setAttribute("nextPage","/"); // 권한이 없는 사용자가 행사 등록 원할시, 축제 게시글 전체 목록으로 리다이렉트
             }
 
             /* spring security가 먼저 로그인 인증조차 하지 않는 요청에서 가로채간다. 그래서 주석처리 2022/05/13
@@ -57,6 +58,6 @@ public class WebAccessDeniedHandler implements AccessDeniedHandler {
             */
         }
         //req.getRequestDispatcher("/err/denied-page").forward(req,res); // /err/denied-page 경로로 req와 res 담아서 보낸다.
-        req.getRequestDispatcher("/festivals").forward(req,res);
+        req.getRequestDispatcher("/access/denined").forward(req,res);
     }
 }

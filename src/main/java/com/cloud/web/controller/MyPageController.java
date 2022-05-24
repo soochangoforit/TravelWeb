@@ -3,6 +3,7 @@ package com.cloud.web.controller;
 
 import com.cloud.web.config.auth.PrincipalDetails;
 import com.cloud.web.domain.*;
+import com.cloud.web.domain.enums.Role;
 import com.cloud.web.dto.request.FoodBoardPostFormDto;
 import com.cloud.web.dto.response.FoodBoardShowDto;
 import com.cloud.web.dto.response.UserResponse;
@@ -54,13 +55,20 @@ public class MyPageController {
         PrincipalDetails userDetails = (PrincipalDetails) authentication.getPrincipal();
         UserResponse user = userService.findUserById(userDetails.getUser().getDb_id());
 
-        // 1. 로그인한 사용자의 정보를 확인할 수 있다.
-        model.addAttribute("user" , user);
+        // if 유저의 권한을 가지고 있을 경우
+        if(user.getRole()== Role.ROLE_USER){
+            // 1. 로그인한 사용자의 정보를 확인할 수 있다.
+            model.addAttribute("user" , user);
 
-        // 2. 자신이 작성한 게시글의 목록을 확인 할 수 있다.
-        model.addAttribute("foodBoards", user.getFoodBoardList());
-
-        return "myPage/info";
+            // 2. 자신이 작성한 게시글의 목록을 확인 할 수 있다.
+            model.addAttribute("foodBoards", user.getFoodBoardList());
+            return "myPage/info"; //user 전용 마이 페이지 이동
+        }
+        // else 관리자 권한을 가지고 있는 경우
+        else{
+            model.addAttribute("user" , user);
+            return "myPage/adminPage"; //admin 전용 마이페이지 이동
+        }
     }
 
 
