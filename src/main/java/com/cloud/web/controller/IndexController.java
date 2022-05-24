@@ -90,15 +90,9 @@ public class IndexController {
      * main 페이지에서 관리자 페이지 버튼 클릭시 들어가는 URL
      */
     @GetMapping("/adminPage")
-    public String adminPage(Model model,Authentication authentication){
+    public String adminPage(){
 
-        // 사용자의 정보를 출력한다.
-        PrincipalDetails userDetails = (PrincipalDetails) authentication.getPrincipal();
-        UserResponse user = userService.findUserById(userDetails.getUser().getDb_id());
-
-        model.addAttribute("user" , user);
-
-        return "myPage/adminPage"; // 관리자 페이지.html로 넘어간다.
+        return "redirect:/myPage";
     }
 
 
