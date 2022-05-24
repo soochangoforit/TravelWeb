@@ -100,15 +100,11 @@ public class FoodController {
         model.addAttribute("locationTypeList", locationTypeList); // 검색 조건으로 사용하기 위해서
         model.addAttribute("foodBoards", foodBoards);   // 검색된 결과가 들어간다.
 
-        //todo: 주석
-        //model.addAttribute("condition" , new FoodBoardCondition()); // post를 통해서 새로운 검색을 하더라도 또 다른 검색이 가능하기 위해서 인스턴스 제공
-
 
         model.addAttribute("startPage",startPage);
         model.addAttribute("endPage",endPage);
 
         model.addAttribute("condition", condition); //  앞전에 검색한 조건을 그대로 model에 넣어준다.
-
 
         return "foodBoard/list"; // 최초의 맛집 게시글 화면으로 이동한다.
     }
@@ -151,7 +147,8 @@ public class FoodController {
 
         // id에 해당하는 맛집 게시글의 댓글 목록 가져온다.
         // FoodBoard 안에 List로 Cmts를 가지고 있어서 getFoodCmts로 굳이 cmtsRepository를 가져오지 않더라도 가능했다.
-        List<FoodCmt> foodCmts = foodBoardRepository.findById(id).get().getFoodCmts();
+        // 일대다 양방향 연관관계에 의해서 가능했다.
+        List<FoodCmt> foodCmts = foodBoardService.showFoodCmts(id);
 
         model.addAttribute("foodBoard" , foodBoard); // id로 게시글 조회시 나타나는 게시글 정보를 담고 있다.
         model.addAttribute("foodCmtDto", new FoodCmtDto()); // 해당 id 게시글에서 댓글 작성하기 위한 Dto ( String 데이터 형태인 cmt만 가지고 있다. )

@@ -104,7 +104,6 @@ public class MyPageController {
      * @return redirect: /myPage/foods/{id} 로 가서 수정한 내역을 확인할 수 있도록 넘어간다.
      */
     @PutMapping("/myPage/foods/{id}")
-    @Transactional
     public String updateFoodBoard(@PathVariable Long id, @ModelAttribute FoodBoardPostFormDto  foodBoardPostFormDto ,
                                   Authentication authentication) throws IOException {
 
@@ -112,9 +111,7 @@ public class MyPageController {
         PrincipalDetails userDetails = (PrincipalDetails) authentication.getPrincipal();
         User user = userRepository.findById(userDetails.getUser().getDb_id()).orElse(null);
 
-        FoodBoard updated = foodBoardService.update(id, user, foodBoardPostFormDto);
-
-        FoodBoard saved = foodBoardRepository.save(updated);
+        foodBoardService.update(id, user, foodBoardPostFormDto);
 
         String aa = String.valueOf(id);
 
@@ -128,7 +125,7 @@ public class MyPageController {
      * @return myPage 반환
      */
     @DeleteMapping("/myPage/foods/{id}")
-    @Transactional
+    @Transactional // service에서 따로 정의하지 않고 사용하기 때문에 Transactional을 붙여줘야 한다.
     public String deleteBoard(@PathVariable("id") Long id){
 
         foodBoardRepository.deleteById(id);

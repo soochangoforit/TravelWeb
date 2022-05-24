@@ -12,6 +12,7 @@ import com.cloud.web.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.util.List;
 
 @Slf4j
 @Service
+@Transactional(readOnly = true)
 public class FoodBoardService {
 
 
@@ -66,6 +68,7 @@ public class FoodBoardService {
      *     날것의 2개 Mul Class Type을 1개의 Attachment Type List으로 바꿔준다. - 첫줄
      *
       */
+    @Transactional
     public FoodBoard post(FoodBoardPostDto boardPostDto) throws IOException {
 
         List<Attachment> attachments = attachmentServiceImpl.saveAttachments(boardPostDto.getAttachmentFiles());
@@ -138,6 +141,7 @@ public class FoodBoardService {
 
 
 
+    @Transactional
     public void saveFoodCmt(Long user_db_id, Long id, FoodCmtDto foodCmtDto){
 
         // 로그인 사용자 중 누가 작성했는지 알기 위해서 해당 Entity 객체를 FoodCmt에 넣기 위해서 필요
@@ -164,7 +168,8 @@ public class FoodBoardService {
 
 
 
-    public FoodBoard update(Long id, User user, FoodBoardPostFormDto foodBoardPostFormDto) throws IOException {
+    @Transactional
+    public void update(Long id, User user, FoodBoardPostFormDto foodBoardPostFormDto) throws IOException {
 
         // JPA의 더티 채킹을 활용하기 위해 entity를 영속성 컨텍스트에 관리 되도록 한다.
         FoodBoard foodBoard = foodBoardRepository.findById(id).orElse(null);
@@ -188,12 +193,17 @@ public class FoodBoardService {
                 , foodBoardPostFormDto.getPreview(), foodBoardPostFormDto.getAddress(), foodBoardPostFormDto.getInfo()
                 , foodBoardPostFormDto.getRate(), attachments);
 
+        FoodBoard saved = foodBoardRepository.save(changed);
 
-        return changed;
     }
 
 
+    public List<FoodCmt> showFoodCmts(Long id){
 
+        List<FoodCmt> foodCmts = foodBoardRepository.findById(id).get().getFoodCmts();
+
+        return foodCmts;
+    }
 
 
 }
