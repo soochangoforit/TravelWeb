@@ -169,7 +169,7 @@ public class FoodController {
      *  @param authentication  : 해당 게시글에서 어떤 로그인한 사용자가 댓글을 달았는지 알기 위해서 Authentication 를 사용한다.
      *  @return 댓글을 확인하기 위해 상세 food 게시글로 이동한다.
      */
-    @Secured("ROLE_USER")
+    @Secured({"ROLE_USER" , "ROLE_ADMIN"})
     @PostMapping("/foods/{id}")
     public String write_FoodBoard_Cmt(@PathVariable Long id, @ModelAttribute FoodCmtDto foodCmtDto , Authentication authentication){
 

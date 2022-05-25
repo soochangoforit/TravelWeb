@@ -37,11 +37,8 @@ public class MyPageController {
     @Autowired
     private LocationTypeRepository locationTypeRepository;
     @Autowired
-    private AttachmentServiceImpl attachmentServiceImpl;
-    @Autowired
-    private AttachmentRepository attachmentRepository;
-    @Autowired
-    private FileStore fileStore;
+    private FoodCmtRepository foodCmtRepository;
+
 
 
     /**
@@ -66,7 +63,10 @@ public class MyPageController {
         }
         // else 관리자 권한을 가지고 있는 경우
         else{
-            model.addAttribute("user" , user);
+            model.addAttribute("user" , user); // user에 관리자 정보가 들어간다.
+            List<FoodBoard> foodBoards = foodBoardRepository.findAll(); // 모든 게시글 정보 보여준다.
+            model.addAttribute("foodBoards", foodBoards);
+
             return "myPage/adminPage"; //admin 전용 마이페이지 이동
         }
     }
@@ -87,12 +87,18 @@ public class MyPageController {
         // 수정할 폼에 해당 게시글이 가지고 있던 원래 데이터를 담아서 넘겨준다.
         FoodBoardPostFormDto foodBoardPostFormDto = foodBoardService.showUpdateFormById(id);
 
+        // 수정 폼에서도 User는 댓글의 목록을 확인할 수 있다.
+        List<FoodCmt> foodCmts = foodBoardRepository.findById(id).get().getFoodCmts();
+
         // 맛집 유형과 위치 정보를 가져온다.
         List<FoodType> foodTypeList = foodTypeRepository.findAll();
         List<LocationType> locationTypeList = locationTypeRepository.findAll();
 
         // 수정 하고자 하는 게시글에 데이터를 뿌려준다.
         model.addAttribute("foodBoardPostFormDto" , foodBoardPostFormDto);
+
+        // 수정하고자 하는 폼에서도 foodCmts를 확인할 수 있다.
+        model.addAttribute("foodCmts" , foodCmts);
 
         // 등록된 게시물이 가지는 사진을 볼 수 있다.
         model.addAttribute("attachedFiles", attachedFiles);
@@ -155,6 +161,23 @@ public class MyPageController {
 
         return "redirect:/logout";
     }
+
+
+    /**
+     * 관리자가 특정 게시물에 접근하고, 해당 게시글의 특정 댓글을 삭제하고자 할때 들어오는 URL
+     */
+    @DeleteMapping("/myPage/foods/cmt/{id}")
+    @Transactional
+    public String deleteCmt(@PathVariable Long id , @RequestParam("board") Long boardId){
+
+        foodCmtRepository.deleteById(id);
+
+        String aa = String.valueOf(boardId);
+
+        return "redirect:/myPage/foods/" + aa;
+    }
+
+
 
 
 }

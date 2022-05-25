@@ -96,21 +96,70 @@
                     </div>
                 </div>
 
-                <input type="submit" class="btn btn-primary" th:value="수정" />
+                <div th:if="${session.user.role.getAuthority()}  == 'ROLE_USER' ">
+                    <input type="submit" class="btn btn-primary" th:value="게시글수정" />
+                </div>
 
             </form>
-
     </div>
+
+
+                <!--관라자 페이지에서는 해당 게시물에 달린 댓글도 확인할 수 있다. -->
+    <div class="container">
+                <br><br>
+                <table class="table">
+                    <p>해당 게시글 댓글 목록</p>
+                    <thead>
+                    <tr>
+                        <th scope="col">번호</th>
+                        <th scope="col">댓글 내용</th>
+                        <th scope="col">작성자 (닉네임)</th>
+                        <th scope="col" >
+                            <div th:if="${session.user.role.getAuthority()}  == 'ROLE_ADMIN' ">삭제 여부</div>
+                        </th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="cmts ,i : ${foodCmts}">
+                        <th th:text="${i.count}"></th>
+                        <th th:text="${cmts.foodCmt}"></th>
+                        <th th:text="${cmts.user.nickname}"></th>
+                        <th>
+                            <!--admin만 삭제하기 버튼이 나타난다. -->
+                            <div th:if="${session.user.role.getAuthority()}  == 'ROLE_ADMIN' ">
+                                <form th:action="@{/myPage/foods/cmt/{id}(id=${cmts.id})}" th:method="post">
+                                    <input type="hidden" name="_method" value="delete"/>
+                                    <input type="hidden" id="board" name="board" th:value="${id}"/>
+                                    <button type="submit">삭제하기</button>
+                                </form>
+                            </div>
+                        </th>
+
+                    </tr>
+
+                </table>
+
+                <br><br><br>
+    </div>
+            <!-- 관리자는 댓글 삭제가 가능하다 구현 --- 끝 ----->
+
+
 
     <p>----------------------------------------------------------------------------------</p>
 
         <!-- 수정하기 버튼, 삭제하기 , 뒤로가기 버튼 필요-->
     <br><br>
 
-    <form id="delete-form" th:action="@{/myPage/foods/{id}(id=${id})}" method="post">
-        <input type="hidden" name="_method" value="delete"/>
-        <button id="delete-btn">삭제</button>
-    </form>
+    <div>
+        <form id="delete-form" th:action="@{/myPage/foods/{id}(id=${id})}" method="post">
+            <input type="hidden" name="_method" value="delete"/>
+            <button id="delete-btn">게시물삭제</button>
+        </form>
+    </div>
+
 
     <a type="button" class="btn btn-primary" th:href="@{/myPage}">뒤로가기</a>
 

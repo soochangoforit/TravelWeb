@@ -54,7 +54,8 @@ public class PrincipalDetails implements UserDetails {
                 .db_id(user.getId())
                 .name(user.getName())
                 .nickname(user.getNickname())
-                .email(user.getEmail()).build();
+                .email(user.getEmail())
+                .role(user.getRoleType()).build();
 
         return userDto;
     }
