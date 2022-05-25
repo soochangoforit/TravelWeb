@@ -60,10 +60,11 @@ public class FoodController {
 
         Page<FoodBoard> foodBoards = foodBoardRepository.findAll(pageable);
 
-        // 현재 페이지로 부터 하단 index바에 몇개까지의 페이지가 표시되게 가능할건지 정하는 코드
-        // 현재 페이지가 10(index 9)페이지이라면 6(index 5)페이지와 14(index 13)페이지가 보이게 한다.
-        int startPage = Math.max( 1, foodBoards.getPageable().getPageNumber() - 4);
-        int endPage = Math.min(foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
+        // 페이징 nav에서 활용하기 위해서 사용된다.
+        int startPage = Math.max( 1 , foodBoards.getPageable().getPageNumber() - 4);
+        int endPage = Math.min( foodBoards.getTotalPages() == 0 ? 1 : foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
+        model.addAttribute("totalPages", foodBoards.getTotalPages() == 0 ? 1 : foodBoards.getTotalPages());
+
 
         List<FoodType> foodTypeList = foodTypeRepository.findAll();
         List<LocationType> locationTypeList = locationTypeRepository.findAll();
@@ -90,8 +91,11 @@ public class FoodController {
 
         Page<FoodBoard> foodBoards = foodBoardRepository.searchPageSimple(condition,pageable);
 
-        int startPage = Math.max( 1, foodBoards.getPageable().getPageNumber() - 4);
-        int endPage = Math.min(foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
+        // 페이징 nav에서 활용하기 위해서 사용된다.
+        int startPage = Math.max( 1 , foodBoards.getPageable().getPageNumber() - 4);
+        int endPage = Math.min( foodBoards.getTotalPages() == 0 ? 1 : foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
+        model.addAttribute("totalPages", foodBoards.getTotalPages() == 0 ? 1 : foodBoards.getTotalPages());
+
 
         List<FoodType> foodTypeList = foodTypeRepository.findAll();
         List<LocationType> locationTypeList = locationTypeRepository.findAll();
