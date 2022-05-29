@@ -30,21 +30,24 @@ import java.util.List;
 @Controller
 public class FoodController {
 
-    @Autowired
     private FoodBoardRepository foodBoardRepository;
-    @Autowired
     private FoodTypeRepository foodTypeRepository;
-    @Autowired
     private LocationTypeRepository locationTypeRepository;
-    @Autowired
     private FoodBoardService foodBoardService;
-    @Autowired
     private UserRepository userRepository;
-
-    @Autowired
     private FileStore fileStore;
 
-
+    @Autowired
+    public FoodController(FoodBoardRepository foodBoardRepository, FoodTypeRepository foodTypeRepository,
+                          LocationTypeRepository locationTypeRepository, FoodBoardService foodBoardService,
+                          UserRepository userRepository, FileStore fileStore) {
+        this.foodBoardRepository = foodBoardRepository;
+        this.foodTypeRepository = foodTypeRepository;
+        this.locationTypeRepository = locationTypeRepository;
+        this.foodBoardService = foodBoardService;
+        this.userRepository = userRepository;
+        this.fileStore = fileStore;
+    }
 
     /**
      * 행사 게시판 배너 클릭시 들어가는 URL controller , 맛집 게시글의 첫 페이지로 들어가기 위한 controller
@@ -52,19 +55,16 @@ public class FoodController {
      *
      * @param  model 맛집 게시글 첫 페이지에 검색 조건에 대한 값을 넣기 위해서 condition 인스턴스 반환
      * @return FoodRepository에서 가져온 결과를 list를 통해서 model에 담는다.
-     *
-     * Pageable은 해당 Controller 요청쪽에서 page번호랑, size를 지정해서 사용할  수 있다.
+     * @author LEE SOO CHAN
 */
     @GetMapping("/foods") // 로그인 -> 행사 게시판
     public String foodBoardList(Model model , @PageableDefault(size = 6) Pageable pageable){
 
         Page<FoodBoard> foodBoards = foodBoardRepository.findAll(pageable);
 
-        // 페이징 nav에서 활용하기 위해서 사용된다.
         int startPage = Math.max( 1 , foodBoards.getPageable().getPageNumber() - 4);
         int endPage = Math.min( foodBoards.getTotalPages() == 0 ? 1 : foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
         model.addAttribute("totalPages", foodBoards.getTotalPages() == 0 ? 1 : foodBoards.getTotalPages());
-
 
         List<FoodType> foodTypeList = foodTypeRepository.findAll();
         List<LocationType> locationTypeList = locationTypeRepository.findAll();
@@ -77,25 +77,27 @@ public class FoodController {
         model.addAttribute("startPage",startPage);
         model.addAttribute("endPage",endPage);
 
-        return "foodBoard/list";
+        return "foodBoard/list"; // 맛집 게시글의 전체 리스트를 보여주는 페이지로 이동
     }
 
 
     /**
      *  맨 처음 /foods로 들어오면 해당 검색 조건에 값을 입력할 수 있도록 인스턴스를 넘겨준다.
-     *  넘겨 받은 인스턴스에 값을 할당하고 "검색"할시 해당 controller로 들어온다.
+     *  넘겨 받은 인스턴스에 값을 할당하고 "검색"시 해당 controller로 들어온다.
      *  검색한 결과에서 상세 보기를 클릭하고 , 뒤로 돌아올시 해당 controller condition에 앞서 검색한 조건이 그대로 담겨진다.
+     *
+     * @param condition 웹에서 온 검색 조건이 바인딩 된다.
+     * @return 검색 조건이 반영된, 맛집 게시글 리스트 목록으로 이동한다
+     * @author LEE SOO CHAN
      */
     @PostMapping("/foods")
     public String foodBoardConditionList(FoodBoardCondition condition , Model model , @PageableDefault(size = 6) Pageable pageable){
 
         Page<FoodBoard> foodBoards = foodBoardRepository.searchPageSimple(condition,pageable);
 
-        // 페이징 nav에서 활용하기 위해서 사용된다.
         int startPage = Math.max( 1 , foodBoards.getPageable().getPageNumber() - 4);
         int endPage = Math.min( foodBoards.getTotalPages() == 0 ? 1 : foodBoards.getTotalPages() , foodBoards.getPageable().getPageNumber() + 4);
         model.addAttribute("totalPages", foodBoards.getTotalPages() == 0 ? 1 : foodBoards.getTotalPages());
-
 
         List<FoodType> foodTypeList = foodTypeRepository.findAll();
         List<LocationType> locationTypeList = locationTypeRepository.findAll();
@@ -110,11 +112,8 @@ public class FoodController {
 
         model.addAttribute("condition", condition); //  앞전에 검색한 조건을 그대로 model에 넣어준다.
 
-        return "foodBoard/list"; // 최초의 맛집 게시글 화면으로 이동한다.
+        return "foodBoard/list";
     }
-
-
-
 
 
     /**
@@ -122,6 +121,8 @@ public class FoodController {
      * url에 검색 조건이 다 달려서 넘어온다.
      * @param id 특정 맛집 게시글의 고유 db_id
      * @param model 상세 페이지에서 댓글을 입력하기 위한 빈 인스턴스를 제공.
+     * @return 특정 맛집 게시글의 상세 페이지로 이동한다.
+     * @author LEE SOO CHAN
      */
     @GetMapping("/foods/{id}")
     public String show_FoodBoard_Result(@PathVariable Long id,
@@ -167,11 +168,14 @@ public class FoodController {
     /**
      *  맛집 게시글 제목을 클릭하면 해당 게시글 상세 페이지로 이동 해서 댓글 작성을 원할때
      *  댓글을 작성하기 위해서 POST 방식으로 들어온다.
+     *  USER 랑 ADMIN 모두 댓글 작성 가능하다.
      *
      *  @param id  : 맛집 게시글의 db_id
      *  @param foodCmtDto: 앞서 상세 게시글을 조회하는 순간 댓글도 입력 받기 위한 FoodCmtDto 인스턴스 객체가 생성되었다.
+     *                   댓글 내용이 담기고 나서 해당 파라미터로 들어온다.
      *  @param authentication  : 해당 게시글에서 어떤 로그인한 사용자가 댓글을 달았는지 알기 위해서 Authentication 를 사용한다.
      *  @return 댓글을 확인하기 위해 상세 food 게시글로 이동한다.
+     *  @author LEE SOO CHAN
      */
     @Secured({"ROLE_USER" , "ROLE_ADMIN"})
     @PostMapping("/foods/{id}")
@@ -186,10 +190,9 @@ public class FoodController {
         // id에 해당하는 foodBoard 게시글에서 작성한 댓글을 저장하기 위한 메서드
         foodBoardService.saveFoodCmt(user_db_id, id, foodCmtDto);
 
-        String aa = String.valueOf(id);
+        String boardId = String.valueOf(id);
 
-        return "redirect:/foods/" + aa;
-
+        return "redirect:/foods/" + boardId; //redirect는 get 방식으로 접근한다.
     }
 
 
@@ -197,8 +200,9 @@ public class FoodController {
     /**
      * 맛집 게시글을 등록하기 위한 form을 가져온다.
      *
-     * @param model 하나의 새로운 게시글을 작성할 필요가 있기 때문에 foodBoard를 작성할 수 있는 인스턴스를 반환
+     * @param model 하나의 새로운 게시글을 작성할 필요가 있기 때문에 foodBoard를 작성할 수 있는 새로운 인스턴스를 반환
      * @return 맛집 게시글 등록 폼으로 이동한다.
+     * @author LEE SOO CHAN
      */
     @GetMapping("/foodForm")
     public String show_FoodForm(Model model){
@@ -221,6 +225,7 @@ public class FoodController {
      * @param foodBoardFormDto 작성하고자 하는 맛집 게시글의 상세 정보를 담고 있다.
      * @param authentication 맛집 게시글을 작성한 사용자의 정보를 session에서 가져온다.
      * @return URL controller로 다시 접근하기 위해서는 redirect 넣어준다. redirect를 넣지 않으면 해당 String으로 된 html 파일을 찾는다.
+     * @author LEE SOO CHAN
      */
     @PostMapping("/foodForm")
     public String save_FoodForm(@ModelAttribute FoodBoardPostFormDto foodBoardFormDto , Authentication authentication) throws IOException {
@@ -242,16 +247,13 @@ public class FoodController {
      * @param filename /images/{파일이름}
      * @return 사진을 찾아주는 url
      * @throws MalformedURLException
+     * @author LEE SOO CHAN
      */
     @ResponseBody
     @GetMapping("/images/{filename}")
     public UrlResource processImg(@PathVariable String filename) throws MalformedURLException {
 
         return new UrlResource("file:" + fileStore.createPath(filename, AttachmentType.IMAGE));
-
     }
-
-
-
 
 }
