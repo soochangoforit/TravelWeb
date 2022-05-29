@@ -58,6 +58,6 @@ public class WebAccessDeniedHandler implements AccessDeniedHandler {
             */
         }
         //req.getRequestDispatcher("/err/denied-page").forward(req,res); // /err/denied-page 경로로 req와 res 담아서 보낸다.
-        req.getRequestDispatcher("/access/denined").forward(req,res);
+        req.getRequestDispatcher("/access/denied").forward(req,res);
     }
 }

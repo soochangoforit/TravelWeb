@@ -1,14 +1,10 @@
 package com.cloud.web.controller;
 
-import com.cloud.web.config.auth.PrincipalDetails;
 import com.cloud.web.dto.request.UserJoinRequest;
 import com.cloud.web.dto.response.UserResponse;
 import com.cloud.web.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -89,7 +85,7 @@ public class IndexController {
      */
     @GetMapping(value = "/access/denied")
     public String acce(){
-        return "accessDenined"; // 접근 권한이 없다는 alert 창이 뜨는 html이다.
+        return "accessDenied"; // 접근 권한이 없다는 alert 창이 뜨는 html이다.
     }
 
 

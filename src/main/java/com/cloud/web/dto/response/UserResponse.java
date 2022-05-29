@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @NoArgsConstructor
-public class UserResponse  implements Serializable {
+public class UserResponse  {
 
     private Long db_id;
     private String name;

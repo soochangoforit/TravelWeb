@@ -59,10 +59,6 @@ public class PrincipalDetailsService implements UserDetailsService {
     @Override // 해당 username은 사용자 고유한 Id 값이다 unique로 설정된!!!
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        log.info("username    " + username);
-
-        //Optional<User> userEntity = userRepository.findByLoginId(username);
-
         User userEntity = userRepository.findByLoginId(username).orElse(null);
 
 
