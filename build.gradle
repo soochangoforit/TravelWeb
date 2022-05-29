@@ -75,6 +75,11 @@ dependencies {
 	//implementation("org.springframework.session:spring-session-jdbc")
 
 
+	// https://github.com/stleary/JSON-java
+	implementation files('libs/json-20220320.jar')
+
+
+
 }
 
 tasks.named('test') {
