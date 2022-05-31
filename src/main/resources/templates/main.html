@@ -15,6 +15,42 @@ here is main Page from "/"
         <a  th:href="@{/login}">로그인 및 회원가입하러 가기</a><br><br>
 
         <a  th:href="@{/adminPage}">관리자 페이지 가기</a><br><br>
+
+
+        <div class="container">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">맛집1줄소개</th>
+                    <th scope="col">작성자 (유저)</th>
+                    <th scope="col">사진</th>
+                    <th scope="col">상세보기 버튼</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="board , i : ${foodBoards}">
+                    <th th:text="${i.count}"></th>
+                    <th th:text="${board.getTitle()}" ></th>
+                    <th th:text="${board.getPreview()}"></th>
+                    <th th:text="${board.getUser().getNickname()}"></th>
+                    <th>
+                        <img th:each="imageFile : ${board.attachedFiles}"
+                             th:src="@{/images/{imageFile}(imageFile=${imageFile.storeFilename})}" width="300" height="300" style="margin-right: 5px"/>
+                    </th>
+                    <th>
+                        <form th:action="@{/foods/{id}(id=${board.id})}"  method="get">
+                            <button type="submit" >상세보기</button>
+                        </form>
+                    </th>
+                </tr>
+            </table>
+        </div>
+
+
+
+
     </div>
 
 
@@ -39,6 +75,8 @@ here is main Page from "/"
         <a href="/logout">
             로그아웃
         </a>
+
+
 
 
     </form>

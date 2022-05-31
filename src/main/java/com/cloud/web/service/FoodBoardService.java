@@ -206,4 +206,11 @@ public class FoodBoardService {
     }
 
 
+    public List<FoodBoard> findByRateDescLimit(int num){
+
+        List<FoodBoard> limitBoards = foodBoardRepository.findByRateDescLimit(num);
+        return limitBoards;
+    }
+
+
 }

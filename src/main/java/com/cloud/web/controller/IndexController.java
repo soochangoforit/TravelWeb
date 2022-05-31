@@ -1,13 +1,18 @@
 package com.cloud.web.controller;
 
+import com.cloud.web.domain.FoodBoard;
 import com.cloud.web.dto.request.UserJoinRequest;
 import com.cloud.web.dto.response.UserResponse;
+import com.cloud.web.repository.FoodBoardRepository;
+import com.cloud.web.service.FoodBoardService;
 import com.cloud.web.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 프로젝트 Main Page에 대한 Controller
@@ -17,10 +22,13 @@ import org.springframework.web.bind.annotation.*;
 public class IndexController {
 
     private final UserService userService;
+    private final FoodBoardService foodBoardService;
 
     @Autowired
-    public IndexController(UserService userService ) {
+    public IndexController(UserService userService , FoodBoardService foodBoardService) {
         this.userService = userService;
+        this.foodBoardService = foodBoardService;
+
     }
 
     /**
@@ -28,6 +36,11 @@ public class IndexController {
      */
     @GetMapping("/")
     public  String index(Model model){
+
+        List<FoodBoard> foodBoards = foodBoardService.findByRateDescLimit(5);
+
+        model.addAttribute("foodBoards", foodBoards);
+
         return "main";
     }
 
