@@ -48,7 +48,10 @@ public class IndexController {
 
         List<FoodBoard> foodBoards = foodBoardService.findByRateDescLimit(5);
 
+        // 맛집 게시글 5개
         model.addAttribute("foodBoards", foodBoards);
+        // 명소 게시글 목록
+        model.addAttribute("attractions" , AttractionService.apiBoards);
 
         return "main";
     }
