@@ -1,9 +1,11 @@
 package com.cloud.web.controller;
 
 import com.cloud.web.domain.FoodBoard;
+import com.cloud.web.dto.api.ApiBoard;
 import com.cloud.web.dto.request.UserJoinRequest;
 import com.cloud.web.dto.response.UserResponse;
 import com.cloud.web.repository.FoodBoardRepository;
+import com.cloud.web.service.AttractionService;
 import com.cloud.web.service.FoodBoardService;
 import com.cloud.web.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 프로젝트 Main Page에 대한 Controller
@@ -23,11 +26,13 @@ public class IndexController {
 
     private final UserService userService;
     private final FoodBoardService foodBoardService;
+    private final AttractionService attractionService;
 
     @Autowired
-    public IndexController(UserService userService , FoodBoardService foodBoardService) {
+    public IndexController(UserService userService , FoodBoardService foodBoardService , AttractionService attractionService) {
         this.userService = userService;
         this.foodBoardService = foodBoardService;
+        this.attractionService = attractionService;
 
     }
 
@@ -36,6 +41,10 @@ public class IndexController {
      */
     @GetMapping("/")
     public  String index(Model model){
+
+        if(AttractionService.apiBoards.size() == 0) {
+            attractionService.callApiWithJson("100", "1");
+        }
 
         List<FoodBoard> foodBoards = foodBoardService.findByRateDescLimit(5);
 
@@ -96,10 +105,10 @@ public class IndexController {
      * @return 행사 게시글 페이지 반환
      * @author LEE SOO CHAN
      */
-    @GetMapping(value = "/access/denied")
-    public String acce(){
-        return "accessDenied"; // 접근 권한이 없다는 alert 창이 뜨는 html이다.
-    }
+//    @GetMapping(value = "/access/denied")
+//    public String acce(){
+//        return "accessDenied"; // 접근 권한이 없다는 alert 창이 뜨는 html이다.
+//    }
 
 
     /**

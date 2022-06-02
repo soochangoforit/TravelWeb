@@ -33,7 +33,7 @@ public class AttractionController {
     public String attractionsPage(Model model ) {
 
         if(AttractionService.apiBoards.size() == 0) {
-            Map<String, List<ApiBoard>> map = attractionService.callApiWithJson("100", "1");
+            attractionService.callApiWithJson("100", "1");
         }
 
         ArrayList<ApiBoard> apiBoards = AttractionService.apiBoards;

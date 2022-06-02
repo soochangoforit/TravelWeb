@@ -166,7 +166,8 @@ public class MyPageController {
      * @return 로그 아웃된 main page 반환
      * @author LEE SOO CHAN
      */
-    @DeleteMapping("/myPage")
+    //@DeleteMapping("/myPage")
+    @GetMapping("/myPage/delete")
     @Transactional
     public String leave(Authentication authentication){
 
