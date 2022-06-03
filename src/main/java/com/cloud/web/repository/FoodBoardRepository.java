@@ -13,6 +13,7 @@ import java.util.List;
 @Repository
 public interface FoodBoardRepository extends JpaRepository<FoodBoard,Long> , FoodBoardRepositoryCustom {
 
+    // main에 갯수 제한으로 뿌려주기 위한 메소드
     @Query(value="SELECT * FROM food_board ORDER BY food_rate DESC LIMIT :num" , nativeQuery = true)
     List<FoodBoard> findByRateDescLimit(@Param("num") int num);
 
