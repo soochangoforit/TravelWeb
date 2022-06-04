@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>여러개 마커 표시하기</title>
+</head>
+<body>
+
+    <div id="map" style="width:100%;height:350px;"></div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=751a94e1764e20659bfca798c8b931f9"></script>
+    <script th:inline="javascript">
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+            mapOption = {
+                center: new kakao.maps.LatLng(35.1605598, 129.0560362), // 지도의 중심좌표
+                level: 10 // 지도의 확대 레벨
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+
+        const attractionList = [[${attractions}]];
+
+        const marker_generated = attractionList.map(attraction => {
+            return {
+                content: `<h7>${attraction.title}</h7> <p>${attraction.subtitle}</p>`,
+                latlng: new kakao.maps.LatLng(attraction.lat, attraction.lng),
+                url: `/attractions/${attraction.uc_seq}`
+            }
+        });
+
+
+        for (var i = 0; i < marker_generated.length; i ++) {
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                position: marker_generated[i].latlng // 마커의 위치
+            });
+
+            // 마커에 표시할 인포윈도우를 생성합니다
+            var infowindow = new kakao.maps.InfoWindow({
+                content: marker_generated[i].content // 인포윈도우에 표시할 내용
+            });
+
+            // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+            // 이벤트 리스너로는 클로저를 만들어 등록합니다
+            // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+            kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+            kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+            kakao.maps.event.addListener(marker, 'click', makeClickListener(marker_generated[i].url));
+        }
+
+        // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
+        function makeOverListener(map, marker, infowindow) {
+            return function() {
+                infowindow.open(map, marker);
+            };
+        }
+
+        // 인포윈도우를 닫는 클로저를 만드는 함수입니다
+        function makeOutListener(infowindow) {
+            return function() {
+                infowindow.close();
+            };
+        }
+
+        // 클릭 시 화면을 이동시키는 클로저를 만드는 함수입니다
+        function makeClickListener(url) {
+            return function() {
+                location.href = `${url}?condition=`;
+            };
+        }
+
+    </script>
+
+
+</body>
+</html>
+

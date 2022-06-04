@@ -56,6 +56,17 @@ public class IndexController {
         return "main";
     }
 
+    /**
+     *  main 페이지에서 map 접근
+     */
+    @GetMapping("/map")
+    public  String map(Model model){
+
+        model.addAttribute("attractions", AttractionService.apiBoards);
+
+        return "map/map";
+    }
+
 
     /**
      * 로그인 url
