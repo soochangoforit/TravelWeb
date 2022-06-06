@@ -125,10 +125,17 @@ public class FoodBoardService {
 
         FoodBoard entity = foodBoardRepository.findById(id).get();
 
+        String entityAddress = entity.getAddress(); // 부산 해운대구 / 삼시식당
+
+        String address = entityAddress.substring(0, entityAddress.lastIndexOf("/") - 1);
+        String addressDetail = entityAddress.substring(entityAddress.lastIndexOf("/") + 2);
+
+
         FoodBoardPostFormDto foodBoardPostFormDto = FoodBoardPostFormDto.builder()
                 .title(entity.getTitle())
                 .preview(entity.getPreview())
-                .address(entity.getAddress())
+                .address(address)
+                .addressDetail(addressDetail)
                 .info(entity.getInfo())
                 .rate(entity.getRate())
                 .locationType(entity.getLocationType())
@@ -190,7 +197,7 @@ public class FoodBoardService {
 
         FoodBoard changed = foodBoard.changeToEntity(id
                 , user, foodBoardPostFormDto.getLocationType(), foodBoardPostFormDto.getFoodType(), foodBoardPostFormDto.getTitle()
-                , foodBoardPostFormDto.getPreview(), foodBoardPostFormDto.getAddress(), foodBoardPostFormDto.getInfo()
+                , foodBoardPostFormDto.getPreview(), foodBoardPostFormDto.getAddress() + " / " + foodBoardPostFormDto.getAddressDetail(), foodBoardPostFormDto.getInfo()
                 , foodBoardPostFormDto.getRate(), attachments);
 
         FoodBoard saved = foodBoardRepository.save(changed);

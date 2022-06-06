@@ -40,6 +40,7 @@ public class FoodBoardPostFormDto extends BaseTimeEntity {
     private String title;
     private String preview;
     private String address;
+    private String addressDetail;
     private String info;
     private double rate;
 
@@ -78,14 +79,16 @@ public class FoodBoardPostFormDto extends BaseTimeEntity {
      *  바인딩의 목적으로 만들어졌다.
      */
     @Builder
-    public FoodBoardPostFormDto(LocationType locationType, FoodType foodType, String title, String preview, String address,
-                                String info, double rate, List<MultipartFile> imageFiles ) {
+    public FoodBoardPostFormDto(LocationType locationType, FoodType foodType, String title, String preview,
+                                String address, String addressDetail, String info,
+                                double rate, List<MultipartFile> imageFiles ) {
 
         this.locationType = locationType;
         this.foodType = foodType;
         this.title = title;
         this.preview = preview;
         this.address = address;
+        this.addressDetail = addressDetail;
         this.info = info;
         this.rate = rate;
         this.imageFiles = (imageFiles != null) ? imageFiles : new ArrayList<>() ;
@@ -117,7 +120,7 @@ public class FoodBoardPostFormDto extends BaseTimeEntity {
                 .foodType(foodType)
                 .title(title)
                 .preview(preview)
-                .address(address)
+                .address(address + " / " + addressDetail)
                 .info(info)
                 .rate(rate)
                 .attachmentFiles(attachments)
