@@ -34,23 +34,22 @@
         <div class="container bootstrap snippets bootdey" >
 
             <div class="row" >
+
+
+
                 <div class="col-md-6">
                     <div class="pro-img-details" >
-                        <!--                        <img src="https://via.placeholder.com/550x380/FFB6C1/000000" alt="">-->
                         <img th:each="imageFile : ${foodBoard.attachedFiles}"
-                             th:src="@{/images/{imageFile}(imageFile=${imageFile.storeFilename})}"  height="250px" width="400px" style="margin-right: 5px"/>
+                             th:src="@{/images/{imageFile}(imageFile=${imageFile.storeFilename})}"  height="250px" width="400px"
+                               style="margin-right: 5px; margin-bottom:10px;"/>
                     </div>
                 </div>
+
 
                 <div class="col-sm-6 push-bit" style="padding: 10px;">
                     <div class="clearfix" th:object="${foodBoard}"  enctype="multipart/form-data" >
                         <span class="badge bg-warning text-dark" th:text="*{locationType.getType()}"></span>
                         <span class="badge bg-info text-dark" th:text="|*{foodType.getType()}|"></span>
-
-<!--                        <span class="dd">-->
-<!--                                                    <span class="t2" th:text="${board.getUser().getNickname()}"></span>-->
-<!--                                                </span>-->
-<!--                        </br>-->
 
                         <span class="h4" style="padding-top: 10px" >
                             <h3  class="text-success" th:text="*{title}">맛집 제목</h3><br />
