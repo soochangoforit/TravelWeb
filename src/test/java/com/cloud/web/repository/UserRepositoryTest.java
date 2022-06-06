@@ -45,10 +45,6 @@ public class UserRepositoryTest {
     @Autowired
     private FoodCmtRepository foodCmtRepository;
     @Autowired
-    private FestivalBoardRepository festivalBoardRepository;
-    @Autowired
-    private FestivalCmtRepository festivalCmtRepository;
-    @Autowired
     private EntityManager em;
 
 
@@ -97,21 +93,6 @@ public class UserRepositoryTest {
 
    }
 
-   @Test
-   public void user_Update_success() throws Exception {
-       //given
-       Optional<User> searched = userRepository.findById(1L);
-
-       //when
-       searched.get().setName("이수찬2"); // dirty check (변경 감지)를 통해서 update
-
-       //then
-       Optional<User> searched2 = userRepository.findById(1L);
-       assertThat(searched2.get().getName()).isEqualTo("이수찬2"); // 실제 DB에서도 이수찬2로 이름이 변경된것을 확인 가능
-
-   }
-
-
     @Test
     public void loginId_unique_check_success() throws Exception {
         //given
@@ -122,35 +103,5 @@ public class UserRepositoryTest {
         assertThatThrownBy(() -> userRepository.save(user) )
                 .isInstanceOf(DataIntegrityViolationException.class);
      }
-
-
-     @Test
-     public void 회원을_삭제할때_회원이_작성한_모든하위데이터_삭제_확인() throws Exception {
-         //given
-
-         //when
-         userRepository.deleteById(1L);
-
-         em.flush(); // flush를 해주는 이유. Db에 바로 반영을 해주기 위해서
-
-         List<FoodBoard> all = foodBoardRepository.findAll();
-         List<FoodCmt> all1 = foodCmtRepository.findAll();
-         List<FestivalBoard> all2 = festivalBoardRepository.findAll();
-         List<FestivalCmt> all3 = festivalCmtRepository.findAll();
-
-         //then
-         assertThat(all.size()).isEqualTo(3);
-         assertThat(all1.size()).isEqualTo(3);
-         assertThat(all2.size()).isEqualTo(3);
-         assertThat(all3.size()).isEqualTo(3);
-
-
-
-      }
-
-
-
-
-
 
 }

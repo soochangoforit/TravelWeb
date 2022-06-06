@@ -183,7 +183,7 @@ public class AttractionService {
                 String uc_seq = String.valueOf(item.getInt("UC_SEQ"));
                 String main_title = item.getString("MAIN_TITLE");
                 String gugun_nm = item.getString("GUGUN_NM");
-                String lat = String.valueOf(item.getDouble("LAT")); // todo : getDouble로 변경
+                String lat = String.valueOf(item.getDouble("LAT"));
                 String lng = String.valueOf(item.getDouble("LNG"));
                 String place = item.getString("PLACE");
                 String title = item.getString("TITLE");

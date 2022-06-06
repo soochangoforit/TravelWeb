@@ -1,5 +1,6 @@
 package com.cloud.web.config.auth;
 
+import com.cloud.web.domain.User;
 import org.apache.logging.log4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
@@ -7,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -43,22 +45,12 @@ public class WebAccessDeniedHandler implements AccessDeniedHandler {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
             // user인 사용자가 main 페이지에 있는 관리자 페이지에 접근하고자 할때 "/adminPage"로 접근하고자 할때 "/"으로 돌려보낸다.
-            if(authentication != null ){
+            if(authentication != null && ((PrincipalDetails)authentication.getPrincipal()).getUser().getRole().getAuthority().equals("ROLE_USER")){
                 req.setAttribute("msg","접근 권한 없는 사용자입니다.");
                 req.setAttribute("nextPage","/"); // 권한이 없는 사용자가 행사 등록 원할시, 축제 게시글 전체 목록으로 리다이렉트
             }
 
-            /* spring security가 먼저 로그인 인증조차 하지 않는 요청에서 가로채간다. 그래서 주석처리 2022/05/13
-            else { // 로그인 조차 X
-                req.setAttribute("msg","로그인이 필요한 페이지 입니다.");
-                req.setAttribute("nextPage","/login"); // 로그인 폼으로
-                res.setStatus(HttpStatus.UNAUTHORIZED.value());
-                SecurityContextHolder.clearContext();
-            }
-            */
         }
-        //req.getRequestDispatcher("/err/denied-page").forward(req,res); // /err/denied-page 경로로 req와 res 담아서 보낸다.
-        //req.getRequestDispatcher("/access/denied").forward(req,res);
         req.getRequestDispatcher("/login").forward(req,res);
     }
 }

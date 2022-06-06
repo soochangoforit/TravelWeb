@@ -4,7 +4,6 @@ import com.cloud.web.domain.FoodBoard;
 import com.cloud.web.dto.api.ApiBoard;
 import com.cloud.web.dto.request.UserJoinRequest;
 import com.cloud.web.dto.response.UserResponse;
-import com.cloud.web.repository.FoodBoardRepository;
 import com.cloud.web.service.AttractionService;
 import com.cloud.web.service.FoodBoardService;
 import com.cloud.web.service.UserService;
@@ -12,10 +11,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 프로젝트 Main Page에 대한 Controller
@@ -46,14 +47,20 @@ public class IndexController {
             attractionService.callApiWithJson("100", "1");
         }
 
-        List<FoodBoard> foodBoards = foodBoardService.findByRateDescLimit(5);
+        List<FoodBoard> foodBoards = foodBoardService.findByRateDescLimit(6);
 
         // 맛집 게시글 5개
-        model.addAttribute("foodBoards", foodBoards);
-        // 명소 게시글 목록
-        model.addAttribute("attractions" , AttractionService.apiBoards);
+        model.addAttribute("foodBoards", foodBoards); // map ( key - value )
 
-        return "main";
+        ArrayList<ApiBoard> attractions = new ArrayList<>();
+        for(int i = 0; i < 5 ; i++){
+            attractions.add(AttractionService.apiBoards.get(i));
+        }
+
+        // 명소 게시글 목록
+        model.addAttribute("attractions" , attractions);
+
+        return "main"; //  main.html (빈 페이지)
     }
 
     /**
@@ -114,18 +121,6 @@ public class IndexController {
 
 
     /**
-     * Main에 있는 관리자 페이지 가기 버튼을 ADMIN이 아닌 다른 사용자가 접근 했을때
-     * 접근 권한 Error가 해당 controller로 들어온다.
-     * @return 행사 게시글 페이지 반환
-     * @author LEE SOO CHAN
-     */
-//    @GetMapping(value = "/access/denied")
-//    public String acce(){
-//        return "accessDenied"; // 접근 권한이 없다는 alert 창이 뜨는 html이다.
-//    }
-
-
-    /**
      * main 페이지에서 관리자 페이지 버튼 클릭시 들어가는 URL
      * @return 다시 /myPage로 redirect 한다.
      * @author LEE SOO CHAN
@@ -135,29 +130,6 @@ public class IndexController {
 
         return "redirect:/myPage";
     }
-
-
-
-/*
-
-    @GetMapping("/user")
-    public @ResponseBody String aproveUser(){
-        return "로그인 까지 성공후 User 권한을 가진 사용자가 / 경로가 아닌 /user 경로로 자동으로 접근되었습니다.";
-    }
-
-    // 특정 메서드에 간단하게 걸고 싶으면 이렇게 하면 된다.
-    @Secured("ROLE_ADMIN") // 해당 controller 위에 선언하면, ADMIN 권한만 가진 사용자만 접근 가능하다. 비록 security config에서 설정에서 제외를 해줬지만!!
-    @GetMapping("/info")
-    public @ResponseBody String info(){
-        return "admin 권한 개인정보";
-    }
-
-    @PreAuthorize("hasRole('ROLE_ADMIN')") // dataPage 메소드가 실행 되기 전에 실행된다. 저런 문법(hasRole('~') 아래에서만 사용이 가능하다. 하나로만 걸고 싶으면 @Secured만 사용해도 괜찮다.
-    @GetMapping("/data")
-    public @ResponseBody String dataPage(){
-        return "admin 권한 데이터 정보";
-    }
-*/
 
 
 }

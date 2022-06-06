@@ -59,9 +59,6 @@ public class LoginSuccessHandler  implements AuthenticationSuccessHandler {
         // 로그인 실패하더라도 다시 로그인 성공하면 해당 실패 session 삭제하는 method
         clearAuthenticationAttributes(request);
 
-        //response.sendRedirect("/");
-        // 일반 로그인 하면 다시 main으로 돌아가는건 맞지만, user 권한이 필요한 시점에서
-        // 접근할때 로그인 하면 해당 위치에서 계속 작업을 이어갈 수 있는게 아니라 다시 main으로 돌아오게 된다.
 
     }
 
@@ -81,6 +78,7 @@ public class LoginSuccessHandler  implements AuthenticationSuccessHandler {
 
         SavedRequest savedRequest = requestCache.getRequest(request, response);
 
+        // 로그인 권한 문제로 /login으로 들어왔을 경우, 해당 주소를 기억하고 , 성공하면 해당 주소로 다시 Redirect
         if(savedRequest!=null) {
             String targetUrl = savedRequest.getRedirectUrl();
             redirectStratgy.sendRedirect(request, response, targetUrl);
