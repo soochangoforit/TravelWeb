@@ -1,79 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>여러개 마커 표시하기</title>
+    <div th:replace="./fragments/header.html :: fragment-header"></div>
 </head>
 <body>
-
-    <div id="map" style="width:100%;height:350px;"></div>
-
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=751a94e1764e20659bfca798c8b931f9"></script>
-    <script th:inline="javascript">
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-            mapOption = {
-                center: new kakao.maps.LatLng(35.1605598, 129.0560362), // 지도의 중심좌표
-                level: 10 // 지도의 확대 레벨
-            };
-
-        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+<!-- Spinner Start -->
+<div th:replace="./fragments/spinner.html :: fragment-spinner"></div>
+<!-- Spinner End -->
 
 
-        const attractionList = [[${attractions}]];
+<!-- Topbar Start -->
+<div th:replace="./fragments/topbar.html :: fragment-topbar"></div>
+<!-- Topbar End -->
 
-        const marker_generated = attractionList.map(attraction => {
-            return {
-                content: `<h7>${attraction.title}</h7> <p>${attraction.subtitle}</p>`,
-                latlng: new kakao.maps.LatLng(attraction.lat, attraction.lng),
-                url: `/attractions/${attraction.uc_seq}`
-            }
+
+<!-- Navbar Start -->
+<div th:replace="./fragments/nav.html :: fragment-nav"></div>
+<!-- Navbar End -->
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h6 class="text-primary">부산 명소 소개</h6>
+            <h1 class="mb-4">부산의 명소 소개</h1>
+        </div>
+<div id="map" style="width:100%;height:350px;"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=751a94e1764e20659bfca798c8b931f9"></script>
+<script th:inline="javascript">
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(35.1605598, 129.0560362), // 지도의 중심좌표
+            level: 10 // 지도의 확대 레벨
+        };
+
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+
+    const attractionList = [[${attractions}]];
+
+    const marker_generated = attractionList.map(attraction => {
+        return {
+            content: `<div style="height: 80px;"><b style="margin: 2px" >${attraction.title}</b><br><p style="font-size: 4px">${attraction.subtitle}</p></div>`,
+            latlng: new kakao.maps.LatLng(attraction.lat, attraction.lng),
+            url: `/attractions/${attraction.uc_seq}`
+        }
+    });
+
+
+    for (var i = 0; i < marker_generated.length; i ++) {
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: marker_generated[i].latlng // 마커의 위치
         });
 
+        // 마커에 표시할 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: marker_generated[i].content // 인포윈도우에 표시할 내용
+        });
 
-        for (var i = 0; i < marker_generated.length; i ++) {
-            // 마커를 생성합니다
-            var marker = new kakao.maps.Marker({
-                map: map, // 마커를 표시할 지도
-                position: marker_generated[i].latlng // 마커의 위치
-            });
+        // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+        // 이벤트 리스너로는 클로저를 만들어 등록합니다
+        // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+        kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+        kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+        kakao.maps.event.addListener(marker, 'click', makeClickListener(marker_generated[i].url));
+    }
 
-            // 마커에 표시할 인포윈도우를 생성합니다
-            var infowindow = new kakao.maps.InfoWindow({
-                content: marker_generated[i].content // 인포윈도우에 표시할 내용
-            });
+    // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
+    function makeOverListener(map, marker, infowindow) {
+        return function() {
+            infowindow.open(map, marker);
+        };
+    }
 
-            // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
-            // 이벤트 리스너로는 클로저를 만들어 등록합니다
-            // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-            kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-            kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-            kakao.maps.event.addListener(marker, 'click', makeClickListener(marker_generated[i].url));
-        }
+    // 인포윈도우를 닫는 클로저를 만드는 함수입니다
+    function makeOutListener(infowindow) {
+        return function() {
+            infowindow.close();
+        };
+    }
 
-        // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
-        function makeOverListener(map, marker, infowindow) {
-            return function() {
-                infowindow.open(map, marker);
-            };
-        }
+    // 클릭 시 화면을 이동시키는 클로저를 만드는 함수입니다
+    function makeClickListener(url) {
+        return function() {
+            location.href = `${url}?condition=`;
+        };
+    }
 
-        // 인포윈도우를 닫는 클로저를 만드는 함수입니다
-        function makeOutListener(infowindow) {
-            return function() {
-                infowindow.close();
-            };
-        }
+</script>
 
-        // 클릭 시 화면을 이동시키는 클로저를 만드는 함수입니다
-        function makeClickListener(url) {
-            return function() {
-                location.href = `${url}?condition=`;
-            };
-        }
+    </div>
+</div>
+<!-- Footer Start -->
+<footer th:replace="./fragments/footer.html :: fragment-footer"></footer>
+<!-- Footer End -->
 
-    </script>
 
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/lib/wow/wow.min.js}"></script>
+<script th:src="@{/lib/easing/easing.min.js}"></script>
+<script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+<script th:src="@{/lib/counterup/counterup.min.js}"></script>
+<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+<script th:src="@{/lib/isotope/isotope.pkgd.min.js}"></script>
+<script th:src="@{/lib/lightbox/js/lightbox.min.js}"></script>,
+
+
+<!-- Template Javascript -->
+<!--<script src="../static/js/main.js"></script>-->
+<script th:src="@{/js/main.js}"></script>
 
 </body>
-</html>
 
+</html>
