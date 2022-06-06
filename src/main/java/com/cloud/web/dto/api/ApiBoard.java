@@ -10,6 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ApiBoard {
 
+    public String baseurl="https://map.kakao.com/link/search/";
     private String uc_seq; //콘텐츠ID
     private String main_title; //콘텐츠명
     private String gugun_nm; //구군
