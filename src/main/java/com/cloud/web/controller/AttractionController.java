@@ -93,7 +93,7 @@ public class AttractionController {
      */
     @GetMapping("/attractions/{id}")
     public String detailPage(@PathVariable("id") String id ,
-            @RequestParam("condition") String conditionResult, Model model) throws IOException {
+            @RequestParam(value = "condition" , required = false) String conditionResult, Model model) throws IOException {
 
         ApiBoard apiBoard = attractionService.callDetailPage(id); // 상세 게시글을 요청할때는 직접 un_seq를 가지고 서버로 호출
 
