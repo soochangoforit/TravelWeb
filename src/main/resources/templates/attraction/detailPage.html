@@ -1,106 +1,200 @@
 <!DOCTYPE html>
+<!--<html lang="en">-->
+
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
+<head>
+    <div th:replace="./fragments/header.html :: fragment-header"></div>
+    <style>
+        .left-text {
 
-<head th:replace="fragments/nav :: head">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            float: left;
+        }
+        .right-text {
 
+            float: right;
+        }
+
+        .img_area img{vertical-align:middle;}
+    </style>
 </head>
 
 <body>
+<!-- Spinner Start -->
+<div th:replace="./fragments/spinner.html :: fragment-spinner"></div>
+<!-- Spinner End -->
 
-    <div th:replace="fragments/nav :: nav"></div>
 
-    <div class="container"><!--FoodBoardPostFormDto 가 넘겨져서 왔다. -->
+<!-- Topbar Start -->
+<div th:replace="./fragments/topbar.html :: fragment-topbar"></div>
+<!-- Topbar End -->
 
-        <div  th:object="${apiBoard}"  enctype="multipart/form-data">
 
-                <div class="form-group">
-                    <label >제목</label>
-                    <div class="form-floating mb-3">
-                        <p th:text="*{main_title}"></p>
+<!-- Navbar Start -->
+<div th:replace="./fragments/nav.html :: fragment-nav"></div>
+<!-- Navbar End -->
+
+<!-- rating.js file -->
+
+<script th:src="@{/js/rating.js}"></script>
+
+
+
+<!-- 게시판 Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="container bootstrap snippets bootdey" >
+
+            <div class="row" >
+                <div class="col-md-6" style="align-items:center; display: flex; justify-content:center;">
+                        <div class="pro-img-details" style="vertical-align:middle; margin-top:10px; " >
+                            <div class="clearfix">
+                        <!--                        <img src="https://via.placeholder.com/550x380/FFB6C1/000000" alt="">-->
+                                <img th:each="imageFile : ${apiBoard.main_img_normal}"
+                                     th:src="${apiBoard.main_img_normal}" width="100%" height="200%" style="margin-right: 5px"/>
+                            </div>
                     </div>
+
                 </div>
 
-                <div class="form-group">
-                    <label >부제목</label>
-                    <div class="form-floating mb-3">
-                        <p th:text="*{title}"></p>
+                <div class="col-sm-6 push-bit" style="padding: 10px;">
+                    <div class="clearfix" th:object="${apiBoard}"  enctype="multipart/form-data" >
+
+                        </br>
+
+                        <span class="h4" style="padding-top: 10px" >
+                            <h3  class="text-success" th:text="*{title}">제목</h3><br />
+                        </span>
+
+                        <div>
+                            <p>
+                            <label class="text-success">주소 : </label>
+                            <a th:text="*{addr1}== '' ? '홈페이지 확인바람' : *{addr1}"></a>
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                            <label class="text-success">연락처 : </label>
+                            <a th:text="*{cntct_tel}== '' ? '홈페이지 확인바람.' : *{cntct_tel}"></a>
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                            <label class="text-success">홈페이지 : </label>
+                            <span th:if="*{homepage_url.equals('')}">홈페이지 없음</span>
+                            <a th:unless="*{homepage_url.equals('')}" th:href="*{homepage_url}" target="_blank" rel="noopener" title="새 창" class="t2" th:text="*{homepage_url}"></a>
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                            <label class="text-success">운영일 : </label>
+                            <a th:text="*{usage_day}== '' ? '홈페이지 확인바람.' : *{usage_day}"></a>
+                            </p>
+                        </div>
+                        <div >
+                            <p>
+                            <label class="text-success">휴무일 : </label>
+                            <a th:text="*{hldy_info}== '' ? '홈페이지 확인바람.' : *{hldy_info}"></a>
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                            <label class="text-success">운영 및 시간 : </label>
+                            <a th:text="*{usage_day_week_and_time}== '' ? '홈페이지 확인바람.' : *{usage_day_week_and_time}"></a>
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                            <label class="text-success">운영 이용요금 시간 : </label>
+                            <a th:text="*{usage_amount}== '' ? '홈페이지 확인바람.' : *{usage_amount}"></a>
+                            </p>
+                        </div>
+                        <hr />
+
                     </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label >소개</label>
-                    <div class="form-floating mb-3">
-                        <p th:text="*{subtitle}"></p>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label >주소</label>
-                    <div class="form-floating mb-3">
-                        <p th:text="*{addr1}"></p>
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label >전화번호</label>
-                    <div class="form-floating mb-3">
-                        <p th:text="*{cntct_tel}"></p>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label >홈페이지 주소</label>
-                    <div class="form-floating mb-3">
-                        <a th:href="*{homepage_url}"></a>
-                    </div>
-                </div>
-
-
-            <div class="form-group">
-                <label >오시는길</label>
-                <div class="form-floating mb-3">
-                    <a th:text="*{trfc_info}"></a>
                 </div>
             </div>
+            <hr/>
+
+            <div class="clearfix" th:object="${apiBoard}"  enctype="multipart/form-data" >
+                <h6  th:text="*{itemcntnts}" ></h6>
+            </div>
+
+            <hr/>
 
 
-                <div class="form-group">
-                    <label >사진</label>
-                    <div class="form-floating mb-3">
-                        <img th:src="*{main_img_normal}" width="300" height="300" style="margin-right: 5px"/>
+            <h7 class="text-success">위치</h7>
+            <div id="map" style="width:100%;height:350px;"></div>
+
+            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=751a94e1764e20659bfca798c8b931f9"></script>
+            <script th:inline="javascript">
+                const lat = [[${apiBoard.lat}]];
+                const lng = [[${apiBoard.lng}]];
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                    mapOption = {
+                        center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                    };
+
+                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                // 마커가 표시될 위치입니다
+                var markerPosition  = new kakao.maps.LatLng(lat, lng);
+
+                // 마커를 생성합니다
+                var marker = new kakao.maps.Marker({
+                    position: markerPosition
+                });
+
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+
+                // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+                // marker.setMap(null);
+            </script>
+            <hr /> <!--map 종료 -->
+
+
+
+                <form th:action="@{/attractions}" method="post" >
+                    <div th:object="${ApiLocationCondition}">
+                        <input type="hidden" th:name="location" th:value="*{location}"/>
+
                     </div>
-                </div>
 
-            <div class="form-group">
-                <label >상세소개</label>
-                <div class="form-floating mb-3">
-                    <a th:text="*{itemcntnts}"></a>
-                </div>
+                    <button class="btn btn-sm btn-primary pull-right" type="submit">뒤로가기</button>
+                </form>
+
             </div>
         </div>
-
-
-        <br><br>
-        <!-- 뒤로가기는 실제 페이지로 뒤로 가는것이 아니라 검색조건과 페이지 정보를 가진 상태에서 검색 버튼으로 들어가야 한다.-->
-        <!--post 방식이라서  body에 검색 조건과 페이지 정보를 넣을 수 있었다.-->
-        <form th:action="@{/attractions}" method="post" >
-
-            <div th:object="${ApiLocationCondition}">
-                <input type="hidden" th:name="location" th:value="*{location}"/>
-            </div>
-
-            <button type="submit">뒤로가기</button>
-        </form>
-
     </div>
+</div>
+<!-- 게시판 End -->
 
 
+<!-- Footer Start -->
+<footer th:replace="./fragments/footer.html :: fragment-footer"></footer>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/lib/wow/wow.min.js}"></script>
+<script th:src="@{/lib/easing/easing.min.js}"></script>
+<script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+<script th:src="@{/lib/counterup/counterup.min.js}"></script>
+<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+<script th:src="@{/lib/isotope/isotope.pkgd.min.js}"></script>
+<script th:src="@{/lib/lightbox/js/lightbox.min.js}"></script>
 
+<script th:src="@{js/extention/choices.js}"></script>
+
+<!— Template Javascript —>
+<script th:src="@{/js/main.js}"></script>
 </body>
+
 </html>
