@@ -46,14 +46,14 @@
                 <div class="form-group">
                     <label >제목</label>
                     <div class="form-floating mb-3" >
-                        <input  type="text" th:field="*{title}" class="form-control" id="title" >
+                        <input  type="text" th:field="*{title}" class="form-control" id="title" th:readonly="${session.user.role.getAuthority()} == 'ROLE_ADMIN' ? 'readonly':'false'">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label >한줄 소개</label>
                     <div class="form-floating mb-3">
-                        <input type="text" th:field="*{preview}" class="form-control" id="preview" >
+                        <input type="text" th:field="*{preview}" class="form-control" id="preview" th:readonly="${session.user.role.getAuthority()} == 'ROLE_ADMIN' ? 'readonly':'false'">
                     </div>
                 </div>
 
@@ -69,14 +69,14 @@
                 <div class="form-group">
                     <label >새롭게 사진 첨부하기</label>
                     <div class="form-floating mb-3"> <!--list 로 잘 받을 수 있을지 의문이고, 그리고 파일 list는 애초에 담지 X -->
-                        <input type="file" class="form-control" id="imageFiles" th:field="*{imageFiles}" multiple="multiple">
+                        <input type="file" class="form-control" id="imageFiles" th:field="*{imageFiles}" multiple="multiple" >
                     </div>
                 </div>
 
 
                 <div class="form-group">
                     <label>맛집 위치 지역 선택</label>
-                    <select class="form-select" th:field="*{locationType}">
+                    <select class="form-select" th:field="*{locationType}" th:disabled=" ${session.user.role.getAuthority()} == 'ROLE_ADMIN' ? 'disabled':'false' ">
                         <option value=""> 선택 </option>
                         <option th:each="val : ${locationTypeList}"
                                 th:value="${val.id}"
@@ -86,7 +86,7 @@
 
                 <div class="form-group">
                     <label>맛집 음식 유형 선택</label>
-                    <select class="form-select"  th:field="*{foodType}">
+                    <select class="form-select"  th:field="*{foodType}" th:disabled=" ${session.user.role.getAuthority()} == 'ROLE_ADMIN' ? 'disabled':'false' ">
                         <option value=""> 선택 </option>
                         <option th:each="val : ${foodTypeList}"
                                 th:value="${val.id}"
@@ -117,17 +117,18 @@
                 </div>
 
 
+
                 <div class="form-group">
                     <label >상세주소</label>
                     <div class="form-floating mb-3">
-                        <input type="text" th:field="*{addressDetail}" class="form-control" id="detail_address" >
+                        <input type="text" th:field="*{addressDetail}" class="form-control" id="detail_address" th:readonly="${session.user.role.getAuthority()} == 'ROLE_ADMIN' ? 'readonly':'false'">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label >리뷰</label>
                     <div class="form-floating mb-3">
-                        <textarea type="text" th:field="*{info}" class="form-control" id="info" ></textarea>
+                        <textarea type="text" th:field="*{info}" class="form-control" id="info" th:readonly="${session.user.role.getAuthority()} == 'ROLE_ADMIN' ? 'readonly':'false'"></textarea>
                     </div>
                 </div>
 
@@ -143,7 +144,7 @@
                     <!--                    <input type="text" class="form-control" id="rate" placeholder="평점" th:field="*{rate}">-->
                     <div class="col-md-4">
                         <div class="input-group spinner">
-                            <input type="text" class="form-control" value="0.5" min="0" max="5"id="rate" th:field="*{rate}">
+                            <input type="text" class="form-control" value="0.5" min="0" max="5"id="rate" th:field="*{rate}" readonly>
                             <div class="input-group-btn-vertical">
                                 <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
                                 <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
