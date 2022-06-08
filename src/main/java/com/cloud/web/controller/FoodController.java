@@ -58,7 +58,7 @@ public class FoodController {
      * @author LEE SOO CHAN
 */
     @GetMapping("/foods") // 로그인 -> 행사 게시판
-    public String foodBoardList(Model model , @PageableDefault(size = 6) Pageable pageable){
+    public String foodBoardList(Model model , @PageableDefault(size = 4) Pageable pageable){
 
         Page<FoodBoard> foodBoards = foodBoardRepository.findAll(pageable);
 
@@ -91,7 +91,7 @@ public class FoodController {
      * @author LEE SOO CHAN
      */
     @PostMapping("/foods")
-    public String foodBoardConditionList(FoodBoardCondition condition , Model model , @PageableDefault(size = 6) Pageable pageable){
+    public String foodBoardConditionList(FoodBoardCondition condition , Model model , @PageableDefault(size = 4) Pageable pageable){
 
         Page<FoodBoard> foodBoards = foodBoardRepository.searchPageSimple(condition,pageable);
 
@@ -126,7 +126,7 @@ public class FoodController {
      */
     @GetMapping("/foods/{id}")
     public String show_FoodBoard_Result(@PathVariable Long id,
-                                        @PageableDefault(size = 6) Pageable pageable,
+                                        @PageableDefault(size = 4) Pageable pageable,
                                         @RequestParam(value = "title" , required = false) String title,
                                         @RequestParam(value = "locationType_Id" , required = false) Long locationType_Id,
                                         @RequestParam(value = "foodType_id" , required = false) Long foodType_id,

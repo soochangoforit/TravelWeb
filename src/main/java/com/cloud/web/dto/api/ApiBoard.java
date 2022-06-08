@@ -34,7 +34,6 @@ public class ApiBoard {
 
 
     @Builder
-
     public ApiBoard(String uc_seq, String main_title, String gugun_nm,
                     String lat, String lng, String place, String title,
                     String subtitle, String addr1, String cntct_tel, String homepage_url,

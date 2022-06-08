@@ -53,6 +53,7 @@ public class IndexController {
         model.addAttribute("foodBoards", foodBoards); // map ( key - value )
 
         ArrayList<ApiBoard> attractions = new ArrayList<>();
+
         for(int i = 0; i < 5 ; i++){
             attractions.add(AttractionService.apiBoards.get(i));
         }
