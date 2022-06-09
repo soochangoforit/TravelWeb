@@ -146,81 +146,9 @@ public class AttractionService {
 
     public ApiBoard callDetailPage(String key ) {
 
-        String numOfRows = "10";
-        String pageNo = "1";
-
         ApiBoard apiBoard = null;
-
-        StringBuffer detailResult = new StringBuffer();
-
-        try {
-            String apiUrl = "http://apis.data.go.kr/6260000/AttractionService/getAttractionKr?" +
-                    "serviceKey=" + serviceKey +
-                    "&numOfRows=" + numOfRows +
-                    "&pageNo=" + pageNo +
-                    "&UC_SEQ=" + key;
-
-            URL url = new URL(apiUrl);
-            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.connect();
-
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(urlConnection.getInputStream());
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(bufferedInputStream, "UTF-8"));
-
-            String returnLine;
-            while((returnLine = bufferedReader.readLine()) != null) {
-                detailResult.append(returnLine);
-            }
-
-            JSONObject jsonObject = XML.toJSONObject(detailResult.toString());
-
-            //jsonObject를 우리가 사용할 특정한 dto로 받아주자.
-            JSONObject response = jsonObject.getJSONObject("response");
-            JSONObject body =  response.getJSONObject("body");
-            JSONObject items =  body.getJSONObject("items");
-            JSONObject item = items.getJSONObject("item");
-
-                String uc_seq = String.valueOf(item.getInt("UC_SEQ"));
-                String main_title = item.getString("MAIN_TITLE");
-                String gugun_nm = item.getString("GUGUN_NM");
-                String lat = String.valueOf(item.getDouble("LAT"));
-                String lng = String.valueOf(item.getDouble("LNG"));
-                String place = item.getString("PLACE");
-                String title = item.getString("TITLE");
-                String subtitle = item.getString("SUBTITLE");
-                String addr1 = item.getString("ADDR1");
-                String cntct_tel = item.getString("CNTCT_TEL");
-                String homepage_url = item.getString("HOMEPAGE_URL");
-                String trfc_info = item.getString("TRFC_INFO");
-                String usage_day = item.getString("USAGE_DAY");
-                String hldy_info = item.getString("HLDY_INFO");
-                String usage_day_week_and_time = item.getString("USAGE_DAY_WEEK_AND_TIME");
-                String usage_amount = item.getString("USAGE_AMOUNT");
-                String middle_size_rm1 = item.getString("MIDDLE_SIZE_RM1");
-                String main_img_normal = item.getString("MAIN_IMG_NORMAL");
-                String main_img_thumb = item.getString("MAIN_IMG_THUMB");
-                String itemcntnts = item.getString("ITEMCNTNTS");
-
-                apiBoard = ApiBoard.builder().uc_seq(uc_seq)
-                        .main_title(main_title)
-                        .gugun_nm(gugun_nm)
-                        .lat(lat)
-                        .lng(lng)
-                        .place(place)
-                        .title(title)
-                        .subtitle(subtitle)
-                        .addr1(addr1)
-                        .cntct_tel(cntct_tel)
-                        .homepage_url(homepage_url)
-                        .trfc_info(trfc_info)
-                        .usage_day(usage_day)
-                        .hldy_info(hldy_info)
-                        .usage_day_week_and_time(usage_day_week_and_time)
-                        .usage_amount(usage_amount)
-                        .middle_size_rm1(middle_size_rm1)
-                        .main_img_normal(main_img_normal)
-                        .main_img_thumb(main_img_thumb)
-                        .itemcntnts(itemcntnts).build();
+        try{
+            apiBoard = apiBoards.stream().filter(e -> e.getUc_seq().equals(key)).findFirst().orElse(null);
 
         } catch (Exception e) {
             e.printStackTrace();
