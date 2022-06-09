@@ -60,25 +60,20 @@ public class AttractionController {
     @PostMapping("/attractions")
     public String locationPage(ApiLocationCondition condition , Model model ) {
 
-
-        if(condition.getLocation().equals("")){
+        if (condition.getLocation().equals("")) {
             ArrayList<ApiBoard> apiBoards = AttractionService.apiBoards;
             model.addAttribute("apiBoards", apiBoards); // 전체 게시글 보여준다.
             model.addAttribute("ApiLocationCondition", new ApiLocationCondition());
-
-        }else{
+        } else {
             String location = condition.getLocation();
             List<ApiBoard> apiBoards = AttractionService.map.get(location);
             model.addAttribute("apiBoards", apiBoards);
             model.addAttribute("ApiLocationCondition", condition);
-
         }
-
         ArrayList<String> locationKeys = AttractionService.keys;
         model.addAttribute("locationKeys", locationKeys);
 
         return "attraction/list";
-
     }
 
 
@@ -87,7 +82,7 @@ public class AttractionController {
      *
      * @param id 해당 명소 게시글의 고유한 id (un_seq)
      * @param conditionResult 검색 조건
-     * @param model 상세 페이지 들어갈때도 검색 조건을 가지고 있는 상태로 들어가기 위해서 값을 넣어준다.
+     * @param model 상세 페이지 들어갈때도 검색 조건을 가지고 있는 상태로 들어가기 위해서 값을 받아준다.
      * @return 부산 명소 게시글의 상세 페이지
      * @author LEE SOO CHAN
      */

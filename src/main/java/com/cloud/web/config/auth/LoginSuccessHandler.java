@@ -47,7 +47,6 @@ public class LoginSuccessHandler  implements AuthenticationSuccessHandler {
                                         Authentication authentication) throws IOException, ServletException {
 
         PrincipalDetails user = (PrincipalDetails) authentication.getPrincipal(); // 이렇게 생각한 이유 loadbyusername에서 TestPrincipalDetails 반환하고 있어서...
-
         HttpSession session = request.getSession();
 
         session.setAttribute("user", user.getUser()); // user dto 객체 그대로 저장

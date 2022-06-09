@@ -37,7 +37,7 @@ public class UserService {
     public UserResponse join(UserJoinRequest user){
 
         String rawPw = user.getPassword();
-        String encodePw = bCryptPasswordEncoder.encode(rawPw);
+        String encodePw = bCryptPasswordEncoder.encode(rawPw); //암호 부호화
 
         String loginId = user.getUsername(); // 로그인한 User의 아이디 get
         User encoder;
@@ -52,7 +52,6 @@ public class UserService {
                     .nickname(user.getNickname())
                     .email(user.getEmail())
                     .role(Role.valueOf("ROLE_ADMIN")).build();
-
         }else{
             encoder = User.builder()
                     .loginId(user.getUsername())
@@ -62,13 +61,8 @@ public class UserService {
                     .email(user.getEmail())
                     .role(Role.valueOf("ROLE_USER")).build();
         }
-
         // repository를 통해 save하기 전에 encode 해줘야 한다.
         User entity = userRepository.save(encoder);
-
-      //  UserResponse userLoginResponse = new UserResponse
-       //         (entity.getId(), entity.getName(), entity.getNickname(), entity.getEmail() , entity.getRoleType() , entity.getFoodBoards());
-
         UserResponse userLoginResponse = UserResponse.builder()
                 .db_id(entity.getId())
                 .name(entity.getName())

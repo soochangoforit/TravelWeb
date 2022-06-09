@@ -78,7 +78,7 @@ public class IndexController {
 
     /**
      * 로그인 url
-     * /login -> loginForm.html -> /loginProcess -> login fail -> alertmsg 에러 메시지 담는다.
+     * /login -> loginForm.html -> /loginProcess -> if login fail -> alertmsg 에러 메시지 담는다.
      * -> /login으로 해당 error 메시지 alterMessage 변수에 넣어준다.
      *
      * @param alertMessage 로그인에 실패 했을 경우 , 서버(loginFailureHandler)로부터 날라오는 error를 controller에 변수로 담는다.
