@@ -58,7 +58,7 @@ public class FoodBoard extends BaseTimeEntity {
     private double rate;
 
     @Column(name = "food_like" )
-    @ColumnDefault(" 0 ") // 의미 없음 @persist에 의해서
+    @ColumnDefault(" 0 ")                     // 의미 없음 @persist에 의해서
     private Integer like;
 
     @PrePersist
@@ -81,7 +81,7 @@ public class FoodBoard extends BaseTimeEntity {
      * @param attachedFiles 맛집 게시글에 등록시 첨부하는 사진 목록
      */
     public void addAttachedFiles(List<Attachment> attachedFiles) {
-        attachedFiles.stream().forEach(e->e.setBoard(this)); // 내가 추가함!!!!!
+        attachedFiles.stream().forEach(e->e.setBoard(this));
         this.attachedFiles = attachedFiles;
     }
 
@@ -100,12 +100,7 @@ public class FoodBoard extends BaseTimeEntity {
 
         foodCmt.setFoodBoard(this);
         this.foodCmts.add(foodCmt);
-       /*
-        FoodCmt build = foodCmt.builder()
-                .user(foodCmt.getUser())
-                .foodBoard(this)
-                .foodCmt(foodCmt.getFoodCmt()).build();
-        */
+
     }
 
 

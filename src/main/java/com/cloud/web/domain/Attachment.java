@@ -24,8 +24,8 @@ public class Attachment {
 
     private String storeFilename;
 
+    // @OnDelete(action = OnDeleteAction.CASCADE)
     @ManyToOne(fetch = FetchType.LAZY)
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name="food_board_id")
     private FoodBoard board;
 
