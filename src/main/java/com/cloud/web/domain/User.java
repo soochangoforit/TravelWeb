@@ -38,7 +38,7 @@ public class User {
     @Column(name = "user_password" , nullable = false)
     private String password;
 
-    @Column(name = "user_name" , nullable = false)
+    @Column(name = "user_name" , nullable = false )
     private String name; // 사용자 실제 이름 ex) 이수찬
 
     @Column(name = "user_nickname" , columnDefinition = " varchar(255) NOT NULL UNIQUE ")
@@ -56,8 +56,13 @@ public class User {
     /**
      * User 입자에서 자신이 등록한 게시물의 리스트를 확인한다.
      * 일대다 양방향 연관관계에서 List로 사용해서 활용 추가 - 2022-05-19
+     *
+     * 2022-06-24
+     * 처음에는 @OneToMany에 대해서, cascadeType.ALL를 붙여줬지만
+     * 잘 생각해보면, User가 persist 될때 (즉, 회원가입을 할때) 게시물도 함께
+     * persist되는 영속성 전이는 올바르지 않는 방향이므로, cascadeType.ALL 삭제함!
      */
-    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user" )
     private List<FoodBoard> foodBoards = new ArrayList<>();
 
     /**
@@ -73,21 +78,6 @@ public class User {
         this.foodBoards.add(foodBoard);
     }
 
-
-
-
-
-
-
-    /**
-     * persist() 메서드는 save()에 의해서 엔티티가 영속성컨텍스트에 관리하기 직전에 호출 된다.
-     * 식별자 생성 전략을 사용한 경우 엔티티에 식별자는 아직 존재 하지 않는다. 새로운 인스턴스를 merge할 때도 수행된다
-     * DB에 default 값을 넣어줄때 유용하다.
-     */
-    // @PrePersist
-    //  public void prePersist(){
-    //    this.roleType = this.roleType == null ? Role.ROLE_USER : this.roleType;
-    //  }
 
     public User() {
     }
