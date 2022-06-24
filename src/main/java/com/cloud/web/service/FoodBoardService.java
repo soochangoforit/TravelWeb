@@ -11,8 +11,11 @@ import com.cloud.web.repository.FoodBoardRepository;
 import com.cloud.web.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -147,7 +150,6 @@ public class FoodBoardService {
     }
 
 
-
     @Transactional
     public void saveFoodCmt(Long user_db_id, Long id, FoodCmtDto foodCmtDto){
 
@@ -172,9 +174,6 @@ public class FoodBoardService {
         foodBoardRepository.save(foodBoard);
     }
 
-
-
-
     @Transactional
     public void update(Long id, User user, FoodBoardPostFormDto foodBoardPostFormDto) throws IOException {
 
@@ -196,12 +195,13 @@ public class FoodBoardService {
         attachments.stream().forEach(e-> e.setBoard(foodBoard));
 
         FoodBoard changed = foodBoard.changeToEntity(id
-                , user, foodBoardPostFormDto.getLocationType(), foodBoardPostFormDto.getFoodType(), foodBoardPostFormDto.getTitle()
-                , foodBoardPostFormDto.getPreview(), foodBoardPostFormDto.getAddress() + " / " + foodBoardPostFormDto.getAddressDetail(), foodBoardPostFormDto.getInfo()
+                , user, foodBoardPostFormDto.getLocationType(), foodBoardPostFormDto.getFoodType()
+                , foodBoardPostFormDto.getTitle(), foodBoardPostFormDto.getPreview()
+                ,foodBoardPostFormDto.getAddress() + " / " + foodBoardPostFormDto.getAddressDetail()
+                , foodBoardPostFormDto.getInfo()
                 , foodBoardPostFormDto.getRate(), attachments);
 
         FoodBoard saved = foodBoardRepository.save(changed);
-
     }
 
 

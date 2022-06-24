@@ -105,11 +105,8 @@ public class FoodController {
         model.addAttribute("foodTypeList", foodTypeList); // 검색 조건으로 사용하기 위해서
         model.addAttribute("locationTypeList", locationTypeList); // 검색 조건으로 사용하기 위해서
         model.addAttribute("foodBoards", foodBoards);   // 검색된 결과가 들어간다.
-
-
         model.addAttribute("startPage",startPage);
         model.addAttribute("endPage",endPage);
-
         model.addAttribute("condition", condition); //  앞전에 검색한 조건을 그대로 model에 넣어준다.
 
         return "foodBoard/list";
@@ -133,13 +130,6 @@ public class FoodController {
                                         @RequestParam(value = "rate" , required = false) Integer rate,
                                         Model model  ){
 
-        // 현 controller에 넘어오기 전에 현재 있는 전체 게시글에서 몇번째 게시글 순서에서 상세 페이지를 눌렀는지에 대한 정보가 필요하다
-        // 해당 controller로 넘어오기 전에!!!
-        // 지금 있는 페이지의 페이지 번호도 함께 details page에 들어가야 한다.!!!!!!! (쿼리 스트링으로 들어가야 한다.)
-
-        //details에 있는 뒤로가기에 page 번호가 제공되어야 한다. 여기서 제공하면 된다. 해당 상세페이지는 자신이 몇번째 페이지의 게시물인지 알지 X
-        // 따라서 우리는 알려줘야 한다. 뭐로?? model를 통해서 현 게식물이 몇번쨰 페이지인지 알려줘여 한다.
-
         model.addAttribute("page", pageable.getPageNumber()); // 몇번쨰 페이지인지 알려줘라 details한테 숫자로 알려줘라!!!
 
         FoodBoardCondition condition = FoodBoardCondition.builder()
@@ -158,7 +148,6 @@ public class FoodController {
         model.addAttribute("foodBoard" , foodBoard); // id로 게시글 조회시 나타나는 게시글 정보를 담고 있다.
         model.addAttribute("foodCmtDto", new FoodCmtDto()); // 해당 id 게시글에서 댓글 작성하기 위한 Dto ( String 데이터 형태인 cmt만 가지고 있다. )
         model.addAttribute("foodCmts", foodCmts); // id로 게시글 조회시 하단에 나타나는 기존의 댓글 목록을 출력하기 위해 model에 제공
-
         model.addAttribute("condition", condition); // 상세 페이지에서 뒤로가기 누를시 검색 조건을 그대로 가져가기 위해서
 
         return "foodBoard/detailsPage";
@@ -179,13 +168,12 @@ public class FoodController {
      */
     @Secured({"ROLE_USER" , "ROLE_ADMIN"})
     @PostMapping("/foods/{id}")
-    public String write_FoodBoard_Cmt(@PathVariable Long id, @ModelAttribute FoodCmtDto foodCmtDto , Authentication authentication){
+    public String write_FoodBoard_Cmt(@PathVariable Long id, @ModelAttribute FoodCmtDto foodCmtDto ,
+                                      Authentication authentication){
 
         // 어떤 로그인한 사용자가 댓글을 작성했는지 알기 위해서 생성 (댓글 기능은 로그인한 사람만 이용 가능하다)
         PrincipalDetails userDetails = (PrincipalDetails) authentication.getPrincipal();
         Long user_db_id = userDetails.getUser().getDb_id();
-
-        log.info(user_db_id.toString()); // 제대로 가져왔는지 확인하기 위해서 Log 찍음
 
         // id에 해당하는 foodBoard 게시글에서 작성한 댓글을 저장하기 위한 메서드
         foodBoardService.saveFoodCmt(user_db_id, id, foodCmtDto);
