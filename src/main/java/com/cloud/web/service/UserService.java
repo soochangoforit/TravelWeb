@@ -32,7 +32,8 @@ public class UserService {
     }
 
 
-    // 원래는 User 사용하면 X , DTO로 사용해야한다. Join 하는 시점에 원래 role_type 필드에 권한을 넣어줘야 한다.
+    // 원래는 User 사용하면 X , DTO로 사용해야한다. Join 하는 시점에 원래 role_type 필드에 권한의 종류를 명시하는 값을 넣어준다.
+    // 실제로 Security에서 권한을 확인할때는 해당 User의 DB Column을 보고 권한을 판단하는 것은 아니다!
     @Transactional
     public UserResponse join(UserJoinRequest user){
 

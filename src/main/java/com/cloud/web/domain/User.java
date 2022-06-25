@@ -16,10 +16,10 @@ import java.util.List;
 
 /**
  * default 속성을 이용하고 싶을때는 columnDefinition 를 통해서 table에 들어갈 필드 속성을 '모두' 작성한다.
- * unique = true 속성을 사용하게 되면, uniqye 제약조건의 이름이 특정한 코드의 문자열로 할당된다.
+ * unique = true 속성을 사용하게 되면, unique 제약조건의 이름이 특정한 코드의 문자열로 할당된다.
  *
  * 또 다른 방법으로 default값을 넣어줄때는 ColumnDefault를 통해서 Table에도 default값이 ~가 들어와야 한다고 명시를 하고
- * (실제 의미 X , 동작 시점은 save()로 DB에 한번 들어갔다가 한번 꺼내서 영속성 컨텍스트에 관리를 하고 나서 다시 DB에 들어갈때 작동 )
+ * (실제 의미 X , 동작 시점은 save()를 통해서 persist 하기전에 prepersist가 먼저 호출될때 값을 할당한다.
  * 따라서 테이블에는 그냥 명시만 해주고 실제 동작은 prePersist()를 통해서 override 구현해주도록 한다.
  */
 @Entity
@@ -49,7 +49,6 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(length = 10 , nullable = false)
-    @ColumnDefault("'ROLE_USER'") // 의미 없음 @persist에 의해서 , 이렇게 해서 얻을 수 있는 이점은 prePersist할때 USER만 들어올  수 있고 , 다른 값이 들어오면 error 뱉는다.
     private Role roleType;
 
 

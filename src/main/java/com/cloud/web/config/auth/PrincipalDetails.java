@@ -60,16 +60,30 @@ public class PrincipalDetails implements UserDetails {
         return userDto;
     }
 
-    // return Type이 Collection에 GrantedAuthority 를 return 하는 return Type이 필요하다.
-    // 해당 User의 권한을 return 하는 곳 , 기본 security에서는 user가 로그인할 시점에 user 권한을 받는 것이 아닌, 회원 가입 시점에서부터
-    // 이미 USER 라는 권한을 가지고 있다. 그래서 로그인 시점에서는 해당 로그인이 성공하면 실제 해당 유저 정보를 가지고 있는 DB에서
-    // 권한 정보를 가져오는 역할을 한다. 그래서 사실, PrincipalDetails 가 감싸고 있는 로그인에 성공한 User Class 객체가 가지고 있는
-    // ROLE 정보를 get으로 가져오면 된다. 그렇게 할 수 있었던 이유는, 로그인에 성공된 해당 User class 객체 안에 이미 반영된 USER 권한을 가지고 있기 때문에
+    /**
+     *return Type이 Collection 형태에다가 GrantedAuthority 를 return 해야한다.
+     * 해당 User의 권한을 return 하는 곳이다.
+     * 회원 가입 시점에서부터 앞서 우리가 Join 할때 커스텀 했듯이
+     * 이미 어떠한 권한을 가질 수 있는 필드 값을 가지고 있다.
+     * 그래서 로그인 시점에서 로그인이 성공하면 DB로 부터 실제 해당 유저 정보를 가지고 있는
+     * 데이터를 가져오고, User Class가 가지고 있는 Enum 필드으로부터 권한 정보를 가져오는 역할을 한다.
+     * 따라서, PrincipalDetails 가 감싸고 있는 로그인에 성공한 User Class 객체가 가지고 있는
+     * Enum ROLE 정보를 get()으로 가져오면 된다. 그렇게 할 수 있었던 이유는,
+     * 로그인에 성공된 해당 User class 객체 안에 이미 Join 시점에 할당 받았던
+     * 특정한(USER) 권한을 나타내는 필드 값을 가지고 있기 때문이다.
+     * User가 가지고 있는 role를 단순히 getRoleType()를 통해서 가져올 순 없다.
+     * 왜냐하면 기본적으로 getAuthority() return Type이 String이기 때문이다.
+     * 나의 경우는 Enum Role Type 이다.
+     * user.getRoleType();
+     * 근데 getRoleType()에서 반환 하는것은 Enum이다. String Type 으로 바꿔줄 필요 있다.
+     * 그러고 나서 String을 다시 GrantedAuthority 으로 만들어주는게 필요하다.
+     */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
         // 나의 경우는 Enum Role Type 이다. ...
-        // user.getRoleType(); // 근데 user ROLE이 Enum이다. String Type 으로 바꿔줄 필요 있다. 그래서 GrantedAuthority 으로 만들어주는게 필요하다.
+        // user.getRoleType();
+        // 근데 user ROLE이 Enum이다. String Type 으로 바꿔줄 필요 있다. 그래서 GrantedAuthority 으로 만들어주는게 필요하다.
 
         Collection<GrantedAuthority> collection = new ArrayList<>();
         // collection 안에는 GrantedAuthority이 들어가야 하니깐 새롭게 GrantedAuthority 객체를 생성해준다.
@@ -89,7 +103,7 @@ public class PrincipalDetails implements UserDetails {
         return user.getPassword();
     }
 
-    // 사용자의 id를 반환 unique 한 값 ( 즉 사용자의 이름이 아니다.)
+    // 사용자의 로그인 id를 반환 unique 한 값 ( 즉 사용자의 이름이 아니다.)
     @Override
     public String getUsername() {
         return user.getLoginId();
@@ -124,9 +138,4 @@ public class PrincipalDetails implements UserDetails {
 
         return true;
     }
-
-
-
-
-
 }
