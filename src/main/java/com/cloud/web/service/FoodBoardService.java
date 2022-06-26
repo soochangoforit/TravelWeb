@@ -62,11 +62,6 @@ public class FoodBoardService {
         FoodBoard board = boardPostDto.createBoard();
         board.addAttachedFiles(attachments);
 
-        // 위에서 createBoard를 하면 FoodBoard DB에서는 외래키로 User의 id가 들어오지만
-        // User에 만들었던 list에는 board를 저장할 수 없다. 그래서 board가 등록되는 시점에
-        // 해당 게시글을 작성한 User의 boardList에 add로 넣어준다.
-        //수정사항 편의 메서드를 user에 넣는게 아니라 맛집 게시글이 등록될떄 user의 list에도 갖고자 한다.
-        board.getUser().addFoodBoard(board);
 
         // Cascade.ALL안에 포함되어 있는 Cascade.Persist를 통해 같이 영속화되어 저장된다.
         return foodBoardRepository.save(board);
