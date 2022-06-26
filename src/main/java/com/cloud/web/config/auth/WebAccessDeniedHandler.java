@@ -19,18 +19,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 인증, 인가 거부된 요청시 이동될 페이지는 /err/denied-page 입니다.
+ * 인증, 인가 거부된 요청시 이동될 사용되는 Class
  * msg와 nextPage attribute를 이용하여 alert를 띄우며 다음 페이지도 이동됩니다.
  *
- * 로그인 권한이 없는(=인증되지 않은) 사용자의 경우 401 http status code를 (ln 20) 응답하며
- * 강제로 로그아웃 처리되도록 SecurityContextHolder를 clear한 후(ln 21), /login페이지로 redirect 합니다. (ln 19)
- *
- * 접근 권한이 없는(=인가되지 않은) 사용자의 경우 403 http status code를 응답하면서 (ln 9)
- * /v 페이지로 redirect 합니다.
- * (ROLE_ADMIN 권한을 가지고 있지 않은 사용자가 회원 메뉴에 접속했을 때에 관한 처리를 해주는 부분입니다.)
- *
- * forward 방식으로 /err/denied-page로 이동시키고, 그 곳에서 javascript로 msg를 alert를 띄운 후,
- * nextPage에 담긴 페이지로 redirect 시킵니다.
+ * 접근 권한이 없는(=인가되지 않은) 사용자의 경우 403 http status code를 응답하면서
+ * nextPage로 redirect 합니다.
+ * (ROLE_ADMIN 권한을 가지고 있지 않은 사용자가 관리자 메뉴에 접속했을 때에 관한 처리를 해주는 부분입니다.)
  */
 @Configuration
 public class WebAccessDeniedHandler implements AccessDeniedHandler {
@@ -47,7 +41,7 @@ public class WebAccessDeniedHandler implements AccessDeniedHandler {
             // user인 사용자가 main 페이지에 있는 관리자 페이지에 접근하고자 할때 "/adminPage"로 접근하고자 할때 "/"으로 돌려보낸다.
             if(authentication != null && ((PrincipalDetails)authentication.getPrincipal()).getUser().getRole().getAuthority().equals("ROLE_USER")){
                 req.setAttribute("msg","접근 권한 없는 사용자입니다.");
-                req.setAttribute("nextPage","/"); // 권한이 없는 사용자가 행사 등록 원할시, 축제 게시글 전체 목록으로 리다이렉트
+                req.setAttribute("nextPage","/");
             }
 
         }

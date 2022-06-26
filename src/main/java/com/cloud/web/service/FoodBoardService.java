@@ -11,6 +11,7 @@ import com.cloud.web.repository.FoodBoardRepository;
 import com.cloud.web.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,26 +39,6 @@ public class FoodBoardService {
     private AttachmentRepository attachmentRepository;
     @Autowired
     private FileStore fileStore;
-
-/*
-    public FoodBoard save(Long user_db_id , FoodBoardSaveDto foodBoardDto){
-
-        User user = userRepository.findById(user_db_id).get();
-
-        FoodBoard saveFoodBoard = FoodBoard.builder().user(user)
-                .locationType(foodBoardDto.getLocationType())
-                .foodType(foodBoardDto.getFoodType())
-                .title(foodBoardDto.getTitle())
-                .preview(foodBoardDto.getPreview())
-                .address(foodBoardDto.getAddress())
-                .info(foodBoardDto.getInfo())
-                .rate(foodBoardDto.getRate()).build();
-
-        FoodBoard saved = foodBoardRepository.save(saveFoodBoard);
-        return saved;
-    }
-*/
-
 
     /**
      *     FoodBoard를 추가할때 첨부파일도 List에 저장함과 동시에 첨부파일 DB table에도 저장을 한다. (영속화되어 저장)
