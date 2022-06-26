@@ -2,6 +2,7 @@ package com.cloud.web.config.auth;
 
 
 import com.cloud.web.domain.User;
+import com.cloud.web.dto.response.UserResponse;
 import com.cloud.web.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,15 @@ public class PrincipalDetailsService implements UserDetailsService {
 
         User userEntity = userRepository.findByLoginId(username).orElse(null);
 
+        UserResponse dto = UserResponse.builder()
+                .db_id(userEntity.getId())
+                .name(userEntity.getName())
+                .nickname(userEntity.getNickname())
+                .loginId(userEntity.getLoginId())
+                .password(userEntity.getPassword())
+                .role(userEntity.getRoleType())
+                .build();
+
 
         // 바로 이 시점이 security가 알아서 로그인 폼에 입력한 사용자 정보를 가지고
         // 실제 DB에서 데이터가 있는지 findByLoginId()를 통해서 확인한다.
@@ -84,7 +94,7 @@ public class PrincipalDetailsService implements UserDetailsService {
         // 이렇게 하면 로그인이 완료가 된다.
 
         if(userEntity != null) {
-           return new PrincipalDetails(userEntity);
+           return new PrincipalDetails(dto);
         }
 
         return null;

@@ -41,21 +41,21 @@ public class PrincipalDetails implements UserDetails {
 
     // override 해줘야 한다.
     // 우리의 로그인에 성공한 정보는 User Class 객체가 가지고 있다.
-    private User user; //콤포지션
+    private UserResponse user; //콤포지션
 
     // PrincipalDetails 가 실제 로그인에 성공한 User 정보를 담기 위해서 생성자로 해당 User 객체를 받아서 감싸준다.
-    public PrincipalDetails(User user) {
+    public PrincipalDetails(UserResponse user) {
         this.user = user;
     }
 
     public UserResponse getUser() {
 
         UserResponse userDto = UserResponse.builder()
-                .db_id(user.getId())
+                .db_id(user.getDb_id())
                 .name(user.getName())
                 .nickname(user.getNickname())
                 .email(user.getEmail())
-                .role(user.getRoleType()).build();
+                .role(user.getRole()).build();
 
         return userDto;
     }
@@ -91,7 +91,7 @@ public class PrincipalDetails implements UserDetails {
             // 정해진 메소드에서는 String Type만을 return 할 수 있다.
             @Override
             public String getAuthority() {
-                return user.getRoleType().getAuthority(); // getRoleType 는 Enum 객체를 반환하지만 그 안에서 String 형태를 하고 있는 Authority 를 반환하고자 한다.
+                return user.getRole().getAuthority(); // getRoleType 는 Enum 객체를 반환하지만 그 안에서 String 형태를 하고 있는 Authority 를 반환하고자 한다.
             }
         });
 

@@ -72,7 +72,7 @@ dependencies {
 
 
 	//session dB
-	//implementation("org.springframework.session:spring-session-jdbc")
+	implementation("org.springframework.session:spring-session-jdbc")
 
 
 	// https://github.com/stleary/JSON-java
