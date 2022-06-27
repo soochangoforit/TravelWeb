@@ -69,7 +69,7 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
     @Override
     public Page<FoodBoard> searchPageSimple(FoodBoardCondition condition, Pageable pageable) {
 
-        QueryResults<FoodBoard> results = queryFactory
+        List<FoodBoard> content = queryFactory
                 .select(foodBoard)
                 .from(foodBoard)
                 .where(titleLike(condition.getTitle()),
@@ -78,10 +78,15 @@ public class FoodBoardRepositoryImpl implements FoodBoardRepositoryCustom {
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())
                 .orderBy(rate(condition.getRate()))
-                .fetchResults();
+                .fetch();
 
-        List<FoodBoard> content = results.getResults();
-        long total = results.getTotal();
+        Long total = queryFactory
+                .select(foodBoard.count())
+                .from(foodBoard)
+                .where(titleLike(condition.getTitle()),
+                        locationTypeEq(condition.getLocationType_Id()),
+                        foodTypeEq(condition.getFoodType_id()))
+                .fetchOne();
 
         return new PageImpl<>(content, pageable , total);
 
