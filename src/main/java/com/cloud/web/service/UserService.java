@@ -98,4 +98,8 @@ public class UserService {
     }
 
 
+    // check duplicate loginId from userRepository
+    public Boolean checkDuplicateLoginId(String loginId) {
+        return userRepository.findByLoginId(loginId).isPresent();
+    }
 }

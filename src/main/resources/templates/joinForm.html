@@ -54,7 +54,10 @@
                                             <h6 class="mb-0">Id</h6>
                                         </div>
                                         <div class="col-md-9 pe-5">
-                                            <input type="text" class="form-control" name="username" placeholder="loginID 입력" required="required">
+                                            <input type="text" class="form-control" name="username" id="username" placeholder="loginID 입력" required="required">
+                                            <button class="btn btn-outline-secondary" type="button" onclick="dataSend()">중복확인</button>
+                                        </div>
+                                        <div id="resultDiv">
                                         </div>
                                     </div>
                                     <hr class="mx-n3">
@@ -78,7 +81,7 @@
                                     <hr class="mx-n3">
                                     <div class="px-5 py-4" style="text-align: center">
 <!--                                        <button type="submit" class="btn btn-primary btn-lg" >Submit</button>-->
-                                        <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+                                        <button type="submit" id="signUp-button" class="btn btn-primary btn-block btn-lg" disabled>Sign Up</button>
                                     </div>
                                 </div>
                             </form>
@@ -112,6 +115,31 @@
 
 <!-- Template Javascript -->
 <script th:src="@{/js/main.js}"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    // send var data with ajax
+function dataSend() {
+        var username = $('#username').val();
+        $.ajax({
+            type: 'POST',
+            url: '/checkDuplicateLoginId',
+            data: {
+                loginId: username
+            }
+        }).done(function (data) {
+            if(data.isDuplicate === true){
+               $('#resultDiv').html('<p style="color:red">중복된 아이디입니다.</p>');
+               $('#signUp-button').attr('disabled', true);
+            }else{
+               $('#resultDiv').html('<p style="color:green">사용가능한 아이디입니다.</p>');
+               $('#signUp-button').attr('disabled', false);}
+            }
+        );
+    }
+
+</script>
+
 </body>
 
 </html>

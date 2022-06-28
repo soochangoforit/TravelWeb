@@ -3,17 +3,22 @@ package com.cloud.web.controller;
 import com.cloud.web.domain.FoodBoard;
 import com.cloud.web.dto.api.ApiBoard;
 import com.cloud.web.dto.request.UserJoinRequest;
+import com.cloud.web.dto.response.DuplicateMessageDto;
 import com.cloud.web.dto.response.UserResponse;
 import com.cloud.web.service.AttractionService;
 import com.cloud.web.service.FoodBoardService;
 import com.cloud.web.service.UserService;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,6 +123,14 @@ public class IndexController {
 
         UserResponse userDto = userService.join(user); // 시큐리티 설정을 하는 순간 비밀번호 암호화가 반드시 필요하다.
         return "redirect:/login";  //   @GetMapping("/loginForm") 여기로 돌아간다.
+    }
+
+    // check duplicate login id
+    @PostMapping(value = "/checkDuplicateLoginId")
+    @ResponseBody
+    public DuplicateMessageDto checkDuplicateLoginId(@RequestParam("loginId") String loginId){
+        Boolean isDuplicate = userService.checkDuplicateLoginId(loginId);
+        return DuplicateMessageDto.builder().isDuplicate(isDuplicate).build();
     }
 
 
