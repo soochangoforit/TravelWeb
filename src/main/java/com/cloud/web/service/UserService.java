@@ -102,4 +102,9 @@ public class UserService {
     public Boolean checkDuplicateLoginId(String loginId) {
         return userRepository.findByLoginId(loginId).isPresent();
     }
+
+    // check duplicate nickname from userRepository
+    public Boolean checkDuplicateNickname(String nickname) {
+        return userRepository.findByNickname(nickname).isPresent();
+    }
 }

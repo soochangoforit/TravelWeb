@@ -120,7 +120,6 @@ public class IndexController {
      */
     @PostMapping(value = "/join" )
     public String join(UserJoinRequest user){
-
         UserResponse userDto = userService.join(user); // 시큐리티 설정을 하는 순간 비밀번호 암호화가 반드시 필요하다.
         return "redirect:/login";  //   @GetMapping("/loginForm") 여기로 돌아간다.
     }
@@ -130,6 +129,14 @@ public class IndexController {
     @ResponseBody
     public DuplicateMessageDto checkDuplicateLoginId(@RequestParam("loginId") String loginId){
         Boolean isDuplicate = userService.checkDuplicateLoginId(loginId);
+        return DuplicateMessageDto.builder().isDuplicate(isDuplicate).build();
+    }
+
+    //check duplicate nickname
+    @PostMapping(value = "/checkDuplicateNickname")
+    @ResponseBody
+    public DuplicateMessageDto checkDuplicateNickname(@RequestParam("nickname") String nickname){
+        Boolean isDuplicate = userService.checkDuplicateNickname(nickname);
         return DuplicateMessageDto.builder().isDuplicate(isDuplicate).build();
     }
 
