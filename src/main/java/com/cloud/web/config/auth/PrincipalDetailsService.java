@@ -67,6 +67,7 @@ public class PrincipalDetailsService implements UserDetailsService {
                 .name(userEntity.getName())
                 .nickname(userEntity.getNickname())
                 .loginId(userEntity.getLoginId())
+                .email(userEntity.getEmail())
                 .password(userEntity.getPassword())
                 .role(userEntity.getRoleType())
                 .build();

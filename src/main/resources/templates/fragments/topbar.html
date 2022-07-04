@@ -22,8 +22,8 @@
                 <!--                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="/myPage"><i class="fab fa-facebook-f"></i></a>-->
                 <a href="/myPage" class="nav-item nav-link" sec:authorize="isAuthenticated()">MyPage</a>
                 <a href="/logout" class="nav-item nav-link" sec:authorize="isAuthenticated()">Logout </a>
-                <div th:object="${session.user}">
-                    <a class="nav-item nav-link" sec:authorize="isAuthenticated()" th:text="|*{getName()}님 환영합니다!!|" ><i class="fa fa-arrow-right ms-3"></i></a>
+                <div >
+                    <a class="nav-item nav-link" sec:authorize="isAuthenticated()" th:text="|${name}님 환영합니다!!|" ><i class="fa fa-arrow-right ms-3"></i></a>
 
                 </div>
                 <!--                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>-->

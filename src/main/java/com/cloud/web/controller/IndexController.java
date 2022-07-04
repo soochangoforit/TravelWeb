@@ -1,5 +1,6 @@
 package com.cloud.web.controller;
 
+import com.cloud.web.config.auth.PrincipalDetails;
 import com.cloud.web.domain.FoodBoard;
 import com.cloud.web.dto.api.ApiBoard;
 import com.cloud.web.dto.request.UserJoinRequest;
@@ -13,6 +14,10 @@ import lombok.Builder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,7 +51,7 @@ public class IndexController {
      *  Main Page 접근
      */
     @GetMapping("/")
-    public  String index(Model model){
+    public  String index(Model model , @AuthenticationPrincipal PrincipalDetails principalDetails) {
 
         if(AttractionService.apiBoards.size() == 0) {
             attractionService.callApiWithJson("100", "1");
@@ -66,7 +71,12 @@ public class IndexController {
         // 명소 게시글 목록
         model.addAttribute("attractions" , attractions);
 
-        return "main"; //  main.html (빈 페이지)
+        // security session에 있는 name 정보 가져온다.
+        if(principalDetails != null) {
+            model.addAttribute("name", principalDetails.getUser().getName());
+        }
+
+       return "main"; //  main.html (빈 페이지)
     }
 
     /**
@@ -151,6 +161,82 @@ public class IndexController {
 
         return "redirect:/myPage";
     }
+
+
+    @GetMapping("test/login")
+    @ResponseBody
+    public String testLogin(Authentication authentication , @AuthenticationPrincipal PrincipalDetails principalDetails){
+
+        // DI를 통해서 받고, 다운 캐스팅을 통해서 데이터를 받을 수도 있고
+        // Authentication Class 객체를 사용해서 principalDetails 정보를 가져올 수 있다.
+        PrincipalDetails principal = (PrincipalDetails) authentication.getPrincipal();
+        System.out.println("authentication : " + principal.getUser());
+
+
+        // @AuthenticationPrincipal 어노테이션을 이용해서 데이터를 가져올 수 있다.
+        // @AuthenticationPrincipal 어노테이션은 UserDetails 타입을 가지고 있다.
+        // 우리는 또 다른 UserDetails 타입을 가지고 있기 때문에, 바꿔끼워도 상관 없다.
+        // 현재 userDetails에서 UserResponse 객체가 들어가고 있고, 일부 정보만 들어있다.
+        // UserResponse를 사용했던 이유는 Session DB를 사용하기 위해서는 User를 Serializable 객체로 만들 순 없기 때문이다.
+        System.out.println("userDetails : " + principalDetails.getUser());
+        System.out.println("userDetails : " + principalDetails.getUser().getName());
+
+        //위처럼 일반 로그인 과정에서는 올바르게 각 상황에 맞춰서 PrincipalDetails 로 형변환이 가능했지만
+        // Oauth2 로그인을 사용하는 경우는 , 형변환을 PrincipalDetails로 할  수 없다.
+        // Oauth2를 해서 얻어진 details type은 org.springfamily.security.oauth2.user.DefaultOAuth2User 이다.
+
+        return "일반 로그인 세션 정보 확인";
+    }
+
+
+    //위처럼 일반 로그인 과정에서는 올바르게 각 상황에 맞춰서 PrincipalDetails 로 형변환이 가능했지만
+    // Oauth2 로그인을 사용하는 경우는 , 형변환을 PrincipalDetails로 할  수 없다.
+    // Oauth2를 해서 얻어진 details type은 org.springfamily.security.oauth2.user.DefaultOAuth2User 이다.
+    @GetMapping("test/oauth/login")
+    @ResponseBody
+    public String testOauthLogin(Authentication authentication , @AuthenticationPrincipal OAuth2User oauth2User){
+
+        // 따라서, 형변환 할때는 OAuth2User로 해줘야 한다.
+        // getAttributes() 메소드를 사용하면, 구글 로그인에 성공한 사용자의 프로필 정보를 확인할 수 있다.
+        // 그 말은 즉, PrincipalOath2UserService에서 super.loadUser(userRequest) 를 통해서 얻어진
+        // 구글로부터 로그인된 사용자의 데이터를 받은 정보가 Spring Security가 알아서 해당 모든 정보들을
+        // SpringSecurityContextHolder에 저장해준다. 저장 해주었기 때문에
+        // 아래와 같이 authentication으로 접근해서 데이터를 가져올 수 있었던 것이다.
+        OAuth2User oauth2 = (OAuth2User) authentication.getPrincipal();
+        System.out.println("oauth2User : " + oauth2.getAttributes());
+
+
+        // 또 다른 방법으로는 @AuthenticationPrincipal 어노테이션을 이용해서 데이터를 가져올 수 있다.
+        // 대신 일반 로그인과는 다르게 PrincipalDetails를 사용하는것이 아니라,
+        // Oauth2User가 가지고 있는 타입을 활용해여 한다.
+        // 위에랑 똑같이 getAttributes() 메소드를 사용하면, SpringSecutiryContextHolder에 담긴
+        // 구글 로그인에 성공한 사용자의 프로필 정보를 확인할 수 있다.
+        // 중요한 점**** OAuth2로 로그인을 하면 Authentication 객체에는 OAuth2User 객체가 담겨있다.
+        System.out.println("oauth2User : " + oauth2User.getAttributes());
+
+        // 문제점!!
+        // 일반 로그인 같은 경우는 UserDetails가 시큐리티 세션에 담겨지고
+        // OAuth2 로그인 같은 경우는 OAuth2User가 시큐리티 세션에 담겨지고 있다.
+        // 혹여나, 다른 컨트롤러에서 Security Session에 접근해서 정보를 가져와야할 경우
+        // UserDetails로 가져와야 할지 OAuth2User로 가져와야 할지 모르게 된다.
+        // 그러기 때문에 부가적인 작업이 필요하다.
+        // 특정한 Class X를 만들어서 UserDetails도 implements하고 OAuth2User도 implements 하도록 한다.
+        // PrincipalDetailsService의 loadUserByUsername() 메소드의 return 값이 SecurityContextHolder에 담기게 된다.
+        // 따라서, 앞서 우리가 만들어 놓았던, PrincipalDetails Class를 UserDetails와 OAuth2User를 같이 implements하도록 한다.
+        // 그렇게 하면 사용자는 OAuth2로 로그인 하든, 일반 로그인을 하든 PrincipalDetails로 형변환 할 수 있다.
+
+
+        return "Oauth 세션 정보 확인";
+    }
+
+    @GetMapping("/anotherlogin")
+    @ResponseBody
+    public String another(@AuthenticationPrincipal PrincipalDetails principalDetails){
+        System.out.println("principalDetails : " + principalDetails.getUser());
+
+        return "data";
+    }
+
 
 
 }

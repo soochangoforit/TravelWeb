@@ -22,12 +22,16 @@ public class UserResponse implements Serializable {
     private String nickname;
     private String email;
     private Role role;
+
+    private String provider; // 소셜로그인 제공자 이름
+
+    private String providerId; // 소셜로그인에서 제공 받은 sub(여러 자리의 숫자)
     private List<FoodBoard> foodBoardList;
 
 
     @Builder
     public UserResponse(Long db_id, String loginId, String password, String name, String nickname,
-                        String email, Role role, List<FoodBoard> foodBoardList) {
+                        String email, Role role,String provider, String providerId , List<FoodBoard> foodBoardList) {
         this.db_id = db_id;
         this.loginId = loginId;
         this.password = password;
@@ -35,6 +39,8 @@ public class UserResponse implements Serializable {
         this.nickname = nickname;
         this.email = email;
         this.role = role;
+        this.provider = provider;
+        this.providerId = providerId;
         this.foodBoardList = foodBoardList;
     }
 }

@@ -78,6 +78,9 @@ dependencies {
 	// https://github.com/stleary/JSON-java
 	implementation files('libs/json-20220320.jar')
 
+	// oauth2 client
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
 
 
 }

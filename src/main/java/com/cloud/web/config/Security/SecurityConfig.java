@@ -1,5 +1,6 @@
 package com.cloud.web.config.Security;
 
+import com.cloud.web.config.Oauth2.PrincipalOauth2UserService;
 import com.cloud.web.config.auth.LoginFailureHandler;
 import com.cloud.web.config.auth.LoginSuccessHandler;
 import com.cloud.web.config.auth.WebAccessDeniedHandler;
@@ -36,19 +37,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private  WebAccessDeniedHandler webAccessDeniedHandler; // 권한 없을때 처리하는 클래스
 
+    private PrincipalOauth2UserService principalOauth2UserService;
+
+    private BCryptPasswordEncoder encodePwd;
+
+
 
     @Autowired
-    public SecurityConfig(LoginFailureHandler loginFailureHandler, LoginSuccessHandler loginSuccessHandler, WebAccessDeniedHandler webAccessDeniedHandler) {
+    public SecurityConfig(LoginFailureHandler loginFailureHandler, LoginSuccessHandler loginSuccessHandler,
+                          WebAccessDeniedHandler webAccessDeniedHandler,PrincipalOauth2UserService principalOauth2UserService
+                          ,BCryptPasswordEncoder encodePwd) {
         this.loginFailureHandler = loginFailureHandler;
         this.loginSuccessHandler = loginSuccessHandler;
         this.webAccessDeniedHandler = webAccessDeniedHandler;
+        this.principalOauth2UserService = principalOauth2UserService;
+        this.encodePwd = encodePwd;
     }
 
-    // 시큐리티 에서 비밀번호를 암호화 하기 위해서 사용한다.
-    @Bean
-    public BCryptPasswordEncoder encodePwd(){
-        return new BCryptPasswordEncoder();
-    }
+
 
 
     // 시큐리티에서 js,css,image,font 등의 리소스를 제어하기 위한 접근은 무시하도록 한다.
@@ -97,7 +103,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .deleteCookies("JSESSIONID")
 
                 .and()
-                .exceptionHandling().accessDeniedHandler(webAccessDeniedHandler); // 모든 403에 대한 에러를 처리하는 핸들러
+                .exceptionHandling().accessDeniedHandler(webAccessDeniedHandler) // 모든 403에 대한 에러를 처리하는 핸들러
+                .and()
+                .oauth2Login()
+                .loginPage("/login")
+                // 구글 로그인이 완료된 뒤의 후처리가 필요함
+                // 1. 코드 받기 (인증) , 2. 엑세스 토큰(권한), 3. 사용자 프로필 정보를 가져오고
+                // 4-1. 그 정보를 토대로 회원가입을 자동으로 진행시키기도 함.
+                // 4-2. (이메일, 전화번호, 이름, 아이디 ) 쇼핑몰 -> (집주소) , 백화점몰 -> (VIP 등급, 일반등급)
+                // 사용자로부터 추가적인 데이터를 받아서 회원가입을 진행 해야한다.
+                // 중요** oauth2 client library를 사용하면, 구글 로그인이 완료가 되면
+                // 코드 X -> (엑세스토큰 + 사용자프로필정보)를 한번에 받는다. library의 장점(편리하다.)
+                .userInfoEndpoint()
+                .userService(principalOauth2UserService); // 파라미터 타입이, OAuth2UserService여야 한다.
+
+
 
     }
 }

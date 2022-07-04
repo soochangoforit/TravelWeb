@@ -51,6 +51,12 @@ public class User {
     @Column(length = 10 , nullable = false)
     private Role roleType;
 
+    @Column(name="provider")
+    private String provider; // 소셜로그인 제공자 이름
+
+    @Column(name="provider_id")
+    private String providerId; // 소셜로그인에서 제공 받은 sub(여러 자리의 숫자)
+
 
     /**
      * User 입자에서 자신이 등록한 게시물의 리스트를 확인한다.
@@ -74,6 +80,12 @@ public class User {
         this.foodBoards.add(foodBoard);
     }*/
 
+    @PrePersist
+    public void prePersist() {
+        // 닉네임이 없으면 이메일의 @의 앞부분까지 가져와서 할당한다.
+        this.nickname = this.nickname == null ? this.email.substring(0, this.email.indexOf("@")) : this.nickname;
+    }
+
 
 
 
@@ -81,13 +93,16 @@ public class User {
     }
 
     @Builder
-    public User(String loginId, String password, String name, String nickname, String email, Role role) {
+    public User(String loginId, String password, String name, String nickname, String email, Role role,
+                String provider, String providerId) {
         this.loginId = loginId;
         this.password = password;
         this.name = name;
         this.nickname = nickname;
         this.email = email;
         this.roleType = role;
+        this.provider = provider;
+        this.providerId = providerId;
 
     }
 }
