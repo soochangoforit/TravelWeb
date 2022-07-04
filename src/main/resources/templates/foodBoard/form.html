@@ -29,23 +29,23 @@
             <h1 class="mb-4">각 지역의 맛집을 소개해주세요.</h1>
         </div>
 
-        <form th:action="@{/foodForm}" th:object="${foodBoard}" method="post" enctype="multipart/form-data">
+        <form th:action="@{/foodForm}"  method="post" enctype="multipart/form-data">
             <div class="row g-3">
                 <div class="col-12">
                     <label>식당 이름</label>
-                    <input required type="text" class="form-control" id="title" th:field="*{title}" style="height: 55px;">
+                    <input required type="text" class="form-control" id="title" name="title" style="height: 55px;">
                 </div>
                 <div class="col-12">
                     <label>식당 한줄 소개</label>
-                    <input required type="text" class="form-control" id="preview" th:field="*{preview}" style="height: 55px;">
+                    <input required type="text" class="form-control" name="preview"  style="height: 55px;">
                 </div>
 
 
                 <div class="col-12 col-sm-6">
                     <br>
                     <label >식당 도로명 주소</label>
-                    <input required type="text" class="form-control border-0" id="address" name="comm_address"  placeholder="식당 도로명 주소"
-                           th:field="*{address}"
+                    <input required type="text" class="form-control border-0" id="address" name="address"  placeholder="식당 도로명 주소"
+
                            style="height: 55px; display: inline-flex; margin-right: 10px; width: 83%;" readonly>
 
                     <button class="btn btn-outline-success btn-sm py-3 px-4" id="adBtn" onclick="Postcode()" type="button"
@@ -58,7 +58,7 @@
                 <div class="form-group">
                     <label >상세주소</label>
                     <div class="form-floating mb-3">
-                        <input required type="text" th:field="*{addressDetail}" class="form-control" id="detail_address" >
+                        <input required type="text" name = "addressDetail"  class="form-control" id="detail_address" >
                     </div>
                 </div>
 
@@ -68,11 +68,11 @@
 
                 <div class="col-12">
                     <label>사진 업로드</label>
-                    <input required type="file" name="file" class="form-control" id="imageFiles" th:field="*{imageFiles}" multiple="multiple"placeholder="행사소개 이미지" style="height: 55px;">
+                    <input required type="file" name="imageFiles" class="form-control" id="imageFiles"  multiple="multiple"placeholder="행사소개 이미지" style="height: 55px;">
                 </div>
                 <div class="form-group">
                     <label>맛집 위치 지역 선택</label>
-                    <select required class="form-select" th:field="*{locationType}">
+                    <select required class="form-select" name="locationType">
                         <option value=""> 선택 </option>
                         <option th:each="val : ${locationTypeList}"
                                 th:value="${val.id}"
@@ -81,7 +81,7 @@
                 </div>
                 <div class="form-group">
                     <label>맛집 음식 유형 선택</label>
-                    <select required class="form-select"  th:field="*{foodType}">
+                    <select required class="form-select"  name="foodType">
                         <option value=""> 선택 </option>
                         <option th:each="val : ${foodTypeList}"
                                 th:value="${val.id}"
@@ -91,15 +91,16 @@
 
                 <div class="col-12">
                     <label>내용</label>
-                    <textarea required class="form-control" placeholder="Leave a comment here" id="info" style="height: 100px"
-                              th:field="*{info}"></textarea>
+                    <textarea required class="form-control" placeholder="Leave a comment here" name="info" style="height: 100px"
+                              ></textarea>
                 </div>
 
                 <div class="col-12">
                     <label>평점</label>
                     <div class="col-md-4">
                         <div class="input-group spinner">
-                            <input required type="text" class="form-control" value="0.5" min="0" max="5"id="rate" th:field="*{rate}" readonly>
+                            <input required type="text" class="form-control" value="0.5" min="0" max="5"id="rate" name="rate"
+                                    readonly>
                             <div class="input-group-btn-vertical">
                                 <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
                                 <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>

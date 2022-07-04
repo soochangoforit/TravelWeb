@@ -201,7 +201,7 @@ public class FoodController {
         model.addAttribute("foodTypeList", foodTypeList);
         model.addAttribute("locationTypeList", locationTypeList);
 
-        model.addAttribute("foodBoard", new FoodBoardPostFormDto()); // 오로지 웹 정보만 받도록 하는 dto 생성 후 반환
+        //model.addAttribute("foodBoard", new FoodBoardPostFormDto()); // 오로지 웹 정보만 받도록 하는 dto 생성 후 반환
 
         return "foodBoard/form";
     }
