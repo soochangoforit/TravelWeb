@@ -1,5 +1,9 @@
 package com.cloud.web.config.Oauth2;
 
+import com.cloud.web.config.Oauth2.Provider.FacebookUserInfo;
+import com.cloud.web.config.Oauth2.Provider.GoogleUserInfo;
+import com.cloud.web.config.Oauth2.Provider.NaverUserInfo;
+import com.cloud.web.config.Oauth2.Provider.OAuth2UserInfo;
 import com.cloud.web.config.auth.PrincipalDetails;
 import com.cloud.web.domain.User;
 import com.cloud.web.domain.enums.Role;
@@ -12,6 +16,8 @@ import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserServ
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 @Service
 @Slf4j
@@ -50,14 +56,32 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         // userRequest가 가지고 있는 AccessToken를 통해서 loadUser를 호출하면 구글로부터 회원 프로필을 받을 수 있다.
         // 그때 사용되는 함수가 loadUsr함수이다.
         // loadUser 함수를 통해서 AccessToken를 통해 ->  회원 프로필을 데이터를 받을 수 있다.
-        OAuth2User oAuth2User = super.loadUser(userRequest);
+        OAuth2User oAuth2 = super.loadUser(userRequest);
 
-        // 회원가입을 강제로 진행해볼 예정
-        String provider = userRequest.getClientRegistration().getRegistrationId(); // google
-        String providerId = oAuth2User.getAttribute("sub");
+        // 회원가입을 강제로 진행해볼 예정 (다만, 구글과 페이스북에 제공하는게 조금씩 다르기 때문에 유지보수 입장에서 인터페이스 활용)
+        OAuth2UserInfo oAuth2UserInfo = null;
+        if(userRequest.getClientRegistration().getRegistrationId().equals("google")) {
+            oAuth2UserInfo = new GoogleUserInfo(oAuth2.getAttributes());
+        } else if(userRequest.getClientRegistration().getRegistrationId().equals("facebook")) {
+            oAuth2UserInfo = new FacebookUserInfo(oAuth2.getAttributes());
+        }else if(userRequest.getClientRegistration().getRegistrationId().equals("naver")) {
+            oAuth2UserInfo = new NaverUserInfo((Map) oAuth2.getAttributes().get("response"));
+        }else{
+            throw new IllegalArgumentException("알수없는 OAuth2 클라이언트 정보 : " + userRequest.getClientRegistration().getRegistrationId());
+        }
+
+
+
+
+        //String provider = userRequest.getClientRegistration().getRegistrationId(); // google
+        String provider = oAuth2UserInfo.getProvider(); // google
+        //String providerId = oAuth2.getAttribute("sub");
+        String providerId = oAuth2UserInfo.getProviderId(); // {sub} or {id}
         String loginId = provider + "_" + providerId; // google_124567890 중복을 피하기 위해서
-        String password = passwordEncoder.encode("겟인데어"); // 암호화(겟인데어) -> 어차피 구글 로그인으로 진행되는 회원이라서, 아이디랑 비밀번호를 쳐서 로그인을 하는것은 아니다. -> 따라서 솔직히 username일아 password가 필요없다. (그냥 만드는거다.)
-        String email = oAuth2User.getAttribute("email"); // email
+        String password = passwordEncoder.encode("web"); // 암호화(겟인데어) -> 어차피 구글 로그인으로 진행되는 회원이라서, 아이디랑 비밀번호를 쳐서 로그인을 하는것은 아니다. -> 따라서 솔직히 username일아 password가 필요없다. (그냥 만드는거다.)
+        //String email = oAuth2.getAttribute("email"); // email
+        String email = oAuth2UserInfo.getEmail(); // email
+        String name = oAuth2UserInfo.getName(); // name
         Role role = Role.valueOf("ROLE_USER"); // ROLE_USER
 
         // 이미 회원이 있는지 확인한다. userRepository를 통해서 회원이 있는지 확인한다.
@@ -74,7 +98,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
             User entity = User.builder()
                     .loginId(loginId)
                     .password(password)
-                    .name(oAuth2User.getAttribute("name"))
+                    .name(name)
                     .email(email)
                     .role(role)
                     .provider(provider)
@@ -85,6 +109,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
             userResponse = UserResponse.builder()
                     .db_id(saved.getId())
                     .loginId(saved.getLoginId())
+                    .password(saved.getPassword())
                     .email(saved.getEmail())
                     .name(saved.getName())
                     .nickname(saved.getNickname())
@@ -98,6 +123,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
             userResponse = UserResponse.builder()
                     .db_id(user.getId())
                     .loginId(user.getLoginId())
+                    .password(user.getPassword())
                     .name(user.getName())
                     .nickname(user.getNickname())
                     .email(user.getEmail())
@@ -110,6 +136,6 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         // 해당 return 값은 Spring Security 에 Authentication 객체로 들어갈것이다.
         // 일반적으로 로그인 한다고 하면 단순히 UserResponse에 대한 데이터만 들고 있겠지만
         // Oauth2로 로그인을 한다고 하면 UserResponse와 Attributes를 함께 가지게 된다.
-        return new PrincipalDetails(userResponse , oAuth2User.getAttributes());
+        return new PrincipalDetails(userResponse , oAuth2.getAttributes());
     }
 }

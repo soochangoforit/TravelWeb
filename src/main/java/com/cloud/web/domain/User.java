@@ -83,7 +83,7 @@ public class User {
     @PrePersist
     public void prePersist() {
         // 닉네임이 없으면 이메일의 @의 앞부분까지 가져와서 할당한다.
-        this.nickname = this.nickname == null ? this.email.substring(0, this.email.indexOf("@")) : this.nickname;
+        this.nickname = this.nickname == null ? this.email.substring(0, this.email.indexOf("@")) + "_" + this.provider : this.nickname;
     }
 
 
