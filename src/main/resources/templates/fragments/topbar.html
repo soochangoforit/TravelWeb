@@ -23,7 +23,7 @@
                 <a href="/myPage" class="nav-item nav-link" sec:authorize="isAuthenticated()">MyPage</a>
                 <a href="/logout" class="nav-item nav-link" sec:authorize="isAuthenticated()">Logout </a>
                 <div >
-                    <a class="nav-item nav-link" sec:authorize="isAuthenticated()" th:text="|${name}님 환영합니다!!|" ><i class="fa fa-arrow-right ms-3"></i></a>
+                    <a class="nav-item nav-link" sec:authorize="isAuthenticated()" sec:authentication="principal.name"  ><i class="fa fa-arrow-right ms-3"></i></a>
 
                 </div>
                 <!--                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>-->

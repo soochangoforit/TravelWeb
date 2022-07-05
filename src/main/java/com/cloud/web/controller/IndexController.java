@@ -231,7 +231,10 @@ public class IndexController {
 
     @GetMapping("/anotherlogin")
     @ResponseBody
-    public String another(@AuthenticationPrincipal PrincipalDetails principalDetails){
+    public String another(Authentication authentication , @AuthenticationPrincipal PrincipalDetails principalDetails ) {
+
+        System.out.println("authentication : " + ((PrincipalDetails) authentication.getPrincipal()).getUser() );
+
         System.out.println("principalDetails : " + principalDetails.getUser());
 
         return "data";

@@ -208,6 +208,6 @@ public class PrincipalDetails implements UserDetails  , OAuth2User {
         // getName은 Attributes가 들고 있는 sub를 return 하도록 하면 된다.
         // 근데 실질적으로 잘 안쓰이기 떄문에 null로 해도 상관없다.
         // return attributes.get("sub").toString();
-        return null;
+        return user.getName() + "님 환영합니다!!";
     }
 }
