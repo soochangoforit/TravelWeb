@@ -26,6 +26,7 @@ public class FoodCmt {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "food_board_id" , nullable = false , foreignKey = @ForeignKey(name = "fk_food_cmt_to_food_board"))
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private FoodBoard foodBoard;
 
     @Column(name = "food_cmt" , length = 2000 , nullable = false)

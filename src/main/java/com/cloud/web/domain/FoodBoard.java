@@ -90,18 +90,10 @@ public class FoodBoard extends BaseTimeEntity {
      * FoodBoard는 cmt을 알기 위해서
      * 일대다 양방향 연관관계에서 list로 사용해서 활용 추가 - 2022-05-17
      */
-    @OneToMany(mappedBy = "foodBoard" , cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "foodBoard")
     private List<FoodCmt> foodCmts = new ArrayList<FoodCmt>();
 
-    /**
-     * 연관 관계 편의 메서드
-     */
-    public void addFoodCmts(FoodCmt foodCmt) {
 
-        foodCmt.setFoodBoard(this);
-        this.foodCmts.add(foodCmt);
-
-    }
 
 
     public FoodBoard changeToEntity(Long id, User user, LocationType locationType,

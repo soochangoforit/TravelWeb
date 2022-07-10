@@ -8,6 +8,7 @@ import com.cloud.web.dto.request.FoodCmtDto;
 import com.cloud.web.dto.response.FoodBoardShowDto;
 import com.cloud.web.repository.AttachmentRepository;
 import com.cloud.web.repository.FoodBoardRepository;
+import com.cloud.web.repository.FoodCmtRepository;
 import com.cloud.web.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,9 @@ public class FoodBoardService {
     private AttachmentRepository attachmentRepository;
     @Autowired
     private FileStore fileStore;
+
+    @Autowired
+    private FoodCmtRepository foodCmtRepository;
 
     /**
      *     FoodBoard를 추가할때 첨부파일도 List에 저장함과 동시에 첨부파일 DB table에도 저장을 한다. (영속화되어 저장)
@@ -143,11 +147,18 @@ public class FoodBoardService {
                 .foodCmt(cmt).build();
 
         // 영속성 컨텍스트에서 관리중인 Entity 객체에 Cmts 추가 , cascade=ALL에 의해서 연관된 entity 함께 persist 된다.
-        foodBoard.addFoodCmts(foodcmt);
+        //foodBoard.addFoodCmts(foodcmt);
 
         // 영속성 컨텍스트에서 관리되고 있는 객체를 Dirty check를 함으로써 Cmt를 추가하고자 한다.
         // 현재 FoodBoard Entity는 이미 한번 DB_ID 값을 가지고 있기 때문에 Dirty Check 가능하다.
-        foodBoardRepository.save(foodBoard);
+        //foodBoardRepository.save(foodBoard);
+
+
+        // foodBoard <-> foodCmt는 서로 완전히 의존적인 관계가 아니기 때문에
+        // cascade 옵셥을 사용하지 않는다. 만약 사용한다 하더라도 foodCmt는 다른 Entity랑 아무런 연관관계가 없어야한다.
+        foodCmtRepository.save(foodcmt);
+
+
     }
 
     @Transactional
