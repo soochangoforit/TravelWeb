@@ -99,8 +99,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout() // "/logout"이 default 값이다.
                 .logoutSuccessUrl("/") //main으로 돌아가게 설정
-                // JSESSIONID 이름으로 된 쿠키를 제거한다.
-                .deleteCookies("JSESSIONID")
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID") // JSESSIONID 이름으로 된 쿠키를 제거한다.
 
                 .and()
                 .exceptionHandling().accessDeniedHandler(webAccessDeniedHandler) // 모든 403에 대한 에러를 처리하는 핸들러
