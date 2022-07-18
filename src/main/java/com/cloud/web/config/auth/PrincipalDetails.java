@@ -73,17 +73,24 @@ public class PrincipalDetails implements UserDetails  , OAuth2User {
 
     /**
      * 기본 session에 저장하기 위해서 사용한다.
+     *
+     * 2022/07/18
+     * 더 이상 기본적인 HttpSession은 사용하지 않는다.
+     * HtttpSession에 민감한 정보를 담지 않기 위해서 해당 getUser를 통해
+     * 민감하지 않는 데이터로만 구성된 UserResponse를 반환하고자 하였지만,
+     * 이젠 부턴 Spring Security Session만 사용하게 됨으로써, UserResponse를 그대로 return 하도록한다.
+     * 추후 Controller에서 사용하기 위해서
      */
     public UserResponse getUser() {
 
-        UserResponse userDto = UserResponse.builder()
-                .db_id(user.getDb_id())
-                .name(user.getName())
-                .nickname(user.getNickname())
-                .email(user.getEmail())
-                .role(user.getRole()).build();
+//        UserResponse userDto = UserResponse.builder()
+//                .db_id(user.getDb_id())
+//                .name(user.getName())
+//                .nickname(user.getNickname())
+//                .email(user.getEmail())
+//                .role(user.getRole()).build();
 
-        return userDto;
+        return user;
     }
 
 
