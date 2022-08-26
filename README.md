@@ -5,10 +5,10 @@
 ## Contents
 
 - [Introduction](#Introduction)
-- ****Requriements****
-- ****Installation****
-- ****Contributing****
-- ****Maintainer****
+- [Requriements](#Requirements)
+- [Installation](#Installation)
+- [Contributing](#Contributing)
+- [Maintainer](#Maintainer)
 
 
 ## Introduction
