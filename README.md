@@ -4,11 +4,11 @@
 
 ## Contents
 
-- ****[Introduction](https://www.notion.so/ReadMe-md-d68c52ac151646fb89d2d787c919d1d2)****
-- ****[Requriements](https://www.notion.so/ReadMe-md-d68c52ac151646fb89d2d787c919d1d2)****
-- ****[Installation](https://www.notion.so/ReadMe-md-d68c52ac151646fb89d2d787c919d1d2)****
-- ****[Contributing](https://www.notion.so/ReadMe-md-d68c52ac151646fb89d2d787c919d1d2)****
-- ****[Maintainer](https://www.notion.so/ReadMe-md-d68c52ac151646fb89d2d787c919d1d2)****
+- ****[Introduction]****
+- ****[Requriements]****
+- ****[Installation])****
+- ****[Contributing]****
+- ****[Maintainer)****
 
 ## Introduction
 
