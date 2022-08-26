@@ -4,11 +4,11 @@
 
 ## Contents
 
-- ****[Introduction]****
-- ****[Requriements]****
-- ****[Installation])****
-- ****[Contributing]****
-- ****[Maintainer)****
+- ****Introduction****
+- ****Requriements****
+- ****Installation****
+- ****Contributing****
+- ****Maintainer****
 
 ## Introduction
 
