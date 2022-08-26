@@ -10,6 +10,7 @@
 - ****Contributing****
 - ****Maintainer****
 
+
 ## Introduction
 
 
@@ -53,6 +54,7 @@
 - MariaDB
 - Oracle Server
 
+
 ## Requirements
 
 
@@ -62,6 +64,7 @@
 - You can also import the code straight into your IDE:
     - [Spring Tool Suite (STS)](https://spring.io/tools)
     - [IntelliJ IDEA](https://www.jetbrains.com/)
+
 
 ## ****Installation****
 
@@ -73,6 +76,7 @@
     - Search **lombok** and Install
     
 
+
 ## Contributing
 
 
@@ -83,6 +87,7 @@
 4. When the work is completed, request a pull request to main branch after rebaseing the main branch.
 5. Review the code and merge it
 
+
 ### Branching
 
 `ISSUE_NUMBER-description`
@@ -91,6 +96,7 @@
     
     `2-img-upload`
     
+
 
 ### Commit Message
 
@@ -108,6 +114,7 @@ Referred to [Beom Dev Log](https://beomseok95.tistory.com/328) and [Conventio
     
     `feat: allow provided config object to extend other configs`
     
+
 
 ## Maintainer
 
