@@ -1,6 +1,6 @@
 # TravelWeb
 
----
+
 
 ## Contents
 
@@ -12,28 +12,28 @@
 
 ## Introduction
 
----
+
 
 - 2022년도 3학년 1학기 Web Server Project, SSR으로 개발하였습니다.
 - 전국 맛집, 부산 관광 명소 공유하는 웹 사이트
 
 - **부산 관광 명소**
     
-    ![Untitled](ReadMe%20md%2088f7c14381d8449ba8b5bde878fbd276/Untitled.png)
+    ![a](https://user-images.githubusercontent.com/91618389/186837014-240fb878-2dd2-4fc5-8af6-20e5bc25054e.png)
     
 
 - **전국 맛집 게시글**
     
-    ![Untitled](ReadMe%20md%2088f7c14381d8449ba8b5bde878fbd276/Untitled%201.png)
+    ![b](https://user-images.githubusercontent.com/91618389/186837012-7c573808-3622-4f4f-8fee-45ccc6e23912.png)
     
 - **맛집 게시글 상세 페이지**
     
-    ![Untitled](ReadMe%20md%2088f7c14381d8449ba8b5bde878fbd276/Untitled%202.png)
+    ![c](https://user-images.githubusercontent.com/91618389/186837008-d93b387d-6e82-4226-9344-c354cbb26f4c.png)
     
 
 - **부산 관광 명소 한눈에 보기**
     
-    ![Untitled](ReadMe%20md%2088f7c14381d8449ba8b5bde878fbd276/Untitled%203.png)
+    ![d](https://user-images.githubusercontent.com/91618389/186837001-87cb11da-e821-4002-a5d7-b36e336560b6.png)
     
 
 **<기능>**
@@ -55,7 +55,7 @@
 
 ## Requirements
 
----
+
 
 - JDK 11 or later
 - Gradle 4+
@@ -65,7 +65,7 @@
 
 ## ****Installation****
 
----
+
 
 - Install as you would normally install a Java JDK 11
 - If you use IntelliJ, you must install lombok plugin
@@ -75,7 +75,7 @@
 
 ## Contributing
 
----
+
 
 1. Create issues about the work.
 2. Create a branch on the issue.
@@ -111,7 +111,7 @@ Referred to [Beom Dev Log](https://beomseok95.tistory.com/328) and [Conventio
 
 ## Maintainer
 
----
+
 
 Current maintainers:
 
