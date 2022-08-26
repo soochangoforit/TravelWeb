@@ -20,21 +20,37 @@
 
 - **부산 관광 명소**
     
-    ![a](https://user-images.githubusercontent.com/91618389/186837014-240fb878-2dd2-4fc5-8af6-20e5bc25054e.png)
+<div align=center>
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/91618389/186837014-240fb878-2dd2-4fc5-8af6-20e5bc25054e.png">
+
+</div>
     
 
 - **전국 맛집 게시글**
     
-    ![b](https://user-images.githubusercontent.com/91618389/186837012-7c573808-3622-4f4f-8fee-45ccc6e23912.png)
+<div align=center>
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/91618389/186837012-7c573808-3622-4f4f-8fee-45ccc6e23912.png">
+
+</div>
     
 - **맛집 게시글 상세 페이지**
     
-    ![c](https://user-images.githubusercontent.com/91618389/186837008-d93b387d-6e82-4226-9344-c354cbb26f4c.png)
+<div align=center>
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/91618389/186837008-d93b387d-6e82-4226-9344-c354cbb26f4c.png">
+
+</div>
     
 
 - **부산 관광 명소 한눈에 보기**
     
-    ![d](https://user-images.githubusercontent.com/91618389/186837001-87cb11da-e821-4002-a5d7-b36e336560b6.png)
+<div align=center>
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/91618389/186837001-87cb11da-e821-4002-a5d7-b36e336560b6.png">
+
+</div>
     
 
 **<기능>**
